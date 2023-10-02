@@ -3,6 +3,7 @@
     "name": "Afghanistan",
     "code": "AF",
     "book": "The kite runner",
+    "writer": "Khaled Hosseini",
     "read": true
   },
   { "name": "Åland Islands", "code": "AX" },
@@ -14,10 +15,22 @@
   { "name": "Anguilla", "code": "AI" },
   { "name": "Antarctica", "code": "AQ" },
   { "name": "Antigua and Barbuda", "code": "AG" },
-  { "name": "Argentina", "code": "AR", "book": "Elena knows", "read": false },
+  {
+    "name": "Argentina",
+    "code": "AR",
+    "book": "Elena knows",
+    "writer": "Claudio Piñeiro",
+    "read": false
+  },
   { "name": "Armenia", "code": "AM" },
   { "name": "Aruba", "code": "AW" },
-  { "name": "Australia", "code": "AU", "book": "The book thief", "read": true },
+  {
+    "name": "Australia",
+    "code": "AU",
+    "book": "The book thief",
+    "writer": "Marcus Zusak",
+    "read": true
+  },
   { "name": "Austria", "code": "AT" },
   { "name": "Azerbaijan", "code": "AZ" },
   { "name": "Bahamas", "code": "BS" },
@@ -25,7 +38,13 @@
   { "name": "Bangladesh", "code": "BD" },
   { "name": "Barbados", "code": "BB" },
   { "name": "Belarus", "code": "BY" },
-  { "name": "Belgium", "code": "BE", "book": "Kaas", "read": true },
+  {
+    "name": "Belgium",
+    "code": "BE",
+    "book": "Kaas",
+    "writer": "Willem Elsschot",
+    "read": true
+  },
   { "name": "Belize", "code": "BZ" },
   { "name": "Benin", "code": "BJ" },
   { "name": "Bermuda", "code": "BM" },
@@ -40,6 +59,7 @@
     "name": "Brunei Darussalam",
     "code": "BN",
     "book": "Written in black",
+    "writer": "K.H. Lim",
     "read": false
   },
   { "name": "Bulgaria", "code": "BG" },
@@ -51,6 +71,7 @@
     "name": "Canada",
     "code": "CA",
     "book": "The handmaid's tale",
+    "writer": "Margaret Atwood",
     "read": true
   },
   { "name": "Cape Verde", "code": "CV" },
@@ -58,7 +79,13 @@
   { "name": "Central African Republic", "code": "CF" },
   { "name": "Chad", "code": "TD" },
   { "name": "Chile", "code": "CL" },
-  { "name": "China", "code": "CN", "book": "Wild swans", "read": false },
+  {
+    "name": "China",
+    "code": "CN",
+    "book": "Wild swans",
+    "writer": "Jung Chang",
+    "read": false
+  },
   { "name": "Christmas Island", "code": "CX" },
   { "name": "Cocos (Keeling) Islands", "code": "CC" },
   { "name": "Colombia", "code": "CO" },
@@ -74,13 +101,15 @@
   {
     "name": "Czech Republic",
     "code": "CZ",
-    "book": "The unbearable lightness",
+    "book": "The unbearable lightness of being",
+    "writer": "Milan Kundera",
     "read": true
   },
   {
     "name": "Denmark",
     "code": "DK",
-    "book": "Fairy Tales from HCA",
+    "book": "Fairy Tales",
+    "writer": "Hans Christian Andersen",
     "read": true
   },
   { "name": "Djibouti", "code": "DJ" },
@@ -91,6 +120,7 @@
     "name": "Egypt",
     "code": "EG",
     "book": "Woman at point zero",
+    "writer": "Nawal El Saadawi",
     "read": true
   },
   { "name": "El Salvador", "code": "SV" },
@@ -102,17 +132,41 @@
   { "name": "Faroe Islands", "code": "FO" },
   { "name": "Fiji", "code": "FJ" },
   { "name": "Finland", "code": "FI" },
-  { "name": "France", "code": "FR", "book": "Bonjour tristesse", "read": true },
+  {
+    "name": "France",
+    "code": "FR",
+    "book": "Bonjour tristesse",
+    "writer": "Françoise Sagan",
+    "read": true
+  },
   { "name": "French Guiana", "code": "GF" },
   { "name": "French Polynesia", "code": "PF" },
   { "name": "French Southern Territories", "code": "TF" },
   { "name": "Gabon", "code": "GA" },
   { "name": "Gambia", "code": "GM" },
   { "name": "Georgia", "code": "GE" },
-  { "name": "Germany", "code": "DE", "book": "The reader", "read": true },
-  { "name": "Ghana", "code": "GH", "book": "Homegoing", "read": true },
+  {
+    "name": "Germany",
+    "code": "DE",
+    "book": "Der Leser",
+    "writer": "Bernhard Schlink",
+    "read": true
+  },
+  {
+    "name": "Ghana",
+    "code": "GH",
+    "book": "Homegoing",
+    "writer": "Yaa Gyasi",
+    "read": true
+  },
   { "name": "Gibraltar", "code": "GI" },
-  { "name": "Greece", "code": "GR", "book": "Sappho's poems", "read": true },
+  {
+    "name": "Greece",
+    "code": "GR",
+    "book": "Sappho's poems",
+    "writer": "Sappho",
+    "read": true
+  },
   { "name": "Greenland", "code": "GL" },
   { "name": "Grenada", "code": "GD" },
   { "name": "Guadeloupe", "code": "GP" },
@@ -130,21 +184,36 @@
     "name": "Hong Kong",
     "code": "HK",
     "book": "The impossible city",
+    "writer": "Karen Cheung",
     "read": true
   },
   { "name": "Hungary", "code": "HU" },
-  { "name": "Iceland", "code": "IS", "book": "The greenhouse", "read": true },
-  { "name": "India", "code": "IN", "book": "The white tiger", "read": true },
+  {
+    "name": "Iceland",
+    "code": "IS",
+    "book": "The greenhouse",
+    "writer": "Auður Ava Ólafsdóttir",
+    "read": true
+  },
+  {
+    "name": "India",
+    "code": "IN",
+    "book": "The white tiger",
+    "writer": "Aravind Adiga",
+    "read": true
+  },
   {
     "name": "Indonesia",
     "code": "ID",
     "book": "Beauty is a wound",
+    "writer": "Eka Kurniawan",
     "read": true
   },
   {
     "name": "Iran, Islamic Republic Of",
     "code": "IR",
     "book": "Persepolis",
+    "writer": "Marjane Satrapi",
     "read": true
   },
   { "name": "Iraq", "code": "IQ" },
@@ -152,16 +221,24 @@
     "name": "Ireland",
     "code": "IE",
     "book": "Foster",
+    "writer": "Claire Keegan",
     "read": true
   },
   { "name": "Isle of Man", "code": "IM" },
   { "name": "Israel", "code": "IL" },
-  { "name": "Italy", "code": "IT", "book": "L'amica geniale", "read": true },
+  {
+    "name": "Italy",
+    "code": "IT",
+    "book": "L'amica geniale",
+    "writer": "Elena Ferrante",
+    "read": true
+  },
   { "name": "Jamaica", "code": "JM" },
   {
     "name": "Japan",
     "code": "JP",
-    "book": "Locanda degli amori ...",
+    "book": "Locanda degli amori diversi",
+    "writer": "Ito Ogawa",
     "read": true
   },
   { "name": "Jersey", "code": "JE" },
@@ -174,6 +251,7 @@
     "name": "Korea, Republic of",
     "code": "KR",
     "book": "Born 1982",
+    "writer": "Kim Ji-young",
     "read": true
   },
   { "name": "Kuwait", "code": "KW" },
@@ -195,6 +273,7 @@
     "name": "Malaysia",
     "code": "MY",
     "book": "Black water sister",
+    "writer": "Zen Cho",
     "read": true
   },
   { "name": "Maldives", "code": "MV" },
@@ -205,7 +284,13 @@
   { "name": "Mauritania", "code": "MR" },
   { "name": "Mauritius", "code": "MU" },
   { "name": "Mayotte", "code": "YT" },
-  { "name": "Mexico", "code": "MX", "book": "Hurricane season", "read": true },
+  {
+    "name": "Mexico",
+    "code": "MX",
+    "book": "Hurricane season",
+    "writer": "Fernanda Melchor",
+    "read": true
+  },
   { "name": "Micronesia, Federated States of", "code": "FM" },
   { "name": "Moldova, Republic of", "code": "MD" },
   { "name": "Monaco", "code": "MC" },
@@ -221,6 +306,7 @@
     "name": "Netherlands",
     "code": "NL",
     "book": "Lichter dan ik",
+    "writer": "Dido Michielsen",
     "read": true
   },
   { "name": "Netherlands Antilles", "code": "AN" },
@@ -232,6 +318,7 @@
     "name": "Nigeria",
     "code": "NG",
     "book": "Half a yellow sun",
+    "writer": "Chimamanda Ngozi Adichie",
     "read": true
   },
   { "name": "Niue", "code": "NU" },
@@ -258,6 +345,7 @@
     "name": "Russian Federation",
     "code": "RU",
     "book": "Riot days",
+    "writer": "Maria Alyokhina",
     "read": true
   },
   { "name": "RWANDA", "code": "RW" },
@@ -278,21 +366,41 @@
     "name": "Singapore",
     "code": "SG",
     "book": "Ministry of Moral Panic",
+    "writer": "Amanda Lee Koe",
     "read": true
   },
   { "name": "Slovakia", "code": "SK" },
   { "name": "Slovenia", "code": "SI" },
   { "name": "Solomon Islands", "code": "SB" },
   { "name": "Somalia", "code": "SO" },
-  { "name": "South Africa", "code": "ZA" },
+  {
+    "name": "South Africa",
+    "code": "ZA",
+    "book": "Period pain",
+    "writer": "Kopano Matlwa",
+    "read": false
+  },
   { "name": "South Georgia and the South Sandwich Islands", "code": "GS" },
-  { "name": "Spain", "code": "ES", "book": "Shadow of the wind", "read": true },
-  { "name": "Sri Lanka", "code": "LK" },
+  {
+    "name": "Spain",
+    "code": "ES",
+    "book": "Shadow of the wind",
+    "writer": "Carlos Ruiz Zafón",
+    "read": true
+  },
+  {
+    "name": "Sri Lanka",
+    "code": "LK",
+    "book": "The Seven Moons of Maali Almeida",
+    "writer": "Shehan Karunatilaka",
+    "read": false
+  },
   { "name": "Sudan", "code": "SD" },
   {
     "name": "Suriname",
     "code": "SR",
     "book": "Hoe duur was de suiker",
+    "writer": "Cynthia Mc Leod",
     "read": true
   },
   { "name": "Svalbard and Jan Mayen", "code": "SJ" },
@@ -301,6 +409,7 @@
     "name": "Sweden",
     "code": "SE",
     "book": "Ronja de roversdochter",
+    "writer": "Astrid Lindgren",
     "read": true
   },
   { "name": "Switzerland", "code": "CH" },
@@ -311,16 +420,29 @@
     "name": "Tanzania, United Republic of",
     "code": "TZ",
     "book": "By the sea",
+    "writer": "Abdulrazak Gurnah",
     "read": true
   },
-  { "name": "Thailand", "code": "TH", "book": "Sightseeing", "read": false },
+  {
+    "name": "Thailand",
+    "code": "TH",
+    "book": "Sightseeing",
+    "writer": "Rattawut Lapcharoensap",
+    "read": false
+  },
   { "name": "Timor-Leste", "code": "TL" },
   { "name": "Togo", "code": "TG" },
   { "name": "Tokelau", "code": "TK" },
   { "name": "Tonga", "code": "TO" },
   { "name": "Trinidad and Tobago", "code": "TT" },
   { "name": "Tunisia", "code": "TN" },
-  { "name": "Turkey", "code": "TR", "book": "Snow", "read": true },
+  {
+    "name": "Turkey",
+    "code": "TR",
+    "book": "Snow",
+    "writer": "Orhan Pamuk",
+    "read": true
+  },
   { "name": "Turkmenistan", "code": "TM" },
   { "name": "Turks and Caicos Islands", "code": "TC" },
   { "name": "Tuvalu", "code": "TV" },
@@ -331,12 +453,14 @@
     "name": "United Kingdom",
     "code": "GB",
     "book": "White teeth",
+    "writer": "Zadie Smith",
     "read": true
   },
   {
     "name": "United States",
     "code": "US",
     "book": "To kill a mockingbird",
+    "writer": "Harper Lee",
     "read": true
   },
   { "name": "United States Minor Outlying Islands", "code": "UM" },
@@ -348,6 +472,7 @@
     "name": "Viet Nam",
     "code": "VN",
     "book": "The mountains sing",
+    "writer": "Nguyễn Phan Quế Mai",
     "read": true
   },
   { "name": "Virgin Islands, British", "code": "VG" },
@@ -356,5 +481,11 @@
   { "name": "Western Sahara", "code": "EH" },
   { "name": "Yemen", "code": "YE" },
   { "name": "Zambia", "code": "ZM" },
-  { "name": "Zimbabwe", "code": "ZW", "book": "Glory", "read": true }
+  {
+    "name": "Zimbabwe",
+    "code": "ZW",
+    "book": "Glory",
+    "writer": "NoViolet Bulawayo",
+    "read": true
+  }
 ]
