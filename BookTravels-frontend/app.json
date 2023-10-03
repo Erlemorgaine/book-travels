@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "BookTravels",
+    "slug": "BookTravels",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "variables": {
+      "development": {
+        "API_URL": "http://localhost:3000/"
+      }
+    },
+    "fonts": {
+      "DMSans": "./assets/fonts/DMSans-Regular.ttf",
+      "DMSansBold": "./assets/fonts/DMSans-Bold.ttf",
+      "DMSansLight": "./assets/fonts/DMSans-Light.ttf"
+    }
+  }
+}
