@@ -5,7 +5,7 @@ export const colors = {
   ["--primary-green"]: "#00A6A6",
   ["--primary-red"]: "#D8572A",
   ["--bg-color"]: "#FEF5EB",
-  ["--bg-color-50"]: "#eedbc544",
+  ["--bg-color-50"]: "#eedbc566",
   ["--card-color"]: "#FEF7ED",
   ["--card-shadow"]: "#eedbc5",
   ["--card-shadow-dark"]: "#c9b6a1",

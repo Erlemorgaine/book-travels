@@ -33,7 +33,6 @@ export default function App() {
     <ImageBackground
       source={require("./assets/paper-texture-4.jpeg")}
       style={styles.background}
-      imageStyle={{ opacity: 0.5 }}
     >
       {fontsLoaded && (
         <View

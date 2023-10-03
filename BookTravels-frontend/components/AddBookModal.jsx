@@ -8,6 +8,7 @@ import {
   Modal,
 } from "react-native";
 import { addBookForUser } from "../utilities/api";
+import ModalWrapper from "./ModalWrapper";
 
 const AddBookModal = ({ show, closeModal, userId }) => {
   const [newEntry, setNewEntry] = useState({});
@@ -30,7 +31,7 @@ const AddBookModal = ({ show, closeModal, userId }) => {
   };
 
   return (
-    <Modal visible={show}>
+    <ModalWrapper show={show}>
       <View>
         <TextInput
           style={styles.input}
@@ -49,7 +50,7 @@ const AddBookModal = ({ show, closeModal, userId }) => {
           Start reading
         </Pressable>
       </View>
-    </Modal>
+    </ModalWrapper>
   );
 };
 
@@ -73,8 +74,9 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     padding: 12,
     margin: 10,
-    marginTop: 5,
+    marginTop: 15,
     borderRadius: 5,
-    fontFamily: "DMSansBold",
+    fontFamily: "Headings",
+    fontWeight: 700,
   },
 });
