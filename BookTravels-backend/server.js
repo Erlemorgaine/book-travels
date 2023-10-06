@@ -15,10 +15,10 @@ app.get("/create/:userId", (req, res) => {
   const { userId } = req.params;
 
   // Load existing data or initialize as an empty array
-  const filePath = path.join(__dirname, `./data/${userId}.json`);
+  const filePath = path.join(__dirname, `./data/users/${userId}.json`);
   const templatePath = path.join(
     __dirname,
-    `./data/book-template-28563829.json`
+    `./data/template/book-template-28563829.json`
   );
 
   // Check if username already exists
@@ -32,7 +32,7 @@ app.get("/create/:userId", (req, res) => {
     const jsonString = JSON.stringify(template);
 
     // Write the JSON string to the file
-    fs.writeFile("./data/" + userId + ".json", template, (err) => {
+    fs.writeFile(`./data/users${userId}.json`, template, (err) => {
       if (err) {
         console.error("Error creating JSON file:", err);
       } else {
@@ -49,7 +49,7 @@ app.post("/user/:userId", (req, res) => {
   const userData = req.body;
 
   // Load existing data or initialize as an empty array
-  const filePath = path.join(__dirname, `./data/${userId}.json`);
+  const filePath = path.join(__dirname, `./data/users${userId}.json`);
   let userArray = [];
 
   try {
@@ -73,7 +73,7 @@ app.get("/user/:userId", (req, res) => {
   const { userId } = req.params;
 
   // Load user data from the file
-  const filePath = path.join(__dirname, `./data/${userId}.json`);
+  const filePath = path.join(__dirname, `./data/users/${userId}.json`);
   let userArray = [];
 
   try {
