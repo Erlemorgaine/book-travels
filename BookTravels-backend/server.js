@@ -11,28 +11,32 @@ app.use(cors());
 // Middleware to parse JSON data in requests
 app.use(express.json());
 
-app.post("/create/:userId", (req, res) => {
+app.get("/create/:userId", (req, res) => {
   const { userId } = req.params;
 
   // Load existing data or initialize as an empty array
-  const filePath = path.join(__dirname, `${userId}.json`);
+  const filePath = path.join(__dirname, `./data/${userId}.json`);
+  const templatePath = path.join(
+    __dirname,
+    `./data/book-template-28563829.json`
+  );
 
   // Check if username already exists
   try {
     const fileData = fs.readFileSync(filePath, "utf-8");
 
-    if (fileData) {
-      res.status(403).json({ message: "User already exists" });
-    }
+    console.log(fileData);
+    res.status(200);
   } catch (error) {
-    const jsonString = JSON.stringify([], null, 2);
+    const template = fs.readFileSync(templatePath, "utf-8");
+    const jsonString = JSON.stringify(template);
 
     // Write the JSON string to the file
-    fs.writeFile("./data/", userId + ".json", jsonString, (err) => {
+    fs.writeFile("./data/" + userId + ".json", template, (err) => {
       if (err) {
         console.error("Error creating JSON file:", err);
       } else {
-        console.log("Empty JSON file created successfully.");
+        console.log("Empty book template created successfully.");
       }
     });
 

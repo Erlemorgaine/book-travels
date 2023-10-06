@@ -11,12 +11,6 @@ const UserAccess = ({ onUserCreated }) => {
 
   const handleApiPost = () => {
     createUser(userId)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
       .then(() => onUserCreated(userId))
       .catch((error) => {
         // Handle errors
