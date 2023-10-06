@@ -5,13 +5,17 @@ import {
   Alert,
   Pressable,
   StyleSheet,
+  Text,
   Modal,
 } from "react-native";
 import { addBookForUser } from "../utilities/api";
 import ModalWrapper from "./ModalWrapper";
+import ButtonPrimary from "./ButtonPrimary";
+import InputField from "./InputField";
+import AppTitle from "./AppTitle";
 
 const AddBookModal = ({ show, closeModal, userId }) => {
-  const [newEntry, setNewEntry] = useState({});
+  const [newEntry, setNewEntry] = useState({ book: "", writer: "" });
 
   const addBook = () => {
     addBookForUser(userId)
@@ -31,24 +35,31 @@ const AddBookModal = ({ show, closeModal, userId }) => {
   };
 
   return (
-    <ModalWrapper show={show}>
+    <ModalWrapper show={show} closeModal={closeModal}>
       <View>
-        <TextInput
-          style={styles.input}
+        <AppTitle title="Time to add a new book!" />
+        <Text style={styles.intro}>
+          You can either add a book that you've already read, or save a book
+          that sounds interesting and that you want to save for a later book
+          travel. Read books will show up on the map in <Text>red</Text>,
+          not-yet-read books will show up in <Text>green</Text>.
+        </Text>
+
+        <InputField
           placeholder="Add a book title"
-          value={userId}
-          onChangeText={(book) => setNewEntry({ ...newEntry, book })}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Add a writer"
-          value={userId}
-          onChangeText={(writer) => setNewEntry({ ...newEntry, writer })}
+          value={newEntry.book}
+          onChange={(book) => setNewEntry({ ...newEntry, book })}
         />
 
-        <Pressable style={styles.button} onPress={addBook}>
-          Start reading
-        </Pressable>
+        <InputField
+          placeholder="Add a writer"
+          value={newEntry.writer}
+          onChange={(writer) => setNewEntry({ ...newEntry, writer })}
+        />
+
+        {/* TODO: Add country dropdown */}
+
+        <ButtonPrimary label="Start reading" onPress={addBook} />
       </View>
     </ModalWrapper>
   );
@@ -57,26 +68,7 @@ const AddBookModal = ({ show, closeModal, userId }) => {
 export default AddBookModal;
 
 const styles = StyleSheet.create({
-  input: {
+  intro: {
     padding: 12,
-    borderRadius: 10,
-    backgroundColor: "var(--white)",
-    margin: 10,
-    marginTop: 5,
-    marginBottom: 0,
-    borderWidth: 2,
-    borderColor: `var(--card-shadow)`,
-  },
-  button: {
-    textAlign: "center",
-    backgroundColor: "var(--primary)",
-    color: "var(--white)",
-    textTransform: "uppercase",
-    padding: 12,
-    margin: 10,
-    marginTop: 15,
-    borderRadius: 5,
-    fontFamily: "Headings",
-    fontWeight: 700,
   },
 });

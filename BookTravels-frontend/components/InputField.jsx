@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { TextInput, StyleSheet } from "react-native";
 
-const InputField = ({ placeholder, value, onChange }) => {
+const InputField = ({ placeholder, value, onChange, style = {} }) => {
   return (
     <TextInput
-      style={styles.input}
+      style={{ ...style, ...styles.input }}
       placeholder={placeholder}
       value={value}
       onChangeText={onChange}
@@ -16,6 +16,7 @@ export default InputField;
 
 const styles = StyleSheet.create({
   input: {
+    width: "100%",
     padding: 12,
     borderRadius: 10,
     backgroundColor: "var(--white)",

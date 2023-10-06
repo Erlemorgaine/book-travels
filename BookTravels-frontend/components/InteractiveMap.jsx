@@ -7,7 +7,7 @@ import { select } from "d3-selection";
 import { feature } from "topojson";
 
 import countriesJson from "../assets/countries.json";
-import RoundButton from "./RoundButton";
+import ButtonRound from "./ButtonRound";
 import AddBookModal from "./AddBookModal";
 
 const InteractiveMap = ({ booksPerCountry }) => {
@@ -130,7 +130,7 @@ const InteractiveMap = ({ booksPerCountry }) => {
         </g>
       </Svg>
 
-      <RoundButton
+      <ButtonRound
         onPress={() => setShowAddModal(true)}
         icon="+"
         style={{ position: "absolute", right: 12, bottom: 12 }}

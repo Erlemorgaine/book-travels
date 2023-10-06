@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Pressable } from "react-native";
 
-const RoundButton = ({ onPress, icon, style = {} }) => {
+const ButtonRound = ({ onPress, icon, style = {} }) => {
   return (
     <Pressable style={{ ...styles.button, ...style }} onPress={onPress}>
       {icon}
@@ -9,7 +9,7 @@ const RoundButton = ({ onPress, icon, style = {} }) => {
   );
 };
 
-export default RoundButton;
+export default ButtonRound;
 
 const styles = StyleSheet.create({
   button: {

@@ -45,7 +45,7 @@ app.post("/user/:userId", (req, res) => {
   const userData = req.body;
 
   // Load existing data or initialize as an empty array
-  const filePath = path.join(__dirname, `${userId}.json`);
+  const filePath = path.join(__dirname, `./data/${userId}.json`);
   let userArray = [];
 
   try {

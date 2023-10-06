@@ -6,11 +6,13 @@ import AddBook from "./AddBookModal";
 const CountryList = ({ countryBooks }) => {
   const [selectedBook, setSelectedBook] = useState(null);
 
-  const BookItem = ({ book, writer, countryCode, read }) => (
+  const BookItem = ({ book, writer, countryCode, read, country }) => (
     <Pressable
       key={countryCode}
       style={styles.bookCase.bookItem}
-      onPress={() => setSelectedBook({ book, writer, countryCode, read })}
+      onPress={() =>
+        setSelectedBook({ book, writer, countryCode, read, country })
+      }
     >
       <Text
         style={{
@@ -41,6 +43,7 @@ const CountryList = ({ countryBooks }) => {
             countryCode={item.code}
             read={item.read}
             writer={item.writer}
+            country={item.name}
           />
         )}
       />
