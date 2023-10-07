@@ -8,10 +8,11 @@ import AppTitle from "./AppTitle";
 import AppCheckbox from "./AppCheckbox";
 import AppDropdown from "./AppDropdown";
 
-const AddBookModal = ({ show, closeModal, userId }) => {
+const AddBookModal = ({ show, closeModal, userId, countries }) => {
   const [newEntry, setNewEntry] = useState({
     book: "",
     writer: "",
+    countryCode: "",
     read: false,
   });
 
@@ -58,7 +59,14 @@ const AddBookModal = ({ show, closeModal, userId }) => {
           onChange={(writer) => setNewEntry({ ...newEntry, writer })}
         />
 
-        <AppDropdown />
+        <AppDropdown
+          label="Select a country"
+          data={countries}
+          value={newEntry.countryCode}
+          onValueChange={(countryCode) =>
+            setNewEntry({ ...newEntry, countryCode })
+          }
+        />
 
         <AppCheckbox
           setEnabled={() => setNewEntry({ ...newEntry, read: !newEntry.read })}
@@ -76,7 +84,6 @@ export default AddBookModal;
 
 const styles = StyleSheet.create({
   intro: {
-    
     paddingBottom: 12,
     paddingLeft: 5,
     read: {

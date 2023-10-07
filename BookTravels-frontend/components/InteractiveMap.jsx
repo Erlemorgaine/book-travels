@@ -139,6 +139,7 @@ const InteractiveMap = ({ booksPerCountry }) => {
       <AddBookModal
         show={showAddModal}
         closeModal={() => setShowAddModal(false)}
+        countries={booksPerCountry.map((book) => ({label: book.name, vallue: book.code}))}
       />
     </View>
   );

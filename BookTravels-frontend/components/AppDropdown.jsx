@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 
-const AppDropdown = () => {
-  const [value, setValue] = useState(null);
+const AppDropdown = ({ label, data, onValueChange, value }) => {
   const [isFocus, setIsFocus] = useState(false);
 
   const renderLabel = () => {
     if (value || isFocus) {
       return (
-        <Text style={[styles.label, isFocus && { color: "blue" }]}>
-          Dropdown label
+        <Text style={[styles.label, isFocus && { color: "#e69700" }]}>
+          {label}
         </Text>
       );
     }
@@ -21,23 +20,23 @@ const AppDropdown = () => {
     <View style={styles.container}>
       {renderLabel()}
       <Dropdown
-        style={[styles.dropdown, isFocus && { borderColor: "blue" }]}
-        // placeholderStyle={styles.placeholderStyle}
-        // selectedTextStyle={styles.selectedTextStyle}
-        // inputSearchStyle={styles.inputSearchStyle}
+        style={[styles.dropdown, isFocus && { borderColor: "#e69700" }]}
+        placeholderStyle={styles.placeholderStyle}
+        selectedTextStyle={styles.selectedTextStyle}
+        inputSearchStyle={styles.inputSearchStyle}
         iconStyle={styles.iconStyle}
-        // data={data}
+        data={data}
         search
         maxHeight={300}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? "Select item" : "..."}
+        placeholder={!isFocus ? label : "..."}
         searchPlaceholder="Search..."
         value={value}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
         onChange={(item) => {
-          setValue(item.value);
+          onValueChange(item.value);
           setIsFocus(false);
         }}
         // renderLeftIcon={() => (
@@ -57,15 +56,15 @@ export default AppDropdown;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
-    padding: 16,
+    paddingTop: 5,
   },
   dropdown: {
-    height: 50,
-    borderColor: "gray",
-    borderWidth: 0.5,
-    borderRadius: 8,
+    height: 44,
+    borderColor: `var(--card-shadow)`,
+    borderWidth: 2,
+    borderRadius: 10,
     paddingHorizontal: 8,
+    backgroundColor: "white",
   },
   icon: {
     marginRight: 5,
@@ -73,17 +72,19 @@ const styles = StyleSheet.create({
   label: {
     position: "absolute",
     backgroundColor: "white",
-    left: 22,
+    color: "#e69700",
+    left: 12,
     top: 8,
     zIndex: 999,
     paddingHorizontal: 8,
-    fontSize: 14,
+    fontSize: 12,
   },
   placeholderStyle: {
-    fontSize: 16,
+    fontSize: 14,
+    paddingLeft: 4,
   },
   selectedTextStyle: {
-    fontSize: 16,
+    fontSize: 14,
   },
   iconStyle: {
     width: 20,
@@ -91,6 +92,7 @@ const styles = StyleSheet.create({
   },
   inputSearchStyle: {
     height: 40,
-    fontSize: 16,
+    fontSize: 14,
+    backgroundColor: "white",
   },
 });
