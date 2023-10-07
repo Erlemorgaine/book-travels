@@ -24,5 +24,8 @@ const styles = StyleSheet.create({
     fontSize: 26,
     lineHeight: 26,
     fontWeight: 700,
+    // shadowColor: `var(--card-shadow-dark)`,
+    // shadowOffset: { width: -2, height: 4 },
+    // shadowRadius: 5,
   },
 });

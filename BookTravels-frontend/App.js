@@ -15,7 +15,7 @@ export default function App() {
   const [fontsLoaded] = useFonts({
     DMSans: require("./assets/fonts/DMSans-Regular.ttf"),
     DMSansBold: require("./assets/fonts/DMSans-Bold.ttf"),
-    Headings: require("./assets/fonts/TheGirlNextDoor-Regular.ttf"),
+    Headings: require("./assets/fonts/SpecialElite-Regular.ttf"),
   });
 
   const [userId, setUserId] = useState(localStorage.getItem(storageUserId));

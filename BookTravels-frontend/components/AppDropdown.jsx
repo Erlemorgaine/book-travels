@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 
-const DropdownComponent = () => {
+const AppDropdown = () => {
   const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
 
@@ -53,7 +53,7 @@ const DropdownComponent = () => {
   );
 };
 
-export default DropdownComponent;
+export default AppDropdown;
 
 const styles = StyleSheet.create({
   container: {

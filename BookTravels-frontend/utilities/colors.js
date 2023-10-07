@@ -1,9 +1,14 @@
 export const colors = {
   // ["--primary"]: "#1D3461",
   ["--primary"]: "#336699",
+  ["--primary-50"]: "#33669988",
 
-  ["--primary-green"]: "#00A6A6",
-  ["--primary-red"]: "#D8572A",
+  ["--primary-green"]: "hsl(180, 100%, 33%)",
+  ["--primary-green-light"]: "hsl(180, 60%, 73%)",
+  ["--primary-green-dark"]: "hsl(180, 100%, 25%)",
+  ["--primary-red"]: "hsl(16, 69%, 51%)",
+  ["--primary-red-light"]: "hsl(16, 75%, 75%)",
+  ["--primary-red-dark"]: "hsl(16, 75%, 35%)",
   ["--bg-color"]: "#FEF5EB",
   ["--bg-color-50"]: "#FDECD888",
   ["--card-color"]: "#FEF7ED",
@@ -13,6 +18,6 @@ export const colors = {
   ["--white"]: "#FFF",
   ["--grey-light"]: "#eee",
   ["--grey-medium"]: "#999",
-  ["--grey-dark"]: "#454545",
+  ["--grey-dark"]: "#555",
   ["--black"]: "#000",
 };

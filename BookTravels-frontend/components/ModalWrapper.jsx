@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     modalContent: {
       flexGrow: 1,
-      padding: 10,
+      padding: 20,
       borderRadius: 5,
       borderWidth: 2,
       borderColor: "var(--primary)",

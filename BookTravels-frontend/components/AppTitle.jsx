@@ -9,12 +9,12 @@ export default AppTitle;
 
 const styles = StyleSheet.create({
   title: {
-    color: "var(--black)",
+    color: "var(--primary)",
     textAlign: "center",
-    fontSize: 18,
+    fontSize: 24,
     lineHeight: 26,
     fontWeight: "700",
     fontFamily: "Headings",
-    paddingBottom: 5,
+    // paddingBottom: 5,
   },
 });

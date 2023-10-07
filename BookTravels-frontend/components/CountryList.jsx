@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { FlatList, View, Text, StyleSheet, Pressable } from "react-native";
+import {
+  FlatList,
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  ImageBackground,
+} from "react-native";
 import BookModal from "./BookModal";
 import AddBook from "./AddBookModal";
 
@@ -14,17 +21,22 @@ const CountryList = ({ countryBooks }) => {
         setSelectedBook({ book, writer, countryCode, read, country })
       }
     >
-      <Text
-        style={{
-          ...styles.bookCase.bookItem.code,
-          "--bg-color": read ? "var(--primary-green)" : "var(--primary-red)",
-        }}
+      <ImageBackground
+        source={require(`../assets/book-${read ? "read" : "unread"}.svg`)}
+        style={styles.bookCase.bookItem.bookBg}
       >
-        {countryCode}
-      </Text>
+        <Text style={styles.bookCase.bookItem.code}>{countryCode}</Text>
+      </ImageBackground>
 
       <View>
-        <Text style={styles.bookCase.bookItem.book}>{book}</Text>
+        <Text
+          style={{
+            ...styles.bookCase.bookItem.book,
+            // color: `var(--primary-${read ? "green" : "red"}-dark)`,
+          }}
+        >
+          {book}
+        </Text>
         {writer && (
           <Text style={styles.bookCase.bookItem.writer}>{writer}</Text>
         )}
@@ -74,19 +86,23 @@ const styles = StyleSheet.create({
     bookItem: {
       flexDirection: "row",
       alignItems: "center",
-      gap: 16,
+      gap: 4,
       margin: 8,
       flex: 1,
 
+      bookBg: {
+        width: 70,
+      },
       code: {
         display: "flex",
         width: 48,
         height: 48,
         justifyContent: "center",
+        paddingLeft: 22,
         alignItems: "center",
         fontWeight: 700,
         fontSize: 18,
-        backgroundColor: "var(--bg-color)",
+        // backgroundColor: "var(--bg-color)",
         borderRadius: 5,
         color: "#fff",
         fontFamily: "Headings",
@@ -94,8 +110,9 @@ const styles = StyleSheet.create({
 
       book: {
         fontSize: 16,
-        fontWeight: 700,
+        fontWeight: 800,
         paddingBottom: 3,
+        color: "var(--grey-dark)",
         // fontFamily: "DMSansBold",
       },
       writer: {
