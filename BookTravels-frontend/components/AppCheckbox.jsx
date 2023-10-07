@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Switch, Text, StyleSheet, View } from "react-native";
 
-const AppCheckbox = ({ setEnabled, isEnabled }) => {
+const AppCheckbox = ({ setEnabled, isEnabled, label }) => {
   return (
     <View style={styles.container}>
       <Switch
@@ -15,7 +15,7 @@ const AppCheckbox = ({ setEnabled, isEnabled }) => {
         value={isEnabled}
       />
 
-      <Text style={styles.label}>I've read this book already</Text>
+      <Text style={styles.label}>{ label}</Text>
     </View>
   );
 };

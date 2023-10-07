@@ -63,9 +63,9 @@ const AddBookModal = ({ show, closeModal, userId }) => {
         <AppCheckbox
           setEnabled={() => setNewEntry({ ...newEntry, read: !newEntry.read })}
           isEnabled={newEntry.read}
+          label="I've read this book already"
         />
 
-        
         <ButtonPrimary label="Start reading" onPress={addBook} />
       </View>
     </ModalWrapper>
@@ -76,7 +76,7 @@ export default AddBookModal;
 
 const styles = StyleSheet.create({
   intro: {
-    paddingTop: 12,
+    
     paddingBottom: 12,
     paddingLeft: 5,
     read: {

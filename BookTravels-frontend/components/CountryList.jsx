@@ -10,7 +10,7 @@ import {
 import BookModal from "./BookModal";
 import AddBook from "./AddBookModal";
 
-const CountryList = ({ countryBooks }) => {
+const CountryList = ({ countryBooks, userId }) => {
   const [selectedBook, setSelectedBook] = useState(null);
 
   const BookItem = ({ book, writer, countryCode, read, country }) => (
@@ -63,6 +63,7 @@ const CountryList = ({ countryBooks }) => {
       <BookModal
         bookItem={selectedBook}
         closeModal={() => setSelectedBook(null)}
+        userId={userId}
       />
     </View>
   );

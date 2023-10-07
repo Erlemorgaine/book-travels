@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextInput, StyleSheet } from "react-native";
 
-const InputField = ({ placeholder, value, onChange, style = {} }) => {
+const InputField = ({ value, onChange, placeholder = "", style = {} }) => {
   return (
     <TextInput
       style={{ ...style, ...styles.input }}

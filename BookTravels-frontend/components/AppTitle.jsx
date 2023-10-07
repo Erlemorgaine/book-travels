@@ -15,6 +15,6 @@ const styles = StyleSheet.create({
     lineHeight: 26,
     fontWeight: "700",
     fontFamily: "Headings",
-    // paddingBottom: 5,
+    paddingBottom: 12,
   },
 });

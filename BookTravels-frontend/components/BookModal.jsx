@@ -1,25 +1,78 @@
-import React, { useState } from "react";
-import { View, Text, Modal, Pressable } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, Text, StyleSheet } from "react-native";
 import ButtonPrimary from "./ButtonPrimary";
 import ModalWrapper from "./ModalWrapper";
+import AppTitle from "./AppTitle";
+import InputField from "./InputField";
+import AppCheckbox from "./AppCheckbox";
+import { updateBookForUser } from "../utilities/api";
 
-export default function BookModal({ bookItem, closeModal }) {
-  console.log(bookItem);
+export default function BookModal({ bookItem, closeModal, userId }) {
+  const [updatedEntry, setUpdatedEntry] = useState(null);
+
+  useEffect(() => {
+    setUpdatedEntry({ ...bookItem });
+  }, [bookItem]);
+
+  function updateBook() {
+    updateBookForUser(userId, bookItem, updatedEntry);
+  }
+
   return (
     <ModalWrapper show={!!bookItem} closeModal={closeModal}>
-      {bookItem && (
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <Text>
-            From <Text>{bookItem.country}</Text> you{" "}
-            {bookItem.read ? "read" : "are planning to read"}{" "}
-            <Text>{bookItem.book}</Text> by <Text>{bookItem.writer}</Text>
-          </Text>
+      {updatedEntry && (
+        <View style={styles.container}>
+          <View>
+            <AppTitle title={updatedEntry.country} />
 
-          <ButtonPrimary label="Go back to the map" onPress={closeModal} />
+            <Text style={styles.container.bookText}>
+              You {updatedEntry.read ? "read" : "are planning to read"}{" "}
+            </Text>
+
+            <InputField
+              value={updatedEntry.book}
+              onChange={(book) => setUpdatedEntry({ ...updatedEntry, book })}
+            />
+
+            <Text style={styles.container.writerText}> written by </Text>
+
+            <InputField
+              value={updatedEntry.writer}
+              onChange={(writer) =>
+                setUpdatedEntry({ ...updatedEntry, writer })
+              }
+            />
+
+            <AppCheckbox
+              setEnabled={() =>
+                setUpdatedEntry({ ...updatedEntry, read: !updatedEntry.read })
+              }
+              isEnabled={updatedEntry.read}
+              label="I've read this book"
+            />
+
+            <ButtonPrimary
+              label="Update the book details"
+              onPress={updateBook}
+            />
+          </View>
         </View>
       )}
     </ModalWrapper>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    bookText: {
+      paddingBottom: 8,
+    },
+    writerText: {
+      paddingTop: 8,
+      paddingBottom: 8,
+    },
+  },
+});
