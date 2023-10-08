@@ -68,6 +68,30 @@ app.post("/user/:userId", (req, res) => {
   res.status(200).json({ message: "Data saved successfully" });
 });
 
+app.put("/user/:userId", (req, res) => {
+  const { userId } = req.params;
+  const userData = req.body;
+
+  // Load existing data or initialize as an empty array
+  const filePath = path.join(__dirname, `./data/users${userId}.json`);
+  let userArray = [];
+
+  try {
+    const fileData = fs.readFileSync(filePath, "utf-8");
+    userArray = JSON.parse(fileData);
+  } catch (error) {
+    // File does not exist or is empty
+  }
+
+  // Push the new data to the array
+  userArray.push(userData);
+
+  // Write the updated array back to the file
+  fs.writeFileSync(filePath, JSON.stringify(userArray, null, 2));
+
+  res.status(200).json({ message: "Data saved successfully" });
+});
+
 // GET endpoint to retrieve user data
 app.get("/user/:userId", (req, res) => {
   const { userId } = req.params;

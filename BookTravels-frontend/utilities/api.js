@@ -19,7 +19,7 @@ export function addBookForUser(userId, book) {
 
 export function updateBookForUser(userId, oldBook, newBook) {
   return fetch(`${apiUrl}user/${userId}`, {
-    method: "UPDATE",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json", // Set the content type of the request
       // Add any other headers as needed (e.g., authentication headers)
