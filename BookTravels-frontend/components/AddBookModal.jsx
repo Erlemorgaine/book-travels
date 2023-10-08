@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Alert, StyleSheet, Text } from "react-native";
+import { View, Alert, StyleSheet, Text, Image } from "react-native";
 import { addBookForUser } from "../utilities/api";
 import ModalWrapper from "./ModalWrapper";
 import ButtonPrimary from "./ButtonPrimary";
@@ -36,6 +36,10 @@ const AddBookModal = ({ show, closeModal, userId, countries }) => {
   return (
     <ModalWrapper show={show} closeModal={closeModal}>
       <View>
+        <Image
+          style={styles.bookworm}
+          source={require("../assets/bookworm_traveling.svg")}
+        />
         <AppTitle title="Time to add a new book!" />
         <Text style={styles.intro}>
           You can either add a book that you've already read, or save a book
@@ -83,6 +87,14 @@ const AddBookModal = ({ show, closeModal, userId, countries }) => {
 export default AddBookModal;
 
 const styles = StyleSheet.create({
+  bookworm: {
+    width: 187 * 0.8,
+    height: 128 * 0.8,
+
+    margin: "auto",
+    marginTop: 0,
+    marginBottom: 24,
+  },
   intro: {
     paddingBottom: 12,
     paddingLeft: 5,

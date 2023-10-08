@@ -15,7 +15,7 @@ export default function BookModal({ bookItem, closeModal, userId }) {
   }, [bookItem]);
 
   function updateBook() {
-    updateBookForUser(userId, bookItem, updatedEntry);
+    updateBookForUser(userId, updatedEntry);
   }
 
   return (
@@ -64,7 +64,7 @@ export default function BookModal({ bookItem, closeModal, userId }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     flexDirection: "column",
     justifyContent: "center",
     bookText: {

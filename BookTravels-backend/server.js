@@ -44,53 +44,9 @@ app.get("/create/:userId", (req, res) => {
   }
 });
 
-app.post("/user/:userId", (req, res) => {
-  const { userId } = req.params;
-  const userData = req.body;
+app.post("/user/:userId", updateBook);
 
-  // Load existing data or initialize as an empty array
-  const filePath = path.join(__dirname, `./data/users${userId}.json`);
-  let userArray = [];
-
-  try {
-    const fileData = fs.readFileSync(filePath, "utf-8");
-    userArray = JSON.parse(fileData);
-  } catch (error) {
-    // File does not exist or is empty
-  }
-
-  // Push the new data to the array
-  userArray.push(userData);
-
-  // Write the updated array back to the file
-  fs.writeFileSync(filePath, JSON.stringify(userArray, null, 2));
-
-  res.status(200).json({ message: "Data saved successfully" });
-});
-
-app.put("/user/:userId", (req, res) => {
-  const { userId } = req.params;
-  const userData = req.body;
-
-  // Load existing data or initialize as an empty array
-  const filePath = path.join(__dirname, `./data/users${userId}.json`);
-  let userArray = [];
-
-  try {
-    const fileData = fs.readFileSync(filePath, "utf-8");
-    userArray = JSON.parse(fileData);
-  } catch (error) {
-    // File does not exist or is empty
-  }
-
-  // Push the new data to the array
-  userArray.push(userData);
-
-  // Write the updated array back to the file
-  fs.writeFileSync(filePath, JSON.stringify(userArray, null, 2));
-
-  res.status(200).json({ message: "Data saved successfully" });
-});
+app.put("/user/:userId", updateBook);
 
 // GET endpoint to retrieve user data
 app.get("/user/:userId", (req, res) => {
@@ -98,18 +54,51 @@ app.get("/user/:userId", (req, res) => {
 
   // Load user data from the file
   const filePath = path.join(__dirname, `./data/users/${userId}.json`);
-  let userArray = [];
+  let countriesWithBooks = [];
 
   try {
     const fileData = fs.readFileSync(filePath, "utf-8");
-    userArray = JSON.parse(fileData);
+    countriesWithBooks = JSON.parse(fileData);
   } catch (error) {
     return res.status(404).json({ message: "User data not found" });
   }
 
-  res.status(200).json(userArray);
+  res.status(200).json(countriesWithBooks);
 });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+function updateBook(req, res) {
+  const { userId } = req.params;
+  const userData = req.body;
+
+  // Load existing data or initialize as an empty array
+  const filePath = path.join(__dirname, `./data/users/${userId}.json`);
+  let countriesWithBooks = [];
+
+  try {
+    const fileData = fs.readFileSync(filePath, "utf-8");
+    countriesWithBooks = JSON.parse(fileData);
+  } catch (error) {
+    // File does not exist or is empty
+  }
+
+  // Push the new data to the array
+  const currentData = countriesWithBooks.find(
+    (data) => data.code === userData.countryCode
+  );
+
+  if (currentData) {
+    console.log("CURRENT DATA");
+    currentData.writer = userData.writer;
+    currentData.book = userData.book;
+    currentData.read = userData.read;
+  }
+
+  // Write the updated array back to the file
+  fs.writeFileSync(filePath, JSON.stringify(countriesWithBooks, null, 2));
+
+  res.status(200).json(countriesWithBooks);
+}

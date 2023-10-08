@@ -17,14 +17,14 @@ export function addBookForUser(userId, book) {
   }).catch((e) => console.log(e));
 }
 
-export function updateBookForUser(userId, oldBook, newBook) {
+export function updateBookForUser(userId, newBook) {
   return fetch(`${apiUrl}user/${userId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json", // Set the content type of the request
       // Add any other headers as needed (e.g., authentication headers)
     },
-    body: JSON.stringify({ oldBook, newBook }), // Convert the data to a JSON string
+    body: JSON.stringify( newBook), // Convert the data to a JSON string
   }).catch((e) => console.log(e));
 }
 

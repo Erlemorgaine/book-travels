@@ -37,7 +37,7 @@
   { "name": "Brazil", "code": "BR" },
   { "name": "British Indian Ocean Territory", "code": "IO" },
   {
-    "name": "Brunei Darussalam",
+    "name": "Brunei",
     "code": "BN",
     "book": "Written in black",
     "read": false
