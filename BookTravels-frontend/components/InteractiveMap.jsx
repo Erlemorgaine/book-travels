@@ -10,7 +10,7 @@ import countriesJson from "../assets/countries.json";
 import ButtonRound from "./ButtonRound";
 import AddBookModal from "./AddBookModal";
 
-const InteractiveMap = ({ booksPerCountry, userId }) => {
+const InteractiveMap = ({ booksPerCountry, userId, onBookListUpdate }) => {
   const svgRef = useRef(null);
   const mapGroup = useRef(null);
   const mapCountries = useRef(null);
@@ -140,6 +140,7 @@ const InteractiveMap = ({ booksPerCountry, userId }) => {
         show={showAddModal}
         userId={userId}
         closeModal={() => setShowAddModal(false)}
+        onBookListUpdate={onBookListUpdate}
         countries={booksPerCountry.map((book) => ({
           label: book.name,
           vallue: book.code,

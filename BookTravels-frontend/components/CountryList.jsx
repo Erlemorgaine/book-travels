@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import BookModal from "./BookModal";
 
-const CountryList = ({ countryBooks, userId }) => {
+const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
   const [selectedBook, setSelectedBook] = useState(null);
 
   const BookItem = ({ book, writer, countryCode, read, country }) => (
@@ -50,6 +50,7 @@ const CountryList = ({ countryBooks, userId }) => {
         data={countryBooks.filter((country) => country.book)}
         renderItem={({ item }) => (
           <BookItem
+            
             book={item.book}
             countryCode={item.code}
             read={item.read}
@@ -63,6 +64,7 @@ const CountryList = ({ countryBooks, userId }) => {
         bookItem={selectedBook}
         closeModal={() => setSelectedBook(null)}
         userId={userId}
+        onBookListUpdate={onBookListUpdate}
       />
     </View>
   );

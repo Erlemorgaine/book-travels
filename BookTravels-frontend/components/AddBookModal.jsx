@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Alert, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image } from "react-native";
 import { addBookForUser } from "../utilities/api";
 import ModalWrapper from "./ModalWrapper";
 import ButtonPrimary from "./ButtonPrimary";
@@ -8,7 +8,13 @@ import AppTitle from "./AppTitle";
 import AppCheckbox from "./AppCheckbox";
 import AppDropdown from "./AppDropdown";
 
-const AddBookModal = ({ show, closeModal, userId, countries }) => {
+const AddBookModal = ({
+  show,
+  userId,
+  countries,
+  closeModal,
+  onBookListUpdate,
+}) => {
   const [newEntry, setNewEntry] = useState({
     book: "",
     writer: "",
@@ -17,20 +23,10 @@ const AddBookModal = ({ show, closeModal, userId, countries }) => {
   });
 
   const addBook = () => {
-    addBookForUser(userId)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        closeModal();
-        return response.json();
-      })
-      .catch((error) => {
-        // Handle errors
-        console.error("Error:", error);
-        Alert.alert("Error", "API POST request failed.");
-      });
+    addBookForUser(userId).then((newData) => {
+      onBookListUpdate(newData);
+      closeModal();
+    });
   };
 
   return (

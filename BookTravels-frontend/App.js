@@ -44,8 +44,16 @@ export default function App() {
           {!userId && <UserAccess onUserCreated={(id) => setUserId(id)} />}
           {countryBooks && (
             <>
-              <InteractiveMap booksPerCountry={countryBooks} userId={userId} />
-              <CountryList countryBooks={countryBooks} userId={userId} />
+              <InteractiveMap
+                booksPerCountry={countryBooks}
+                userId={userId}
+                onBookListUpdate={(newBooks) => setCountryBooks(newBooks)}
+              />
+              <CountryList
+                countryBooks={countryBooks}
+                userId={userId}
+                onBookListUpdate={(newBooks) => setCountryBooks(newBooks)}
+              />
             </>
           )}
 

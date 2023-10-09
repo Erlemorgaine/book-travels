@@ -7,7 +7,7 @@ import InputField from "./InputField";
 import AppCheckbox from "./AppCheckbox";
 import { updateBookForUser } from "../utilities/api";
 
-export default function BookModal({ bookItem, closeModal, userId }) {
+export default function BookModal({ bookItem, closeModal, userId, onBookListUpdate }) {
   const [updatedEntry, setUpdatedEntry] = useState(null);
 
   useEffect(() => {
@@ -15,7 +15,9 @@ export default function BookModal({ bookItem, closeModal, userId }) {
   }, [bookItem]);
 
   function updateBook() {
-    updateBookForUser(userId, updatedEntry);
+    updateBookForUser(userId, updatedEntry).then((newData) =>
+      onBookListUpdate(newData)
+    );
   }
 
   return (
