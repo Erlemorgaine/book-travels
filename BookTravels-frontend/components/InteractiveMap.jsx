@@ -10,7 +10,11 @@ import countriesJson from "../assets/countries.json";
 import ButtonRound from "./ButtonRound";
 import AddBookModal from "./AddBookModal";
 
-const InteractiveMap = ({ booksPerCountry, userId, onBookListUpdate }) => {
+const InteractiveMap = ({
+  booksPerCountry,
+  userId,
+  firstAdd, onBookListUpdate,
+}) => {
   const svgRef = useRef(null);
   const mapGroup = useRef(null);
   const mapCountries = useRef(null);
@@ -37,6 +41,12 @@ const InteractiveMap = ({ booksPerCountry, userId, onBookListUpdate }) => {
       return prev;
     }, {});
   }, []);
+
+  useEffect(() => { 
+    if (firstAdd) {
+      setShowAddModal(true);
+    }
+  }, [firstAdd]);
 
   function createMap() {
     const countries = feature(countriesJson, countriesJson.objects.countries);

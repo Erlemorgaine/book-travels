@@ -11,7 +11,7 @@ const UserAccess = ({ onUserCreated }) => {
 
   const handleApiPost = () => {
     createUser(userId)
-      .then(() => onUserCreated(userId))
+      .then((countries) => onUserCreated(userId, countries))
       .catch((error) => {
         // Handle errors
         console.error("Error:", error);

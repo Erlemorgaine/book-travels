@@ -23,16 +23,16 @@ app.get("/create/:userId", (req, res) => {
 
   // Check if username already exists
   try {
-    const fileData = fs.readFileSync(filePath, "utf-8");
+    const userData = fs.readFileSync(filePath, "utf-8");
+    const userJson = JSON.parse(userData);
 
-    console.log(fileData);
-    res.status(200);
+    res.status(200).json(userJson);
   } catch (error) {
     const template = fs.readFileSync(templatePath, "utf-8");
-    const jsonString = JSON.stringify(template);
+    const jsonTemplate = JSON.parse(template);
 
     // Write the JSON string to the file
-    fs.writeFile(`./data/users${userId}.json`, template, (err) => {
+    fs.writeFile(`./data/users/${userId}.json`, template, (err) => {
       if (err) {
         console.error("Error creating JSON file:", err);
       } else {
@@ -40,7 +40,7 @@ app.get("/create/:userId", (req, res) => {
       }
     });
 
-    res.status(200).json({ message: "Userfile created successfully" });
+    res.status(200).json(jsonTemplate);
   }
 });
 

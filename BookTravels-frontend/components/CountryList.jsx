@@ -8,57 +8,39 @@ import {
   ImageBackground,
 } from "react-native";
 import BookModal from "./BookModal";
+import BookItem from "./BookItem";
+import NoBooksView from "./NoBooksView";
 
-const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
+const CountryList = ({ countryBooks, userId, onBookListUpdate, onFirstAdd }) => {
   const [selectedBook, setSelectedBook] = useState(null);
-
-  const BookItem = ({ book, writer, countryCode, read, country }) => (
-    <Pressable
-      key={countryCode}
-      style={styles.bookCase.bookItem}
-      onPress={() =>
-        setSelectedBook({ book, writer, countryCode, read, country })
-      }
-    >
-      <ImageBackground
-        source={require(`../assets/book-${read ? "read" : "unread"}.svg`)}
-        style={styles.bookCase.bookItem.bookBg}
-      >
-        <Text style={styles.bookCase.bookItem.code}>{countryCode}</Text>
-      </ImageBackground>
-
-      <View>
-        <Text
-          style={{
-            ...styles.bookCase.bookItem.book,
-            // color: `var(--primary-${read ? "green" : "red"}-dark)`,
-          }}
-        >
-          {book}
-        </Text>
-        {writer && (
-          <Text style={styles.bookCase.bookItem.writer}>{writer}</Text>
-        )}
-      </View>
-    </Pressable>
-  );
+  const allBooks = countryBooks.filter((country) => country.book);
 
   return (
     <View style={styles.bookCase}>
-      <FlatList
-        style={styles.bookCase.bookList}
-        data={countryBooks.filter((country) => country.book)}
-        renderItem={({ item }) => (
-          <BookItem
-            
-            book={item.book}
-            countryCode={item.code}
-            read={item.read}
-            writer={item.writer}
-            country={item.name}
-          />
-        )}
-      />
+      {!!allBooks.length && (
+        <FlatList
+          style={styles.bookCase.bookList}
+          data={allBooks}
+          renderItem={({ item }) => (
+            <BookItem
+              book={item.book}
+              countryCode={item.code}
+              read={item.read}
+              writer={item.writer}
+              country={item.name}
+              onBookSelect={() =>
+                setSelectedBook({
+                  ...item,
+                  countryCode: item.code,
+                  country: item.name,
+                })
+              }
+            />
+          )}
+        />
+      )}
+
+      {!allBooks.length && <NoBooksView onAdd={onFirstAdd} />}
 
       <BookModal
         bookItem={selectedBook}

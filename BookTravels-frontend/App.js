@@ -18,16 +18,34 @@ export default function App() {
     Headings: require("./assets/fonts/SpecialElite-Regular.ttf"),
   });
 
-  const [userId, setUserId] = useState(localStorage.getItem(storageUserId));
+  const [userId, setUserId] = useState("");
   const [countryBooks, setCountryBooks] = useState(null);
+  const [firstAdd, setFirstAdd] = useState(false);
 
   useEffect(() => {
-    if (userId) {
-      getBooksForUser(userId).then((books) => {
+    const storedId = localStorage.getItem(storageUserId);
+    if (storedId) {
+      setUserId(storedId);
+
+      getBooksForUser(storedId).then((books) => {
         setCountryBooks(books);
       });
     }
-  }, [userId]);
+  }, []);
+
+  function storeUserAndCountries(id, countries) {
+    localStorage.setItem(storageUserId, id);
+    setUserId(id);
+    setCountryBooks(countries);
+  }
+
+  function activateFirstAdd() {
+    setFirstAdd(true);
+
+    setTimeout(() => {
+      setFirstAdd(false);
+    }, 1000);
+  }
 
   return (
     <ImageBackground
@@ -41,18 +59,20 @@ export default function App() {
             ...colors,
           }}
         >
-          {!userId && <UserAccess onUserCreated={(id) => setUserId(id)} />}
+          {!userId && <UserAccess onUserCreated={storeUserAndCountries} />}
           {countryBooks && (
             <>
               <InteractiveMap
                 booksPerCountry={countryBooks}
                 userId={userId}
+                firstAdd={firstAdd}
                 onBookListUpdate={(newBooks) => setCountryBooks(newBooks)}
               />
               <CountryList
                 countryBooks={countryBooks}
                 userId={userId}
                 onBookListUpdate={(newBooks) => setCountryBooks(newBooks)}
+                onFirstAdd={activateFirstAdd}
               />
             </>
           )}
