@@ -6,8 +6,14 @@ import AppTitle from "./AppTitle";
 import InputField from "./InputField";
 import AppCheckbox from "./AppCheckbox";
 import { updateBookForUser } from "../utilities/api";
+import CountryMap from "./CountryMap";
 
-export default function BookModal({ bookItem, closeModal, userId, onBookListUpdate }) {
+export default function BookModal({
+  bookItem,
+  closeModal,
+  userId,
+  onBookListUpdate,
+}) {
   const [updatedEntry, setUpdatedEntry] = useState(null);
 
   useEffect(() => {
@@ -21,10 +27,18 @@ export default function BookModal({ bookItem, closeModal, userId, onBookListUpda
   }
 
   return (
-    <ModalWrapper show={!!bookItem} closeModal={closeModal}>
+    <ModalWrapper key={bookItem} show={!!bookItem} closeModal={closeModal}>
       {updatedEntry && (
         <View style={styles.container}>
           <View>
+            {bookItem && (
+              <CountryMap
+                countryCode={bookItem.countryCode}
+                color={
+                  bookItem.read ? "var(--primary-green)" : "var(--primary-red)"
+                }
+              />
+            )}
             <AppTitle title={updatedEntry.country} />
 
             <Text style={styles.container.bookText}>

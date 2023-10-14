@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import {
-  FlatList,
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  ImageBackground,
-} from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import BookModal from "./BookModal";
 import BookItem from "./BookItem";
 import NoBooksView from "./NoBooksView";
 
-const CountryList = ({ countryBooks, userId, onBookListUpdate, onFirstAdd }) => {
+const CountryList = ({
+  countryBooks,
+  userId,
+  onBookListUpdate,
+  onFirstAdd,
+}) => {
   const [selectedBook, setSelectedBook] = useState(null);
   const allBooks = countryBooks.filter((country) => country.book);
 
