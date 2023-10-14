@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
   loginWrapper: {
-    padding: 20,
     flexGrow: 1,
     backgroundColor: "var(--bg-color-50)",
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
   },
 });
