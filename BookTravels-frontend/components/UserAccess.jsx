@@ -9,27 +9,29 @@ const UserAccess = ({ onUserCreated, onLogin }) => {
   const [signUp, setSignUp] = useState(false);
 
   return (
-    <ImageBackground
-      source={require("../assets/paper-texture-4.jpeg")}
-      style={styles.background}
-    >
-      <View style={styles.accessWrapper}>
-        {!login && !signUp && (
-          <View style={styles.accessWrapper.access}>
-            <Image
-              style={styles.bookworm}
-              source={require("../assets/bookworm_reading.svg")}
-              alt="A happy bookworm reading a book"
-            />
-            <ButtonPrimary label="Sign up" onPress={() => setSignUp(true)} />
-            <ButtonPrimary label="Login" onPress={() => setLogin(true)} />
-          </View>
-        )}
+    <View style={styles.accessWrapper}>
+      <ImageBackground
+        source={require("../assets/paper-texture-4.jpeg")}
+        style={styles.background}
+      >
+        <View style={styles.accessWrapper.access}>
+          {!login && !signUp && (
+            <>
+              <Image
+                style={styles.bookworm}
+                source={require("../assets/bookworm_reading.svg")}
+                alt="A happy bookworm reading a book"
+              />
+              <ButtonPrimary label="Sign up" onPress={() => setSignUp(true)} />
+              <ButtonPrimary label="Login" onPress={() => setLogin(true)} />
+            </>
+          )}
 
-        {signUp && <SignUp onUserCreated={onUserCreated} />}
-        {login && <Login onLogin={onLogin} />}
-      </View>
-    </ImageBackground>
+          {signUp && <SignUp onUserCreated={onUserCreated} />}
+          {login && <Login onLogin={onLogin} />}
+        </View>
+      </ImageBackground>
+    </View>
   );
 };
 
@@ -48,14 +50,21 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   accessWrapper: {
-    padding: 20,
+    padding: 10,
     flexGrow: 1,
-    backgroundColor: "var(--bg-color-50)",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "var(--card-color)",
+
     access: {
+      backgroundColor: "var(--bg-color-50)",
       width: "100%",
+      flex: 1,
+      padding: 20,
+      justifyContent: "center",
+      alignItems: "center",
       paddingBottom: 60,
+      borderRadius: 5,
+      borderWidth: 2,
+      borderColor: "var(--primary)",
     },
   },
 });
