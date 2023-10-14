@@ -19,6 +19,7 @@ const UserAccess = ({ onUserCreated, onLogin }) => {
             <Image
               style={styles.bookworm}
               source={require("../assets/bookworm_reading.svg")}
+              alt="A happy bookworm reading a book"
             />
             <ButtonPrimary label="Sign up" onPress={() => setSignUp(true)} />
             <ButtonPrimary label="Login" onPress={() => setLogin(true)} />

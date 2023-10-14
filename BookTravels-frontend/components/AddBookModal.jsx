@@ -35,6 +35,7 @@ const AddBookModal = ({
         <Image
           style={styles.bookworm}
           source={require("../assets/bookworm_traveling.svg")}
+          alt="A happy traveling bookworm with a little backpack on its back"
         />
         <AppTitle title="Time to add a new book!" />
         <Text style={styles.intro}>

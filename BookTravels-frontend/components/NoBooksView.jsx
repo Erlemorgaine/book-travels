@@ -23,6 +23,7 @@ const NoBooksView = ({ onAdd }) => {
       <Image
         style={styles.container.bookworm}
         source={require("../assets/bookworm_traveling.svg")}
+        alt="A happy traveling bookworm with a little backpack on its back"
       />
       <ButtonPrimary label="Add my first book" onPress={onAdd} />
     </View>
@@ -44,7 +45,9 @@ const styles = StyleSheet.create({
       height: 128 * 0.5,
       margin: "auto",
       marginTop: 0,
-      marginBottom: 24,
+      marginBottom: 12,
+      paddingRight: 40,
+      transform: "translateX(-10px)",
     },
   },
 });
