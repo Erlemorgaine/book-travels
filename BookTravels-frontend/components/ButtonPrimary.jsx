@@ -1,9 +1,13 @@
 import React from "react";
 import { Pressable, StyleSheet, Text } from "react-native";
 
-const ButtonPrimary = ({ label, onPress }) => {
+const ButtonPrimary = ({ label, onPress, disabled = false }) => {
   return (
-    <Pressable style={styles.button} onPress={onPress}>
+    <Pressable
+      style={{ ...styles.button, ...(disabled ? styles.disabled : {}) }}
+      onPress={onPress}
+      disabled={disabled}
+    >
       <Text style={styles.button.label}>{label}</Text>
     </Pressable>
   );
@@ -16,7 +20,7 @@ const styles = StyleSheet.create({
     backgroundColor: "var(--primary)",
     padding: 12,
     paddingBottom: 10,
-  // margin: 10,
+    // margin: 10,
     marginTop: 15,
     borderRadius: 5,
     width: "100%",
@@ -27,5 +31,8 @@ const styles = StyleSheet.create({
       textTransform: "uppercase",
       textAlign: "center",
     },
+  },
+  disabled: {
+    opacity: 0.5,
   },
 });

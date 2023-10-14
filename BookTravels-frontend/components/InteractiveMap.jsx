@@ -13,7 +13,8 @@ import AddBookModal from "./AddBookModal";
 const InteractiveMap = ({
   booksPerCountry,
   userId,
-  firstAdd, onBookListUpdate,
+  firstAdd,
+  onBookListUpdate,
 }) => {
   const svgRef = useRef(null);
   const mapGroup = useRef(null);
@@ -42,7 +43,7 @@ const InteractiveMap = ({
     }, {});
   }, []);
 
-  useEffect(() => { 
+  useEffect(() => {
     if (firstAdd) {
       setShowAddModal(true);
     }
@@ -140,11 +141,13 @@ const InteractiveMap = ({
         </g>
       </Svg>
 
-      <ButtonRound
-        onPress={() => setShowAddModal(true)}
-        icon="+"
-        style={{ position: "absolute", right: 12, bottom: 12 }}
-      />
+      <>
+        <ButtonRound
+          onPress={() => setShowAddModal(true)}
+          icon="+"
+          style={{ position: "absolute", right: 12, bottom: 12 }}
+        />
+      </>
 
       <AddBookModal
         show={showAddModal}
@@ -153,7 +156,7 @@ const InteractiveMap = ({
         onBookListUpdate={onBookListUpdate}
         countries={booksPerCountry.map((book) => ({
           label: book.name,
-          vallue: book.code,
+          value: book.code,
         }))}
       />
     </View>

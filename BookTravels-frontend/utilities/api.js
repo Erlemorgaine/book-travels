@@ -16,7 +16,9 @@ export function addBookForUser(userId, book) {
       // Add any other headers as needed (e.g., authentication headers)
     },
     body: JSON.stringify(book), // Convert the data to a JSON string
-  }).catch((e) => console.log(e));
+  })
+    .then((res) => res.json())
+    .catch((e) => console.log(e));
 }
 
 export function updateBookForUser(userId, newBook) {
@@ -26,9 +28,9 @@ export function updateBookForUser(userId, newBook) {
       "Content-Type": "application/json", // Set the content type of the request
       // Add any other headers as needed (e.g., authentication headers)
     },
-    body: JSON.stringify( newBook), // Convert the data to a JSON string
+    body: JSON.stringify(newBook), // Convert the data to a JSON string
   })
-    .then(res => res.json())
+    .then((res) => res.json())
     .catch((e) => console.log(e));
 }
 

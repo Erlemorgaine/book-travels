@@ -1,37 +1,28 @@
 import React, { useState } from "react";
-import { View, Alert, ImageBackground, StyleSheet } from "react-native";
-import { createUser } from "../utilities/api";
+import { View, ImageBackground, StyleSheet } from "react-native";
 import ButtonPrimary from "./ButtonPrimary";
-import InputField from "./InputField";
+import Login from "./LogIn";
+import SignUp from "./SignUp";
 
 const UserAccess = ({ onUserCreated }) => {
-  const [userId, setUserId] = useState("");
-
-  const handleInputChange = (text) => setUserId(text);
-
-  const handleApiPost = () => {
-    createUser(userId)
-      .then((countries) => onUserCreated(userId, countries))
-      .catch((error) => {
-        // Handle errors
-        console.error("Error:", error);
-        Alert.alert("Error", "API POST request failed.");
-      });
-  };
+  const [login, setLogin] = useState(false);
+  const [signUp, setSignUp] = useState(false);
 
   return (
     <ImageBackground
       source={require("../assets/paper-texture-4.jpeg")}
       style={styles.background}
     >
-      <View style={styles.loginWrapper}>
-        <InputField
-          placeholder="Choose a unique username"
-          value={userId}
-          onChange={(text) => handleInputChange(text)}
-        />
+      <View style={styles.accessWrapper}>
+        {!login && !signUp && (
+          <View style={styles.accessWrapper.access}>
+            <ButtonPrimary label="Sign up" onPress={() => setSignUp(true)} />
+            <ButtonPrimary label="Login" onPress={() => setLogin(true)} />
+          </View>
+        )}
 
-        <ButtonPrimary label="Start reading" onPress={handleApiPost} />
+        {signUp && <SignUp onUserCreated={onUserCreated} />}
+        {login && <Login onUserCreated={onUserCreated} />}
       </View>
     </ImageBackground>
   );
@@ -44,11 +35,14 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
   },
-  loginWrapper: {
+  accessWrapper: {
     padding: 20,
     flexGrow: 1,
     backgroundColor: "var(--bg-color-50)",
     justifyContent: "center",
     alignItems: "center",
+    access: {
+      width: "100%",
+    },
   },
 });

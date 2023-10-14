@@ -82,7 +82,7 @@ function updateBook(req, res) {
     const fileData = fs.readFileSync(filePath, "utf-8");
     countriesWithBooks = JSON.parse(fileData);
   } catch (error) {
-    // File does not exist or is empty
+    res.status(404).json({ message: "A file doesn't exist for this user" });
   }
 
   // Push the new data to the array
@@ -91,10 +91,11 @@ function updateBook(req, res) {
   );
 
   if (currentData) {
-    console.log("CURRENT DATA");
     currentData.writer = userData.writer;
     currentData.book = userData.book;
     currentData.read = userData.read;
+  } else {
+    res.status(400).json({ message: "No country with that code exists" });
   }
 
   // Write the updated array back to the file

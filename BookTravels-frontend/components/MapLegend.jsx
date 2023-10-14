@@ -5,6 +5,7 @@ const MapLegend = ({ label }) => {
   return (
     <View style={styles.container}>
       <Text>{label}</Text>
+      <Text>{label}</Text>
     </View>
   );
 };

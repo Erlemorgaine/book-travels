@@ -18,10 +18,7 @@ const ModalWrapper = ({ children, show, closeModal }) => {
             source={require("../assets/paper-texture-4.jpeg")}
             style={styles.background}
           >
-            <View style={styles.modal.modalContent}>
-              
-              {children}
-            </View>
+            <View style={styles.modal.modalContent}>{children}</View>
           </ImageBackground>
         </View>
       </View>
@@ -45,7 +42,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: "center",
     backgroundColor: "var(--card-color)",
-    
+
     modalClose: {
       position: "absolute",
       top: 5,

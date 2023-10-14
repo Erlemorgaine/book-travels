@@ -23,7 +23,7 @@ const AddBookModal = ({
   });
 
   const addBook = () => {
-    addBookForUser(userId).then((newData) => {
+    addBookForUser(userId, newEntry).then((newData) => {
       onBookListUpdate(newData);
       closeModal();
     });
@@ -74,7 +74,11 @@ const AddBookModal = ({
           label="I've read this book already"
         />
 
-        <ButtonPrimary label="Start reading" onPress={addBook} />
+        <ButtonPrimary
+          label="Start reading"
+          onPress={addBook}
+          disabled={!newEntry.book || !newEntry.writer || !newEntry.countryCode}
+        />
       </View>
     </ModalWrapper>
   );
