@@ -9,6 +9,7 @@ import { feature } from "topojson";
 import countriesJson from "../assets/countries.json";
 import ButtonRound from "./ButtonRound";
 import AddBookModal from "./AddBookModal";
+import MapLegend from "./MapLegend";
 
 const InteractiveMap = ({
   booksPerCountry,
@@ -141,13 +142,13 @@ const InteractiveMap = ({
         </g>
       </Svg>
 
-      <>
-        <ButtonRound
-          onPress={() => setShowAddModal(true)}
-          icon="+"
-          style={{ position: "absolute", right: 12, bottom: 12 }}
-        />
-      </>
+      <ButtonRound
+        onPress={() => setShowAddModal(true)}
+        icon="+"
+        style={{ position: "absolute", right: 10, bottom: 8 }}
+      />
+
+      <MapLegend style={{ position: "absolute", left: 10, bottom: 8 }} />
 
       <AddBookModal
         show={showAddModal}

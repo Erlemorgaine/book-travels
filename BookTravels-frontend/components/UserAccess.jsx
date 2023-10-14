@@ -4,7 +4,7 @@ import ButtonPrimary from "./ButtonPrimary";
 import Login from "./LogIn";
 import SignUp from "./SignUp";
 
-const UserAccess = ({ onUserCreated }) => {
+const UserAccess = ({ onUserCreated, onLogin }) => {
   const [login, setLogin] = useState(false);
   const [signUp, setSignUp] = useState(false);
 
@@ -22,7 +22,7 @@ const UserAccess = ({ onUserCreated }) => {
         )}
 
         {signUp && <SignUp onUserCreated={onUserCreated} />}
-        {login && <Login onUserCreated={onUserCreated} />}
+        {login && <Login onLogin={onLogin} />}
       </View>
     </ImageBackground>
   );

@@ -4,14 +4,14 @@ import { createUser } from "../utilities/api";
 import ButtonPrimary from "./ButtonPrimary";
 import InputField from "./InputField";
 
-const Login = ({ onUserCreated }) => {
+const Login = ({ onLogin }) => {
   const [userId, setUserId] = useState("");
 
   const handleInputChange = (text) => setUserId(text);
 
   const handleApiPost = () => {
     createUser(userId)
-      .then((countries) => onUserCreated(userId, countries))
+      .then((countries) => onLogin(userId, countries))
       .catch((error) => {
         // Handle errors
         console.error("Error:", error);
@@ -22,7 +22,7 @@ const Login = ({ onUserCreated }) => {
   return (
     <View style={styles.loginWrapper}>
       <InputField
-        placeholder="Choose a unique username"
+        placeholder="Enter your username"
         value={userId}
         onChange={(text) => handleInputChange(text)}
       />

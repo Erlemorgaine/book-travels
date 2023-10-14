@@ -1,11 +1,17 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
-const MapLegend = ({ label }) => {
+const MapLegend = ({ style }) => {
   return (
-    <View style={styles.container}>
-      <Text>{label}</Text>
-      <Text>{label}</Text>
+    <View style={{ ...style, ...styles.legend }}>
+      <View style={styles.legend.item}>
+        <View style={styles.legend.item.read} />
+        <Text style={styles.legend.text}>Read</Text>
+      </View>
+      <View style={styles.legend.item}>
+        <View style={styles.legend.item.unread} />
+        <Text style={styles.legend.text}>Unread</Text>
+      </View>
     </View>
   );
 };
@@ -13,5 +19,31 @@ const MapLegend = ({ label }) => {
 export default MapLegend;
 
 const styles = StyleSheet.create({
-  container: {},
+  legend: {
+    gap: 6,
+    padding: 4,
+    backgroundColor: "var(--card-color-80)",
+    borderRadius: 5,
+    text: {
+      fontSize: 12,
+    },
+    item: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 10,
+      read: {
+        width: 30,
+        height: 20,
+        borderRadius: 6,
+        backgroundColor: "var(--primary-green)",
+      },
+      unread: {
+        width: 30,
+        height: 20,
+        borderRadius: 6,
+        backgroundColor: "var(--primary-red)",
+      },
+    },
+  },
 });
