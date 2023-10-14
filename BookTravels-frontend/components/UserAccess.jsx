@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, ImageBackground, StyleSheet } from "react-native";
+import { View, ImageBackground, StyleSheet, Image } from "react-native";
 import ButtonPrimary from "./ButtonPrimary";
 import Login from "./LogIn";
 import SignUp from "./SignUp";
@@ -16,6 +16,10 @@ const UserAccess = ({ onUserCreated, onLogin }) => {
       <View style={styles.accessWrapper}>
         {!login && !signUp && (
           <View style={styles.accessWrapper.access}>
+            <Image
+              style={styles.bookworm}
+              source={require("../assets/bookworm_reading.svg")}
+            />
             <ButtonPrimary label="Sign up" onPress={() => setSignUp(true)} />
             <ButtonPrimary label="Login" onPress={() => setLogin(true)} />
           </View>
@@ -35,6 +39,13 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
   },
+  bookworm: {
+    width: 187 * 0.8,
+    height: 168 * 0.8,
+    margin: "auto",
+    marginTop: 0,
+    marginBottom: 20,
+  },
   accessWrapper: {
     padding: 20,
     flexGrow: 1,
@@ -43,6 +54,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     access: {
       width: "100%",
+      paddingBottom: 60,
     },
   },
 });

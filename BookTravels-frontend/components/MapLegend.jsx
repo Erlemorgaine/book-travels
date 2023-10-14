@@ -20,7 +20,7 @@ export default MapLegend;
 
 const styles = StyleSheet.create({
   legend: {
-    gap: 6,
+    gap: 4,
     padding: 4,
     backgroundColor: "var(--card-color-80)",
     borderRadius: 5,
@@ -31,15 +31,15 @@ const styles = StyleSheet.create({
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
-      gap: 10,
+      gap: 8,
       read: {
-        width: 30,
+        width: 20,
         height: 20,
         borderRadius: 6,
         backgroundColor: "var(--primary-green)",
       },
       unread: {
-        width: 30,
+        width: 20,
         height: 20,
         borderRadius: 6,
         backgroundColor: "var(--primary-red)",
