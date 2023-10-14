@@ -1,22 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, Text } from "react-native";
-import Svg, { Defs, Path, G } from "react-native-svg";
+import { View } from "react-native";
+import Svg, { Path } from "react-native-svg";
 import { geoPath, geoNaturalEarth1 } from "d3-geo";
 import { zoom } from "d3-zoom";
 import { select } from "d3-selection";
 import { feature } from "topojson";
 
 import countriesJson from "../assets/countries.json";
-import ButtonRound from "./ButtonRound";
-import AddBookModal from "./AddBookModal";
-import MapLegend from "./MapLegend";
-import BookModal from "./BookModal";
 
 const InteractiveMap = ({
   booksPerCountry,
-  userId,
   firstAdd,
-  onBookListUpdate,
 }) => {
   const svgRef = useRef(null);
   const mapGroup = useRef(null);
@@ -26,9 +20,8 @@ const InteractiveMap = ({
 
   const [currentZoom, setCurrentZoom] = useState(1);
   const [currentTranslation, setCurrentTranslation] = useState(1);
-  const [showAddModal, setShowAddModal] = useState(false);
 
-  const [selectedCountry, setSelectedCountry] = useState(null);
+
   const [zoomScale, setZoomScale] = useState(0.75);
   const [geojson, setGeojson] = useState(null);
 
@@ -77,13 +70,6 @@ const InteractiveMap = ({
     return "transparent";
   }
 
-  const handleCountryClick = (countryCode) => {
-    const bookItem = booksPerCountry.find((item) => item.code === countryCode);
-
-    if (bookItem) {
-      setSelectedCountry({ ...bookItem, country: bookItem.name, countryCode });
-    }
-  };
 
   function resetZoom() {
     mapGroup.current
@@ -132,53 +118,19 @@ const InteractiveMap = ({
           <g id="map-countries">
             {geojson &&
               geojson.features.map((countryData, i) => (
-                <G key={countryData.properties.iso_a2 + i}>
-                  <Path
-                    d={geoPath().projection(projection)(countryData)}
-                    fill={getCountryColor(countryData.properties.iso_a2)}
-                    stroke="gray"
-                    strokeWidth={0.5}
-                    transform={`scale(${zoomScale})`}
-                    onClick={() =>
-                      handleCountryClick(countryData.properties.iso_a2)
-                    }
-                    onPress={() =>
-                      handleCountryClick(countryData.properties.iso_a2)
-                    }
-                  />
-                </G>
+                <Path
+                  key={countryData.properties.iso_a2 + i} // Use a unique identifier
+                  d={geoPath().projection(projection)(countryData)} // Use the projection
+                  fill={getCountryColor(countryData.properties.iso_a2)}
+                  stroke="gray"
+                  strokeWidth={0.5}
+                  //   onPress={() => handleCountryClick(countryData)}
+                  transform={`scale(${zoomScale})`} // Apply the zoom scale
+                />
               ))}
           </g>
         </g>
       </Svg>
-
-      <ButtonRound
-        onPress={() => setShowAddModal(true)}
-        icon="+"
-        style={{ position: "absolute", right: 10, bottom: 8 }}
-      />
-
-      <MapLegend style={{ position: "absolute", left: 10, bottom: 8 }} />
-
-      <AddBookModal
-        show={showAddModal}
-        userId={userId}
-        closeModal={() => setShowAddModal(false)}
-        onBookListUpdate={onBookListUpdate}
-        countries={booksPerCountry.map((book) => ({
-          label: book.name,
-          value: book.code,
-        }))}
-      />
-
-      {selectedCountry && (
-        <BookModal
-          bookItem={selectedCountry}
-          closeModal={() => setSelectedCountry(null)}
-          userId={userId}
-          onBookListUpdate={onBookListUpdate}
-        />
-      )}
     </View>
   );
 };
