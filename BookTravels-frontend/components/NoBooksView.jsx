@@ -35,6 +35,7 @@ export default NoBooksView;
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    paddingBottom: 16,
     justifyContent: "center",
     alignItems: "center",
     intro: {
