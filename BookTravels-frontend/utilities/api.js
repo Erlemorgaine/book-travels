@@ -37,7 +37,13 @@ export function updateBookForUser(userId, newBook) {
 export function createUser(userId) {
   return (
     fetch(apiUrl + "create/" + userId)
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status == 200) {
+          return res.json();
+        } else if (res.status == 409) {
+          return false;
+        }
+      })
       // TODO: Handle status codes
       .catch((error) => {
         console.error("Error:", error);
