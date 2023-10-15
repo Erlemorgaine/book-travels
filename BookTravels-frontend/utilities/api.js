@@ -42,6 +42,26 @@ export function createUser(userId) {
       .catch((error) => {
         console.error("Error:", error);
         Alert.alert("Error", "API request failed.");
+
+        return false;
+      })
+  );
+}
+
+export function loginUser(userId) {
+  return (
+    fetch(apiUrl + "login/" + userId)
+      .then((res) => {
+        if (res.status == 200) {
+          return res.json();
+        } else if (res.status == 404) {
+          return false;
+        }
+      })
+      // TODO: Handle status codes
+      .catch((error) => {
+        console.error("Error:", error);
+        Alert.alert("Error", "API request failed.");
       })
   );
 }

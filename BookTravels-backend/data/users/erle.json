@@ -160,7 +160,10 @@
   },
   {
     "name": "Cambodia",
-    "code": "KH"
+    "code": "KH",
+    "writer": "Loung Ung",
+    "book": "First they killed my father",
+    "read": false
   },
   {
     "name": "Cameroon",
@@ -672,7 +675,10 @@
   },
   {
     "name": "Myanmar",
-    "code": "MM"
+    "code": "MM",
+    "writer": "Nu Nu Yi",
+    "book": "Smile as they bow",
+    "read": false
   },
   {
     "name": "Namibia",
@@ -770,7 +776,10 @@
   },
   {
     "name": "Philippines",
-    "code": "PH"
+    "code": "PH",
+    "writer": "bebang Siy",
+    "book": "It's a men's world",
+    "read": false
   },
   {
     "name": "Pitcairn",

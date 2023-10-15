@@ -59,7 +59,12 @@ export default function App() {
             ...colors,
           }}
         >
-          {!userId && <UserAccess onUserCreated={storeUserAndCountries} />}
+          {!userId && (
+            <UserAccess
+              onUserCreated={storeUserAndCountries}
+              onLogin={storeUserAndCountries}
+            />
+          )}
           {countryBooks && (
             <>
               <InteractiveMap

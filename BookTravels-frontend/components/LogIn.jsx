@@ -1,22 +1,24 @@
 import React, { useState } from "react";
-import { View, Alert, StyleSheet } from "react-native";
-import { createUser } from "../utilities/api";
+import { View, Alert, StyleSheet, Text } from "react-native";
+import { loginUser } from "../utilities/api";
 import ButtonPrimary from "./ButtonPrimary";
 import InputField from "./InputField";
+import ErrorText from "./ErrorText";
 
 const Login = ({ onLogin }) => {
   const [userId, setUserId] = useState("");
+  const [showError, setShowError] = useState(false);
 
   const handleInputChange = (text) => setUserId(text);
 
   const handleApiPost = () => {
-    createUser(userId)
-      .then((countries) => onLogin(userId, countries))
-      .catch((error) => {
-        // Handle errors
-        console.error("Error:", error);
-        Alert.alert("Error", "API POST request failed.");
-      });
+    loginUser(userId).then((countries) => {
+      if (!countries) {
+        setShowError(true);
+      } else {
+        onLogin(userId, countries);
+      }
+    });
   };
 
   return (
@@ -28,6 +30,9 @@ const Login = ({ onLogin }) => {
       />
 
       <ButtonPrimary label="Start reading" onPress={handleApiPost} />
+      {showError && (
+        <ErrorText text="This username doesn't seem to exist yet. Did you type in the correct username?" />
+      )}
     </View>
   );
 };

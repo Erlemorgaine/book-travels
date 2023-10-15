@@ -21,12 +21,10 @@ app.get("/create/:userId", (req, res) => {
     `./data/template/book-template-28563829.json`
   );
 
-  // Check if username already exists
+  // Check if username already exists. If so, throw 409 error
   try {
-    const userData = fs.readFileSync(filePath, "utf-8");
-    const userJson = JSON.parse(userData);
-
-    res.status(200).json(userJson);
+    fs.readFileSync(filePath, "utf-8");
+    res.status(409).json({ message: "User already exists" });
   } catch (error) {
     const template = fs.readFileSync(templatePath, "utf-8");
     const jsonTemplate = JSON.parse(template);
@@ -41,6 +39,27 @@ app.get("/create/:userId", (req, res) => {
     });
 
     res.status(200).json(jsonTemplate);
+  }
+});
+
+app.get("/login/:userId", (req, res) => {
+  const { userId } = req.params;
+
+  // Load existing data or initialize as an empty array
+  const filePath = path.join(__dirname, `./data/users/${userId}.json`);
+  const templatePath = path.join(
+    __dirname,
+    `./data/template/book-template-28563829.json`
+  );
+
+  // Check if username already exists
+  try {
+    const userData = fs.readFileSync(filePath, "utf-8");
+    const userJson = JSON.parse(userData);
+
+    res.status(200).json(userJson);
+  } catch (error) {
+    res.status(404).json({ message: "This user doesn't exist" });
   }
 });
 
