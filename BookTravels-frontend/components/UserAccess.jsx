@@ -12,7 +12,7 @@ const UserAccess = ({ onUserCreated, onLogin }) => {
   return (
     <View style={styles.accessWrapper}>
       <ImageBackground
-        source={require("../assets/paper-texture-4.jpeg")}
+        source={require("../assets/paper-texture-4.webp")}
         style={styles.background}
       >
         <View style={styles.accessWrapper.access}>
@@ -20,7 +20,7 @@ const UserAccess = ({ onUserCreated, onLogin }) => {
             <>
               <Image
                 style={styles.bookworm}
-                source={require("../assets/bookworm_reading.svg")}
+                source={require("../assets/bookworm_reading.webp")}
                 alt="A happy bookworm reading a book"
               />
               <ButtonPrimary label="Sign up" onPress={() => setSignUp(true)} />
@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
   },
   accessWrapper: {
     padding: 10,
+    paddingTop: 40,
     flexGrow: 1,
     backgroundColor: COLORS.cardColor,
 

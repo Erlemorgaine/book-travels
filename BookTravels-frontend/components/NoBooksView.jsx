@@ -22,7 +22,7 @@ const NoBooksView = ({ onAdd }) => {
 
       <Image
         style={styles.container.bookworm}
-        source={require("../assets/bookworm_traveling.svg")}
+        source={require("../assets/bookworm_traveling.webp")}
         alt="A happy traveling bookworm with a little backpack on its back"
       />
       <ButtonPrimary label="Add my first book" onPress={onAdd} />

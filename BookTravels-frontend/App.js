@@ -12,6 +12,8 @@ import { getBooksForUser } from "./utilities/api";
 import { COLORS } from "./utilities/colors";
 
 export default function App() {
+  AsyncStorage.clear();
+
   const storageUserId = "bookTravels-userId";
   const [fontsLoaded] = useFonts({
     DMSans: require("./assets/fonts/DMSans-Regular.ttf"),
@@ -56,13 +58,13 @@ export default function App() {
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar
         animated={true}
-        backgroundColor={COLORS.primary}
+        // backgroundColor={COLORS.primary}
         // barStyle={statusBarStyle}
         // showHideTransition={statusBarTransition}
         hidden={false}
       />
       <ImageBackground
-        source={require("./assets/paper-texture-4.jpeg")}
+        source={require("./assets/paper-texture-4.webp")}
         style={styles.background}
       >
         {fontsLoaded && (

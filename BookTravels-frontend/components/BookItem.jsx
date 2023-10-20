@@ -12,7 +12,7 @@ const BookItem = ({ book, writer, countryCode, read, onBookSelect }) => (
   <Pressable key={countryCode} style={styles.bookItem} onPress={onBookSelect}>
     {read && (
       <ImageBackground
-        source={require("../assets/book-read.svg")}
+        source={require("../assets/book-read.webp")}
         style={styles.bookItem.bookBg}
       >
         <Text style={styles.bookItem.code}>{countryCode}</Text>
@@ -21,7 +21,7 @@ const BookItem = ({ book, writer, countryCode, read, onBookSelect }) => (
 
     {!read && (
       <ImageBackground
-        source={require("../assets/book-unread.svg")}
+        source={require("../assets/book-unread.webp")}
         style={styles.bookItem.bookBg}
       >
         <Text style={styles.bookItem.code}>{countryCode}</Text>

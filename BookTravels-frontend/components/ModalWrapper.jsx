@@ -15,7 +15,7 @@ const ModalWrapper = ({ children, show, closeModal }) => {
 
         <View style={styles.modal}>
           <ImageBackground
-            source={require("../assets/paper-texture-4.jpeg")}
+            source={require("../assets/paper-texture-4.webp")}
             style={styles.background}
           >
             <View style={styles.modal.modalContent}>{children}</View>
