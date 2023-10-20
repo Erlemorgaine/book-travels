@@ -1,6 +1,5 @@
 import { Alert } from "react-native";
 
-console.log(process.env);
 const apiUrl = process.env.EXPO_PUBLIC_API_URL;
 
 export function getBooksForUser(userId) {

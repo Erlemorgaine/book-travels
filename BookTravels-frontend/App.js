@@ -1,11 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import {
-  ImageBackground,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import CountryList from "./components/CountryList";
 import InteractiveMap from "./components/InteractiveMap";
@@ -60,6 +54,13 @@ export default function App() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar
+        animated={true}
+        backgroundColor={COLORS.primary}
+        // barStyle={statusBarStyle}
+        // showHideTransition={statusBarTransition}
+        hidden={false}
+      />
       <ImageBackground
         source={require("./assets/paper-texture-4.jpeg")}
         style={styles.background}

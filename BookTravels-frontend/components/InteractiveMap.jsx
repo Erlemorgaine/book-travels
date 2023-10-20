@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, Text } from "react-native";
+import { View, Dimensions } from "react-native";
 import Svg, { Defs, Path, G } from "react-native-svg";
 import { geoPath, geoNaturalEarth1 } from "d3-geo";
 import { zoom } from "d3-zoom";
@@ -19,6 +19,8 @@ const InteractiveMap = ({
   firstAdd,
   onBookListUpdate,
 }) => {
+  const windowWidth = Dimensions.get("window").width;
+
   const svgRef = useRef(null);
   const mapGroup = useRef(null);
   const mapCountries = useRef(null);
@@ -56,12 +58,13 @@ const InteractiveMap = ({
     const countries = feature(countriesJson, countriesJson.objects.countries);
     setGeojson(countries);
 
-    mapGroup.current = select("#map-wrapper");
-    mapCountries.current = select("#map-countries");
+    // mapGroup.current = select("#map-wrapper");
+    // mapCountries.current = select("#map-countries");
 
     mapZoom.current = zoom().scaleExtent([0.5, 7]).on("zoom", zoomBy); // Improves zoom performance
-
-    mapGroup.current.call(mapZoom.current).on("dblclick.zoom", null);
+    // TODO: Add Panresponder
+    // https://stackoverflow.com/questions/46955024/d3-zoom-behavior-in-react-native
+    // mapGroup.current.call(mapZoom.current).on("dblclick.zoom", null);
   }
 
   function getCountryColor(code) {
@@ -123,14 +126,14 @@ const InteractiveMap = ({
     <View style={{ flex: 1 }}>
       <Svg
         ref={svgRef}
-        width={window.innerWidth}
-        height={window.innerWidth * mapHeightFactor}
-        viewBox={`${window.innerWidth * -0.5} ${
-          window.innerWidth * -mapHeightFactor * 0.55
-        } ${window.innerWidth} ${window.innerWidth * mapHeightFactor}`}
+        width={windowWidth}
+        height={windowWidth * mapHeightFactor}
+        viewBox={`${windowWidth * -0.5} ${
+          windowWidth * -mapHeightFactor * 0.55
+        } ${windowWidth} ${windowWidth * mapHeightFactor}`}
       >
-        <g id="map-wrapper">
-          <g id="map-countries">
+        <G id="map-wrapper" ref={mapGroup}>
+          <G id="map-countries" ref={mapCountries}>
             {geojson &&
               geojson.features.map((countryData, i) => (
                 <G key={countryData.properties.iso_a2 + i}>
@@ -149,8 +152,8 @@ const InteractiveMap = ({
                   />
                 </G>
               ))}
-          </g>
-        </g>
+          </G>
+        </G>
       </Svg>
 
       <ButtonRound

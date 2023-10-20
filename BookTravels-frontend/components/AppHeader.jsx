@@ -11,7 +11,7 @@ export default AppHeader;
 
 const styles = StyleSheet.create({
   header: {
-    color: COLORS.primaryReddark,
+    color: COLORS.primaryRedDark,
     marginTop: 12,
   },
 });

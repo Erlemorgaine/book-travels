@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { FlatList, View, StyleSheet } from "react-native";
+import { FlatList, View, StyleSheet, Dimensions } from "react-native";
 import BookModal from "./BookModal";
 import BookItem from "./BookItem";
 import NoBooksView from "./NoBooksView";
 import { COLORS } from "../utilities/colors";
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 const CountryList = ({
   countryBooks,
@@ -61,8 +64,7 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
     borderRadius: 5,
     padding: 5,
-    height: window.innerHeight - window.innerWidth * 0.85, // TODO: Factor and margin in constant
-
+    height: windowHeight - windowWidth * 0.85, // TODO: Factor and margin in constant
     bookList: {
       flexGrow: 1,
     },

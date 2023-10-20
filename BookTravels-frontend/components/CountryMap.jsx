@@ -1,18 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View } from "react-native";
-import Svg, { Path } from "react-native-svg";
+import { View, Dimensions } from "react-native";
+import Svg, { G, Path } from "react-native-svg";
 import { geoPath, geoNaturalEarth1 } from "d3-geo";
-import { zoom } from "d3-zoom";
-import { select } from "d3-selection";
 import { feature } from "topojson";
 
 import countriesJson from "../assets/countries.json";
 
 const CountryMap = ({ countryCode, color }) => {
+  const windowWidth = Dimensions.get("window").width;
   const svgRef = useRef(null);
-  const mapGroup = useRef(null);
-  const mapCountries = useRef(null);
-  const mapZoom = useRef(null);
 
   const [zoomScale, setZoomScale] = useState(0.75);
   const [geojson, setGeojson] = useState(null);
@@ -34,9 +30,6 @@ const CountryMap = ({ countryCode, color }) => {
     const countries = feature(countriesJson, countriesJson.objects.countries);
 
     setGeojson(countries);
-
-    mapGroup.current = select("#map-wrapper");
-    mapCountries.current = select("#map-countries");
   }
 
   // {...panResponder.panHandlers}
@@ -44,12 +37,12 @@ const CountryMap = ({ countryCode, color }) => {
     <View style={{ flex: 1 }}>
       <Svg
         ref={svgRef}
-        viewBox={`${window.innerWidth * -0.5} ${
-          window.innerWidth * -mapHeightFactor * 0.55
-        } ${window.innerWidth} ${window.innerWidth * mapHeightFactor}`}
+        viewBox={`${windowWidth * -0.5} ${
+          windowWidth * -mapHeightFactor * 0.55
+        } ${windowWidth} ${windowWidth * mapHeightFactor}`}
       >
-        <g id="map-wrapper">
-          <g id="map-countries">
+        <G id="map-wrapper">
+          <G id="map-countries">
             {geojson &&
               geojson.features.map((countryData, i) => (
                 <Path
@@ -61,8 +54,8 @@ const CountryMap = ({ countryCode, color }) => {
                   transform={`scale(${zoomScale})`} // Apply the zoom scale
                 />
               ))}
-          </g>
-        </g>
+          </G>
+        </G>
       </Svg>
     </View>
   );
