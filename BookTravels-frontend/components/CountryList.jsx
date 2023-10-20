@@ -3,6 +3,7 @@ import { FlatList, View, StyleSheet } from "react-native";
 import BookModal from "./BookModal";
 import BookItem from "./BookItem";
 import NoBooksView from "./NoBooksView";
+import { COLORS } from "../utilities/colors";
 
 const CountryList = ({
   countryBooks,
@@ -54,7 +55,7 @@ export default CountryList;
 
 const styles = StyleSheet.create({
   bookCase: {
-    backgroundColor: "var(--card-color)",
+    backgroundColor: COLORS.cardColor,
     shadowColor: `var(--card-shadow)`,
     shadowOffset: { width: -2, height: -4 },
     shadowRadius: 15,
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         fontWeight: 700,
         fontSize: 18,
-        // backgroundColor: "var(--bg-color)",
+        // backgroundColor: COLORS.bgColor,
         borderRadius: 5,
         color: "#fff",
         fontFamily: "Headings",
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 800,
         paddingBottom: 3,
-        color: "var(--grey-dark)",
+        color: COLORS.greyDark,
         // fontFamily: "DMSansBold",
       },
       writer: {

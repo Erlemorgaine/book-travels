@@ -7,6 +7,7 @@ import InputField from "./InputField";
 import AppCheckbox from "./AppCheckbox";
 import { updateBookForUser } from "../utilities/api";
 import CountryMap from "./CountryMap";
+import { COLORS } from "../utilities/colors";
 
 export default function BookModal({
   bookItem,
@@ -34,9 +35,7 @@ export default function BookModal({
             {bookItem && (
               <CountryMap
                 countryCode={bookItem.countryCode}
-                color={
-                  bookItem.read ? "var(--primary-green)" : "var(--primary-red)"
-                }
+                color={bookItem.read ? COLORS.primaryGreen : COLORS.primaryRed}
               />
             )}
             <AppTitle title={updatedEntry.country} />

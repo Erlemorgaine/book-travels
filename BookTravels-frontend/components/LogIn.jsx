@@ -4,6 +4,7 @@ import { loginUser } from "../utilities/api";
 import ButtonPrimary from "./ButtonPrimary";
 import InputField from "./InputField";
 import ErrorText from "./ErrorText";
+import { COLORS } from "../utilities/colors";
 
 const Login = ({ onLogin }) => {
   const [userId, setUserId] = useState("");
@@ -46,7 +47,6 @@ const styles = StyleSheet.create({
   },
   loginWrapper: {
     flexGrow: 1,
-    backgroundColor: "var(--bg-color-50)",
     justifyContent: "center",
     alignItems: "center",
     width: "100%",

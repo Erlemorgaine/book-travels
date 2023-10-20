@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Switch, Text, StyleSheet, View } from "react-native";
+import { COLORS } from "../utilities/colors";
 
 const AppCheckbox = ({ setEnabled, isEnabled, label }) => {
   return (
     <View style={styles.container}>
       <Switch
         trackColor={{
-          false: "var(--primary-red-light)",
-          true: "var(--primary-green-light)",
+          false: COLORS.primaryRedlight,
+          true: COLORS.primaryGreenlight,
         }}
         thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
         ios_backgroundColor="#3e3e3e"
@@ -15,7 +16,7 @@ const AppCheckbox = ({ setEnabled, isEnabled, label }) => {
         value={isEnabled}
       />
 
-      <Text style={styles.label}>{ label}</Text>
+      <Text style={styles.label}>{label}</Text>
     </View>
   );
 };

@@ -3,6 +3,7 @@ import { View, ImageBackground, StyleSheet, Image } from "react-native";
 import ButtonPrimary from "./ButtonPrimary";
 import Login from "./LogIn";
 import SignUp from "./SignUp";
+import { COLORS } from "../utilities/colors";
 
 const UserAccess = ({ onUserCreated, onLogin }) => {
   const [login, setLogin] = useState(false);
@@ -52,10 +53,10 @@ const styles = StyleSheet.create({
   accessWrapper: {
     padding: 10,
     flexGrow: 1,
-    backgroundColor: "var(--card-color)",
+    backgroundColor: COLORS.cardColor,
 
     access: {
-      backgroundColor: "var(--bg-color-50)",
+      backgroundColor: COLORS.bgColor50,
       width: "100%",
       flex: 1,
       padding: 20,
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
       paddingBottom: 60,
       borderRadius: 5,
       borderWidth: 2,
-      borderColor: "var(--primary)",
+      borderColor: COLORS.primary,
     },
   },
 });

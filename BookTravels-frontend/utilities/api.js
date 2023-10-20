@@ -1,6 +1,7 @@
 import { Alert } from "react-native";
 
-const apiUrl = process.env.APP_MANIFEST.variables[process.env.NODE_ENV].API_URL;
+console.log(process.env);
+const apiUrl = process.env.EXPO_PUBLIC_API_URL;
 
 export function getBooksForUser(userId) {
   return fetch(`${apiUrl}user/${userId}`)

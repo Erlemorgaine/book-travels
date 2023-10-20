@@ -7,11 +7,9 @@ import { select } from "d3-selection";
 import { feature } from "topojson";
 
 import countriesJson from "../assets/countries.json";
+import { COLORS } from "../utilities/colors";
 
-const InteractiveMap = ({
-  booksPerCountry,
-  firstAdd,
-}) => {
+const InteractiveMap = ({ booksPerCountry, firstAdd }) => {
   const svgRef = useRef(null);
   const mapGroup = useRef(null);
   const mapCountries = useRef(null);
@@ -20,7 +18,6 @@ const InteractiveMap = ({
 
   const [currentZoom, setCurrentZoom] = useState(1);
   const [currentTranslation, setCurrentTranslation] = useState(1);
-
 
   const [zoomScale, setZoomScale] = useState(0.75);
   const [geojson, setGeojson] = useState(null);
@@ -62,14 +59,13 @@ const InteractiveMap = ({
     if (book) {
       return book.book
         ? book.read
-          ? "var(--primary-green)"
-          : "var(--primary-red)"
-        : "var(--neutral)";
+          ? COLORS.primaryGreen
+          : COLORS.primaryRed
+        : COLORS.neutral;
     }
 
     return "transparent";
   }
-
 
   function resetZoom() {
     mapGroup.current

@@ -6,14 +6,27 @@ import {
   ImageBackground,
 } from "react-native";
 
+import { COLORS } from "../utilities/colors";
+
 const BookItem = ({ book, writer, countryCode, read, onBookSelect }) => (
   <Pressable key={countryCode} style={styles.bookItem} onPress={onBookSelect}>
-    <ImageBackground
-      source={require(`../assets/book-${read ? "read" : "unread"}.svg`)}
-      style={styles.bookItem.bookBg}
-    >
-      <Text style={styles.bookItem.code}>{countryCode}</Text>
-    </ImageBackground>
+    {read && (
+      <ImageBackground
+        source={require("../assets/book-read.svg")}
+        style={styles.bookItem.bookBg}
+      >
+        <Text style={styles.bookItem.code}>{countryCode}</Text>
+      </ImageBackground>
+    )}
+
+    {!read && (
+      <ImageBackground
+        source={require("../assets/book-unread.svg")}
+        style={styles.bookItem.bookBg}
+      >
+        <Text style={styles.bookItem.code}>{countryCode}</Text>
+      </ImageBackground>
+    )}
 
     <View>
       <Text
@@ -51,7 +64,7 @@ const styles = StyleSheet.create({
       alignItems: "center",
       fontWeight: 700,
       fontSize: 18,
-      // backgroundColor: "var(--bg-color)",
+      // backgroundColor: COLORS.bgcolor,
       borderRadius: 5,
       color: "#fff",
       fontFamily: "Headings",
@@ -61,7 +74,7 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontWeight: 800,
       paddingBottom: 3,
-      color: "var(--grey-dark)",
+      color: COLORS.greyDark,
       // fontFamily: "DMSansBold",
     },
     writer: {

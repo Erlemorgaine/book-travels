@@ -1,5 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  ImageBackground,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import CountryList from "./components/CountryList";
 import InteractiveMap from "./components/InteractiveMap";
 import UserAccess from "./components/UserAccess";
@@ -8,7 +15,7 @@ import { useFonts } from "expo-font";
 import { useEffect, useState } from "react";
 import { getBooksForUser } from "./utilities/api";
 
-import { colors } from "./utilities/colors";
+import { COLORS } from "./utilities/colors";
 
 export default function App() {
   const storageUserId = "bookTravels-userId";
@@ -23,7 +30,11 @@ export default function App() {
   const [firstAdd, setFirstAdd] = useState(false);
 
   useEffect(() => {
-    const storedId = localStorage.getItem(storageUserId);
+    initializeUser();
+  }, []);
+
+  async function initializeUser() {
+    const storedId = await AsyncStorage.getItem(storageUserId);
     if (storedId) {
       setUserId(storedId);
 
@@ -31,10 +42,10 @@ export default function App() {
         setCountryBooks(books);
       });
     }
-  }, []);
+  }
 
-  function storeUserAndCountries(id, countries) {
-    localStorage.setItem(storageUserId, id);
+  async function storeUserAndCountries(id, countries) {
+    await AsyncStorage.setItem(storageUserId, id);
     setUserId(id);
     setCountryBooks(countries);
   }
@@ -48,44 +59,41 @@ export default function App() {
   }
 
   return (
-    <ImageBackground
-      source={require("./assets/paper-texture-4.jpeg")}
-      style={styles.background}
-    >
-      {fontsLoaded && (
-        <View
-          style={{
-            ...styles.container,
-            ...colors,
-          }}
-        >
-          {!userId && (
-            <UserAccess
-              onUserCreated={storeUserAndCountries}
-              onLogin={storeUserAndCountries}
-            />
-          )}
-          {countryBooks && (
-            <>
-              <InteractiveMap
-                booksPerCountry={countryBooks}
-                userId={userId}
-                firstAdd={firstAdd}
-                onBookListUpdate={(newBooks) => setCountryBooks(newBooks)}
+    <SafeAreaView style={{ flex: 1 }}>
+      <ImageBackground
+        source={require("./assets/paper-texture-4.jpeg")}
+        style={styles.background}
+      >
+        {fontsLoaded && (
+          <View style={styles.container}>
+            {!userId && (
+              <UserAccess
+                onUserCreated={storeUserAndCountries}
+                onLogin={storeUserAndCountries}
               />
-              <CountryList
-                countryBooks={countryBooks}
-                userId={userId}
-                onBookListUpdate={(newBooks) => setCountryBooks(newBooks)}
-                onFirstAdd={activateFirstAdd}
-              />
-            </>
-          )}
+            )}
+            {countryBooks && (
+              <>
+                <InteractiveMap
+                  booksPerCountry={countryBooks}
+                  userId={userId}
+                  firstAdd={firstAdd}
+                  onBookListUpdate={(newBooks) => setCountryBooks(newBooks)}
+                />
+                <CountryList
+                  countryBooks={countryBooks}
+                  userId={userId}
+                  onBookListUpdate={(newBooks) => setCountryBooks(newBooks)}
+                  onFirstAdd={activateFirstAdd}
+                />
+              </>
+            )}
 
-          <StatusBar style="auto" />
-        </View>
-      )}
-    </ImageBackground>
+            <StatusBar style="auto" />
+          </View>
+        )}
+      </ImageBackground>
+    </SafeAreaView>
   );
 }
 
@@ -97,6 +105,6 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "var(--bg-color-50)",
+    backgroundColor: COLORS.bgColor50,
   },
 });

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TextInput, StyleSheet } from "react-native";
+import { COLORS } from "../utilities/colors";
 
 const InputField = ({ value, onChange, placeholder = "", style = {} }) => {
   return (
@@ -19,11 +20,11 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 12,
     borderRadius: 10,
-    backgroundColor: "var(--white)",
+    backgroundColor: COLORS.white,
     // margin: 10,
     marginTop: 5,
     marginBottom: 0,
     borderWidth: 2,
-    borderColor: `var(--card-shadow)`,
+    borderColor: COLORS.cardShadow,
   },
 });

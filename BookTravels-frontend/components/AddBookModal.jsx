@@ -7,6 +7,7 @@ import InputField from "./InputField";
 import AppTitle from "./AppTitle";
 import AppCheckbox from "./AppCheckbox";
 import AppDropdown from "./AppDropdown";
+import { COLORS } from "../utilities/colors";
 
 const AddBookModal = ({
   show,
@@ -100,11 +101,11 @@ const styles = StyleSheet.create({
     paddingBottom: 12,
     paddingLeft: 5,
     read: {
-      color: "var(--primary-green-dark)",
+      color: COLORS.primaryGreendark,
       fontWeight: 700,
     },
     unread: {
-      color: "var(--primary-red-dark)",
+      color: COLORS.primaryReddark,
       fontWeight: 700,
     },
   },

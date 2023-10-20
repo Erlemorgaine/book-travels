@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Pressable, Text } from "react-native";
+import { COLORS } from "../utilities/colors";
 
 const ButtonIcon = ({ onPress, icon, style = {} }) => {
   return (
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
 
     label: {
-      color: "var(--primary)",
+      color: COLORS.primary,
       fontSize: 26,
       lineHeight: 26,
       fontWeight: 700,

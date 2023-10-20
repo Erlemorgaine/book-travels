@@ -1,5 +1,6 @@
 import React from "react";
 import { Pressable, StyleSheet, Text } from "react-native";
+import { COLORS } from "../utilities/colors";
 
 const ButtonPrimary = ({ label, onPress, disabled = false }) => {
   return (
@@ -17,7 +18,7 @@ export default ButtonPrimary;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "var(--primary)",
+    backgroundColor: COLORS.primary,
     padding: 12,
     paddingBottom: 10,
     // margin: 10,
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     label: {
       fontFamily: "Headings",
       fontWeight: 700,
-      color: "var(--white)",
+      color: COLORS.white,
       textTransform: "uppercase",
       textAlign: "center",
     },

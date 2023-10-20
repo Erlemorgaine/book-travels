@@ -5,6 +5,7 @@ import { geoPath, geoNaturalEarth1 } from "d3-geo";
 import { zoom } from "d3-zoom";
 import { select } from "d3-selection";
 import { feature } from "topojson";
+import { COLORS } from "../utilities/colors";
 
 import countriesJson from "../assets/countries.json";
 import ButtonRound from "./ButtonRound";
@@ -69,9 +70,9 @@ const InteractiveMap = ({
     if (book) {
       return book.book
         ? book.read
-          ? "var(--primary-green)"
-          : "var(--primary-red)"
-        : "var(--neutral)";
+          ? COLORS.primaryGreen
+          : COLORS.primaryRed
+        : COLORS.neutral;
     }
 
     return "transparent";

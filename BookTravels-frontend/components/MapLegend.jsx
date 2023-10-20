@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
+import { COLORS } from "../utilities/colors";
 
 const MapLegend = ({ style }) => {
   return (
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
   legend: {
     gap: 4,
     padding: 4,
-    backgroundColor: "var(--card-color-80)",
+    backgroundColor: COLORS.cardColor80,
     borderRadius: 5,
     text: {
       fontSize: 12,
@@ -36,13 +37,13 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         borderRadius: 6,
-        backgroundColor: "var(--primary-green)",
+        backgroundColor: COLORS.primaryGreen,
       },
       unread: {
         width: 20,
         height: 20,
         borderRadius: 6,
-        backgroundColor: "var(--primary-red)",
+        backgroundColor: COLORS.primaryRed,
       },
     },
   },

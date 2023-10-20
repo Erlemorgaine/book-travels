@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Pressable, Text } from "react-native";
+import { COLORS } from "../utilities/colors";
 
 const ButtonRound = ({ onPress, icon, style = {} }) => {
   return (
@@ -13,7 +14,7 @@ export default ButtonRound;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "var(--primary)",
+    backgroundColor: COLORS.primary,
     borderRadius: 50,
     width: 48,
     height: 48,
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     // shadowRadius: 5,
     label: {
       fontSize: 26,
-      color: "var(--white)",
+      color: COLORS.white,
       lineHeight: 26,
       fontWeight: 700,
     },

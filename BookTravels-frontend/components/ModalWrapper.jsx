@@ -1,19 +1,19 @@
 import React from "react";
 import { StyleSheet, Modal, View, ImageBackground } from "react-native";
-import { colors } from "../utilities/colors";
+import { COLORS } from "../utilities/colors";
 import ButtonIcon from "./ButtonIcon";
 
 const ModalWrapper = ({ children, show, closeModal }) => {
   return (
     <Modal visible={show}>
-      <View style={{ ...colors, ...styles.modalWrapper }}>
+      <View style={styles.modalWrapper}>
         <ButtonIcon
           icon="X"
           onPress={closeModal}
           style={styles.modal.modalClose}
         />
 
-        <View style={{ ...styles.modal, ...colors }}>
+        <View style={styles.modal}>
           <ImageBackground
             source={require("../assets/paper-texture-4.jpeg")}
             style={styles.background}
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     padding: 10,
     flexGrow: 1,
     justifyContent: "center",
-    backgroundColor: "var(--card-color)",
+    backgroundColor: COLORS.cardColor,
 
     modalClose: {
       position: "absolute",
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
       padding: 20,
       borderRadius: 5,
       borderWidth: 2,
-      borderColor: "var(--primary)",
-      backgroundColor: "var(--bg-color-50)",
+      borderColor: COLORS.primary,
+      backgroundColor: COLORS.bgColor50,
       justifyContent: "center",
     },
   },
