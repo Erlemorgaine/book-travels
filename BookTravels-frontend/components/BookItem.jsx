@@ -7,12 +7,13 @@ import {
 } from "react-native";
 
 import { COLORS } from "../utilities/styles/colors";
+import { FONTS } from "../utilities/styles/fonts";
 
 const BookItem = ({ book, writer, countryCode, read, onBookSelect }) => (
   <Pressable key={countryCode} style={styles.bookItem} onPress={onBookSelect}>
     {read && (
       <ImageBackground
-        source={require("../assets/book-read.webp")}
+        source={require("../assets/book-read-l.webp")}
         style={styles.bookItem.bookBg}
       >
         <Text style={styles.bookItem.code}>{countryCode}</Text>
@@ -21,7 +22,7 @@ const BookItem = ({ book, writer, countryCode, read, onBookSelect }) => (
 
     {!read && (
       <ImageBackground
-        source={require("../assets/book-unread.webp")}
+        source={require("../assets/book-unread-l.webp")}
         style={styles.bookItem.bookBg}
       >
         <Text style={styles.bookItem.code}>{countryCode}</Text>
@@ -50,16 +51,14 @@ const styles = StyleSheet.create({
     },
     code: {
       display: "flex",
-      width: 48,
+      width: 54,
       height: 48,
-      justifyContent: "center",
+      paddingTop: 8,
       paddingLeft: 22,
-      alignItems: "center",
       fontSize: 18,
-      // backgroundColor: COLORS.bgcolor,
       borderRadius: 5,
-      color: "#fff",
-      fontFamily: "SpecialElite-Regular",
+      color: "#000",
+      fontFamily: FONTS.SpecialElite,
     },
 
     book: {

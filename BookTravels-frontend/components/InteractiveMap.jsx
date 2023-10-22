@@ -14,12 +14,7 @@ import MapLegend from "./MapLegend";
 import BookModal from "./BookModal";
 import CountriesReadChart from "./CountriesReadChart";
 
-const InteractiveMap = ({
-  booksPerCountry,
-  userId,
-  firstAdd,
-  onBookListUpdate,
-}) => {
+const InteractiveMap = ({ booksPerCountry, userId, onBookListUpdate }) => {
   const windowWidth = Dimensions.get("window").width;
 
   const svgRef = useRef(null);
@@ -47,12 +42,6 @@ const InteractiveMap = ({
       return prev;
     }, {});
   }, []);
-
-  // useEffect(() => {
-  //   if (firstAdd) {
-  //     setShowAddModal(true);
-  //   }
-  // }, [firstAdd]);
 
   function createMap() {
     const countries = feature(countriesJson, countriesJson.objects.countries);

@@ -33,6 +33,8 @@
       "DMSans": "./assets/fonts/DMSans-Regular.ttf",
       "DMSansBold": "./assets/fonts/DMSans-Bold.ttf",
       "DMSansLight": "./assets/fonts/DMSans-Light.ttf"
-    }
+    },
+    "plugins": ["expo-router"],
+    "scheme": "your-app-scheme"
   }
 }

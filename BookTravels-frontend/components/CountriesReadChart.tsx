@@ -42,7 +42,15 @@ const CountriesReadChart: React.FC<CountriesReadChartProps> = ({
         more countries to go!
       </Text>
 
-      <View style={[styles.chart, { width: barWidth }]} accessible>
+      <View
+        style={[styles.chart, { width: barWidth }]}
+        accessible
+        accessibilityLabel={`Bar chart showing that you read a book from ${Math.round(
+          progressRead * 100
+        )} percent of all ${amountCountries} countries, and saved a book to read later for ${Math.round(
+          progressUnread * 100
+        )} of all countries`}
+      >
         <View
           style={[styles.readProgress, { width: progressRead * barWidth }]}
         />
@@ -74,7 +82,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     overflow: "hidden",
     borderRadius: 10,
-    backgroundColor: COLORS.cardColor,
+    backgroundColor: COLORS.neutral,
     shadowColor: COLORS.cardShadowDark,
     shadowOffset: { width: -2, height: -14 },
     shadowOpacity: 1,

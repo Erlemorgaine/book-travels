@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
   },
   dropdown: {
-    height: 44,
+    height: 48,
     borderColor: COLORS.cardShadow,
     borderWidth: 2,
     borderRadius: 10,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     color: "#e69700",
     left: 12,
-    top: 8,
+    top: 10,
     zIndex: 999,
     paddingHorizontal: 8,
     fontSize: 12,

@@ -9,7 +9,7 @@ import { feature } from "topojson";
 import countriesJson from "../assets/countries.json";
 import { COLORS } from "../utilities/styles/colors";
 
-const InteractiveMap = ({ booksPerCountry, firstAdd }) => {
+const InteractiveMap = ({ booksPerCountry }) => {
   const svgRef = useRef(null);
   const mapGroup = useRef(null);
   const mapCountries = useRef(null);
@@ -34,12 +34,6 @@ const InteractiveMap = ({ booksPerCountry, firstAdd }) => {
       return prev;
     }, {});
   }, []);
-
-  useEffect(() => {
-    if (firstAdd) {
-      setShowAddModal(true);
-    }
-  }, [firstAdd]);
 
   function createMap() {
     const countries = feature(countriesJson, countriesJson.objects.countries);

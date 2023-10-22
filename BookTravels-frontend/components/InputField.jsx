@@ -1,24 +1,37 @@
 import React, { useState } from "react";
-import { TextInput, StyleSheet } from "react-native";
+import { TextInput, StyleSheet, View, Text } from "react-native";
 import { COLORS } from "../utilities/styles/colors";
 
-const InputField = ({ value, onChange, placeholder = "", style = {} }) => {
+const InputField = ({
+  value,
+  onChange,
+  label = "",
+  placeholder = "",
+  style = {},
+}) => {
   return (
-    <TextInput
-      style={{ ...style, ...styles.input }}
-      placeholder={placeholder}
-      value={value}
-      onChangeText={onChange}
-    />
+    <View style={[styles.container, style]} accessible>
+      {label && <Text style={styles.label}>{label}</Text>}
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+        value={value}
+        onChangeText={onChange}
+      />
+    </View>
   );
 };
 
 export default InputField;
 
 const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+  },
+  label: {},
   input: {
     width: "100%",
-    padding: 12,
+    padding: 10,
     borderRadius: 10,
     backgroundColor: COLORS.white,
     // margin: 10,

@@ -40,18 +40,17 @@ export default function BookModal({
             )}
             <AppTitle title={updatedEntry.country} />
 
-            <Text style={styles.container.bookText}>
-              You {updatedEntry.read ? "read" : "are planning to read"}{" "}
-            </Text>
-
             <InputField
+              label={`You ${
+                updatedEntry.read ? "read" : "are planning to read"
+              }`}
               value={updatedEntry.book}
               onChange={(book) => setUpdatedEntry({ ...updatedEntry, book })}
+              style={{ marginBottom: 10 }}
             />
 
-            <Text style={styles.container.writerText}> written by </Text>
-
             <InputField
+              label="written by"
               value={updatedEntry.writer}
               onChange={(writer) =>
                 setUpdatedEntry({ ...updatedEntry, writer })

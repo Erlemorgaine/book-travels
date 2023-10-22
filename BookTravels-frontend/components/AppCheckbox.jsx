@@ -23,12 +23,10 @@ const AppCheckbox = ({ setEnabled, isEnabled, label }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingTop: 20,
-    paddingBottom: 10,
+    paddingTop: 10,
   },
   label: {
     paddingLeft: 10,

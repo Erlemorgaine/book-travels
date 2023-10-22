@@ -7,16 +7,12 @@ import ButtonPrimary from "./ButtonPrimary";
 import AddBookModal from "./AddBookModal";
 
 import { COLORS } from "../utilities/styles/colors";
+import { FONTS } from "../utilities/styles/fonts";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-const CountryList = ({
-  countryBooks,
-  userId,
-  onBookListUpdate,
-  onFirstAdd,
-}) => {
+const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
   const [selectedBook, setSelectedBook] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
 
@@ -25,11 +21,13 @@ const CountryList = ({
   return (
     <View style={styles.bookCase}>
       <View style={styles.addBtn}>
-        <ButtonPrimary
-          style={{ marginTop: 10 }}
-          label="Add a book"
-          onPress={() => setShowAddModal(true)}
-        />
+        {!!allBooks.length && (
+          <ButtonPrimary
+            style={{ marginTop: 10 }}
+            label="Add a book"
+            onPress={() => setShowAddModal(true)}
+          />
+        )}
       </View>
 
       <FlatList
@@ -115,7 +113,7 @@ const styles = StyleSheet.create({
         // backgroundColor: COLORS.bgColor,
         borderRadius: 5,
         color: "#fff",
-        fontFamily: "SpecialElite-Regular",
+        fontFamily: FONTS.SpecialElite,
       },
 
       book: {

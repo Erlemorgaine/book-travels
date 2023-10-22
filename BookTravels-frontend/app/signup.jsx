@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { View, Alert, StyleSheet } from "react-native";
 import { createUser } from "../utilities/api";
-import ButtonPrimary from "./ButtonPrimary";
-import InputField from "./InputField";
-import ErrorText from "./ErrorText";
+import ButtonPrimary from "../components/ButtonPrimary";
+import InputField from "../components/InputField";
+import ErrorText from "../components/ErrorText";
+import AccessWrapper from "../components/AccessWrapper";
+import { router } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { storageUserId } from "../contexts/authentication";
+import { DataContext } from "../contexts/data";
 
-const SignUp = ({ onUserCreated }) => {
+export default SignUp = () => {
   const [userId, setUserId] = useState("");
   const [showError, setShowError] = useState(false);
+  const { setData } = useContext(DataContext);
 
   const handleInputChange = (text) => setUserId(text);
 
@@ -27,8 +33,20 @@ const SignUp = ({ onUserCreated }) => {
       });
   };
 
+  async function onUserCreated(id, countries) {
+    await AsyncStorage.setItem(storageUserId, id);
+    // setUserId(id);
+    // setCountryBooks(countries);
+    setData(countries);
+
+    router.push({
+      pathname: "home",
+      params: { userId: id },
+    });
+  }
+
   return (
-    <View style={styles.signUpWrapper}>
+    <AccessWrapper>
       <InputField
         placeholder="Choose a unique username"
         value={userId}
@@ -40,14 +58,6 @@ const SignUp = ({ onUserCreated }) => {
       {showError && (
         <ErrorText text="Unfortunately this username already exists. Enter your next favourite username!" />
       )}
-    </View>
+    </AccessWrapper>
   );
 };
-
-export default SignUp;
-
-const styles = StyleSheet.create({
-  signUpWrapper: {
-    width: "100%",
-  },
-});

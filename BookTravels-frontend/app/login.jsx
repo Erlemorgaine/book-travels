@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { View, Alert, StyleSheet, Text } from "react-native";
 import { loginUser } from "../utilities/api";
-import ButtonPrimary from "./ButtonPrimary";
-import InputField from "./InputField";
-import ErrorText from "./ErrorText";
+import ButtonPrimary from "../components/ButtonPrimary";
+import InputField from "../components/InputField";
+import ErrorText from "../components/ErrorText";
 import { COLORS } from "../utilities/styles/colors";
+import AccessWrapper from "../components/AccessWrapper";
+import { router } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { storageUserId } from "../contexts/authentication";
+import { DataContext } from "../contexts/data";
 
-const Login = ({ onLogin }) => {
+export default Login = () => {
   const [userId, setUserId] = useState("");
   const [showError, setShowError] = useState(false);
+  const { setData } = useContext(DataContext);
 
   const handleInputChange = (text) => setUserId(text);
 
@@ -22,8 +28,21 @@ const Login = ({ onLogin }) => {
     });
   };
 
+  async function onLogin(id, countries) {
+    await AsyncStorage.setItem(storageUserId, id);
+    // setUserId(id);
+    // setCountryBooks(countries);
+
+    setData(countries);
+
+    router.push({
+      pathname: "home",
+      params: { userId: id },
+    });
+  }
+
   return (
-    <View style={styles.loginWrapper}>
+    <AccessWrapper>
       <InputField
         placeholder="Enter your username"
         value={userId}
@@ -34,21 +53,6 @@ const Login = ({ onLogin }) => {
       {showError && (
         <ErrorText text="This username doesn't seem to exist yet. Did you type in the correct username?" />
       )}
-    </View>
+    </AccessWrapper>
   );
 };
-
-export default Login;
-
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    resizeMode: "cover",
-  },
-  loginWrapper: {
-    flexGrow: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-  },
-});

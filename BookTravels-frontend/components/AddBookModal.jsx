@@ -46,8 +46,8 @@ const AddBookModal = ({
         </Text>
         <Text style={{ ...styles.intro, paddingTop: 0 }}>
           Read books will show up on the map in{" "}
-          <Text style={styles.read}>green</Text>, not-yet-read books will show
-          up in <Text style={styles.unread}>red</Text>.
+          <Text style={styles.read}>blue</Text>, not-yet-read books will show up
+          in <Text style={styles.unread}>cerise</Text>.
         </Text>
 
         <InputField
