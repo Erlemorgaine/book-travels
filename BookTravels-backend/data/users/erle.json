@@ -152,7 +152,10 @@
   },
   {
     "name": "Burkina Faso",
-    "code": "BF"
+    "code": "BF",
+    "book": "So distant from my life",
+    "writer": "Monique Ilboudo",
+    "read": false
   },
   {
     "name": "Burundi",
@@ -167,7 +170,10 @@
   },
   {
     "name": "Cameroon",
-    "code": "CM"
+    "code": "CM",
+    "book": "Days come and go",
+    "writer": "Hemley Boum",
+    "read": false
   },
   {
     "name": "Canada",
@@ -267,7 +273,10 @@
   },
   {
     "name": "Djibouti",
-    "code": "DJ"
+    "code": "DJ",
+    "book": "Why Do You Dance When You Walk?",
+    "writer": "Abdourahman A. Waberi",
+    "read": false
   },
   {
     "name": "Dominica",
@@ -522,7 +531,10 @@
   },
   {
     "name": "Kenya",
-    "code": "KE"
+    "code": "KE",
+    "book": "Things they lost",
+    "writer": "Okwiri Oduor",
+    "read": false
   },
   {
     "name": "Kiribati",
@@ -918,7 +930,7 @@
     "code": "LK",
     "book": "The Seven Moons of Maali Almeida",
     "writer": "Shehan Karunatilaka",
-    "read": false
+    "read": true
   },
   {
     "name": "Sudan",
@@ -974,7 +986,7 @@
     "code": "TH",
     "book": "Sightseeing",
     "writer": "Rattawut Lapcharoensap",
-    "read": false
+    "read": true
   },
   {
     "name": "Timor-Leste",

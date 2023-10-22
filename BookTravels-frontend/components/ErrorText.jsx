@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const ErrorText = ({ text }) => {
   return <Text style={styles.errorText}>{text}</Text>;

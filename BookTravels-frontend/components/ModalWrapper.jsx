@@ -1,11 +1,16 @@
 import React from "react";
 import { StyleSheet, Modal, View, ImageBackground } from "react-native";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 import ButtonIcon from "./ButtonIcon";
 
 const ModalWrapper = ({ children, show, closeModal }) => {
   return (
-    <Modal visible={show}>
+    <Modal
+      animationType="slide"
+      visible={show}
+      // This is triggered when user uses back button in native Android bottom menu
+      onRequestClose={closeModal}
+    >
       <View style={styles.modalWrapper}>
         <ButtonIcon
           icon="X"

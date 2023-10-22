@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text } from "react-native";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const AppTitle = ({ title, style = {} }) => {
   return <Text style={{ ...styles.title, ...style }}>{title}</Text>;
@@ -14,8 +14,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 24,
     lineHeight: 26,
-    fontWeight: "700",
-    fontFamily: "Headings",
+    fontFamily: "SpecialElite-Regular",
     paddingBottom: 12,
   },
 });

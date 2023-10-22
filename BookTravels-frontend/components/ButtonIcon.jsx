@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Pressable, Text } from "react-native";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const ButtonIcon = ({ onPress, icon, style = {} }) => {
   return (

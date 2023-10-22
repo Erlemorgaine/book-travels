@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
+import { COLORS } from "../utilities/styles/colors";
 
 const AppDropdown = ({ label, data, onValueChange, value }) => {
   const [isFocus, setIsFocus] = useState(false);
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
   },
   dropdown: {
     height: 44,
-    borderColor: `var(--card-shadow)`,
+    borderColor: COLORS.cardShadow,
     borderWidth: 2,
     borderRadius: 10,
     paddingHorizontal: 8,

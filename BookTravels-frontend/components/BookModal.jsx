@@ -7,7 +7,7 @@ import InputField from "./InputField";
 import AppCheckbox from "./AppCheckbox";
 import { updateBookForUser } from "../utilities/api";
 import CountryMap from "./CountryMap";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 export default function BookModal({
   bookItem,

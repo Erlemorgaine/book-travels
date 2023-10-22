@@ -9,16 +9,17 @@ import { useFonts } from "expo-font";
 import { useEffect, useState } from "react";
 import { getBooksForUser } from "./utilities/api";
 
-import { COLORS } from "./utilities/colors";
+import { COLORS } from "./utilities/styles/colors";
 
 export default function App() {
-  AsyncStorage.clear();
+  // TODO: For testing purposes, remove eventually
+  // AsyncStorage.clear();
 
   const storageUserId = "bookTravels-userId";
   const [fontsLoaded] = useFonts({
-    DMSans: require("./assets/fonts/DMSans-Regular.ttf"),
-    DMSansBold: require("./assets/fonts/DMSans-Bold.ttf"),
-    Headings: require("./assets/fonts/SpecialElite-Regular.ttf"),
+    // "DMSans-Regular": require("./assets/fonts/DMSans-Regular.ttf"),
+    // "DMSans-Bold": require("./assets/fonts/DMSans-Bold.ttf"),
+    "SpecialElite-Regular": require("./assets/fonts/SpecialElite-Regular.ttf"),
   });
 
   const [userId, setUserId] = useState("");

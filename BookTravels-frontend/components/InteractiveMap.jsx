@@ -3,15 +3,16 @@ import { View, Dimensions } from "react-native";
 import Svg, { Defs, Path, G } from "react-native-svg";
 import { geoPath, geoNaturalEarth1 } from "d3-geo";
 import { zoom } from "d3-zoom";
-import { select } from "d3-selection";
+// import { select } from "d3-selection";
 import { feature } from "topojson";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 import countriesJson from "../assets/countries.json";
-import ButtonRound from "./ButtonRound";
+// import ButtonRound from "./ButtonRound";
 import AddBookModal from "./AddBookModal";
 import MapLegend from "./MapLegend";
 import BookModal from "./BookModal";
+import CountriesReadChart from "./CountriesReadChart";
 
 const InteractiveMap = ({
   booksPerCountry,
@@ -29,7 +30,6 @@ const InteractiveMap = ({
 
   const [currentZoom, setCurrentZoom] = useState(1);
   const [currentTranslation, setCurrentTranslation] = useState(1);
-  const [showAddModal, setShowAddModal] = useState(false);
 
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [zoomScale, setZoomScale] = useState(0.75);
@@ -48,11 +48,11 @@ const InteractiveMap = ({
     }, {});
   }, []);
 
-  useEffect(() => {
-    if (firstAdd) {
-      setShowAddModal(true);
-    }
-  }, [firstAdd]);
+  // useEffect(() => {
+  //   if (firstAdd) {
+  //     setShowAddModal(true);
+  //   }
+  // }, [firstAdd]);
 
   function createMap() {
     const countries = feature(countriesJson, countriesJson.objects.countries);
@@ -156,15 +156,24 @@ const InteractiveMap = ({
         </G>
       </Svg>
 
-      <ButtonRound
+      {/* <ButtonRound
         onPress={() => setShowAddModal(true)}
         icon="+"
         style={{ position: "absolute", right: 10, bottom: 8 }}
-      />
+      /> */}
 
       <MapLegend style={{ position: "absolute", left: 10, bottom: 8 }} />
 
-      <AddBookModal
+      <CountriesReadChart
+        amountCountries={booksPerCountry.length}
+        amountRead={booksPerCountry.filter((book) => book.read).length}
+        amountUnread={
+          booksPerCountry.filter((book) => "read" in book && !book.read).length
+        }
+        style={{ position: "absolute", right: 10, bottom: 8 }}
+      />
+
+      {/* <AddBookModal
         show={showAddModal}
         userId={userId}
         closeModal={() => setShowAddModal(false)}
@@ -173,7 +182,7 @@ const InteractiveMap = ({
           label: book.name,
           value: book.code,
         }))}
-      />
+      /> */}
 
       {selectedCountry && (
         <BookModal

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const MapLegend = ({ style }) => {
   return (
@@ -23,8 +23,14 @@ const styles = StyleSheet.create({
   legend: {
     gap: 4,
     padding: 4,
-    backgroundColor: COLORS.cardColor80,
+    paddingRight: 8,
+    backgroundColor: COLORS.cardColor,
     borderRadius: 5,
+    shadowColor: COLORS.cardShadowDark,
+    shadowOffset: { width: -2, height: -14 },
+    shadowOpacity: 1,
+    shadowRadius: 5,
+    elevation: 5, // Necessary to show shadow for Android!
     text: {
       fontSize: 12,
     },

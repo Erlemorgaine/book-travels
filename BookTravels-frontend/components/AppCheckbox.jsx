@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Switch, Text, StyleSheet, View } from "react-native";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const AppCheckbox = ({ setEnabled, isEnabled, label }) => {
   return (
     <View style={styles.container}>
+      <Text style={styles.label}>{label}</Text>
+
       <Switch
         trackColor={{
           false: COLORS.primaryRedlight,
@@ -15,8 +17,6 @@ const AppCheckbox = ({ setEnabled, isEnabled, label }) => {
         onValueChange={setEnabled}
         value={isEnabled}
       />
-
-      <Text style={styles.label}>{label}</Text>
     </View>
   );
 };
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    // justifyContent: "center",
+    justifyContent: "space-between",
     paddingTop: 20,
     paddingBottom: 10,
   },

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Pressable, Text } from "react-native";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const ButtonRound = ({ onPress, icon, style = {} }) => {
   return (
@@ -21,9 +21,6 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    // shadowColor: `var(--card-shadow-dark)`,
-    // shadowOffset: { width: -2, height: 4 },
-    // shadowRadius: 5,
     label: {
       fontSize: 26,
       color: COLORS.white,

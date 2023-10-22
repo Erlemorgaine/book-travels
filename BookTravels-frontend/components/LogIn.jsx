@@ -4,7 +4,7 @@ import { loginUser } from "../utilities/api";
 import ButtonPrimary from "./ButtonPrimary";
 import InputField from "./InputField";
 import ErrorText from "./ErrorText";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const Login = ({ onLogin }) => {
   const [userId, setUserId] = useState("");

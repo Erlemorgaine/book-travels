@@ -6,7 +6,7 @@ import {
   ImageBackground,
 } from "react-native";
 
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const BookItem = ({ book, writer, countryCode, read, onBookSelect }) => (
   <Pressable key={countryCode} style={styles.bookItem} onPress={onBookSelect}>
@@ -29,14 +29,7 @@ const BookItem = ({ book, writer, countryCode, read, onBookSelect }) => (
     )}
 
     <View>
-      <Text
-        style={{
-          ...styles.bookItem.book,
-          // color: `var(--primary-${read ? "green" : "red"}-dark)`,
-        }}
-      >
-        {book}
-      </Text>
+      <Text style={styles.bookItem.book}>{book}</Text>
       {writer && <Text style={styles.bookItem.writer}>{writer}</Text>}
     </View>
   </Pressable>
@@ -62,12 +55,11 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       paddingLeft: 22,
       alignItems: "center",
-      fontWeight: 700,
       fontSize: 18,
       // backgroundColor: COLORS.bgcolor,
       borderRadius: 5,
       color: "#fff",
-      fontFamily: "Headings",
+      fontFamily: "SpecialElite-Regular",
     },
 
     book: {

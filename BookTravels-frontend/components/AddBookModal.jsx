@@ -7,7 +7,7 @@ import InputField from "./InputField";
 import AppTitle from "./AppTitle";
 import AppCheckbox from "./AppCheckbox";
 import AppDropdown from "./AppDropdown";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const AddBookModal = ({
   show,

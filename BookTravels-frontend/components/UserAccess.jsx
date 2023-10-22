@@ -3,7 +3,7 @@ import { View, ImageBackground, StyleSheet, Image } from "react-native";
 import ButtonPrimary from "./ButtonPrimary";
 import Login from "./LogIn";
 import SignUp from "./SignUp";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const UserAccess = ({ onUserCreated, onLogin }) => {
   const [login, setLogin] = useState(false);

@@ -7,7 +7,7 @@ import { select } from "d3-selection";
 import { feature } from "topojson";
 
 import countriesJson from "../assets/countries.json";
-import { COLORS } from "../utilities/colors";
+import { COLORS } from "../utilities/styles/colors";
 
 const InteractiveMap = ({ booksPerCountry, firstAdd }) => {
   const svgRef = useRef(null);
