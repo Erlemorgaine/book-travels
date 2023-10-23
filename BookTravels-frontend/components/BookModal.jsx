@@ -57,6 +57,7 @@ export default function BookModal({
               }
             />
 
+
             <AppCheckbox
               setEnabled={() =>
                 setUpdatedEntry({ ...updatedEntry, read: !updatedEntry.read })

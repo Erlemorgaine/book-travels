@@ -7,11 +7,16 @@ const InputField = ({
   onChange,
   label = "",
   placeholder = "",
+  optional = false,
   style = {},
 }) => {
   return (
     <View style={[styles.container, style]} accessible>
-      {label && <Text style={styles.label}>{label}</Text>}
+      <Text style={{ paddingLeft: 4, marginTop: 4 }}>
+        {label && <Text style={styles.label}>{label}</Text>}
+        {optional && <Text style={styles.optional}> (optional)</Text>}
+      </Text>
+
       <TextInput
         style={styles.input}
         placeholder={placeholder}
@@ -28,14 +33,22 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
   },
-  label: {},
+  label: {
+    fontWeight: "bold",
+    fontSize: 12,
+  },
+  optional: {
+    fontSize: 12,
+    color: COLORS.greyDark,
+    paddingLeft: 4,
+  },
   input: {
     width: "100%",
     padding: 10,
     borderRadius: 10,
     backgroundColor: COLORS.white,
     // margin: 10,
-    marginTop: 5,
+    marginTop: 2,
     marginBottom: 0,
     borderWidth: 2,
     borderColor: COLORS.cardShadow,

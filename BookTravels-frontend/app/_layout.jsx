@@ -19,30 +19,32 @@ export default function AppLayout() {
   });
 
   return (
-    <ImageBackground
-      source={require("../assets/paper-texture-4.webp")}
-      style={styles.background}
-    >
-      <DataContext.Provider value={{ data, setData }}>
-        {fontsLoaded && (
-          <Stack
-            screenOptions={{
-              headerStyle: {
-                backgroundColor: "transparent",
-              },
-              headerShadowVisible: false,
-              headerTransparent: true,
-              // headerBackVisible: false,
-              headerTitle: "",
-            }}
-          />
-        )}
-      </DataContext.Provider>
-      {/* <SessionProvider>
+    <>
+      <ImageBackground
+        source={require("../assets/paper-texture-4.webp")}
+        style={styles.background}
+      >
+        <DataContext.Provider value={{ data, setData }}>
+          {fontsLoaded && (
+            <Stack
+              screenOptions={{
+                headerStyle: {
+                  backgroundColor: "transparent",
+                },
+                headerShadowVisible: false,
+                headerTransparent: true,
+                // headerBackVisible: false,
+                headerTitle: "",
+              }}
+            />
+          )}
+        </DataContext.Provider>
+        {/* <SessionProvider>
         <Slot />
       </SessionProvider> */}
+      </ImageBackground>
       {/* <BottomTabsNavigator /> */}
-    </ImageBackground>
+    </>
   );
 }
 
