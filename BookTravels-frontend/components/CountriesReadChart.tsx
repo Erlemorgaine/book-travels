@@ -39,7 +39,7 @@ const CountriesReadChart: React.FC<CountriesReadChartProps> = ({
 
       <Text style={styles.label}>
         <Text style={styles.percentage}>{amountCountries - amountRead}</Text>{" "}
-        more countries to go!
+        more places to go!
       </Text>
 
       <View

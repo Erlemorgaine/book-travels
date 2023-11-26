@@ -32,7 +32,7 @@ export default UserAccess;
 
 const styles = StyleSheet.create({
   bookworm: {
-    width: 187 * 0.8,
+    width: 188 * 0.8,
     height: 168 * 0.8,
     margin: "auto",
     marginTop: 0,

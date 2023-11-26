@@ -42,7 +42,7 @@ const AddBookModal = ({
       <AppTitle title="Time to add a new book!" />
       <Text style={styles.intro}>
         You can either add a book that you've already read, or save a book that
-        sounds interesting and that you want to save for a later book travel.{" "}
+        you want to keep in mind for a later book travel.{" "}
       </Text>
       <Text style={{ ...styles.intro, paddingTop: 0 }}>
         Read books will show up on the map in{" "}

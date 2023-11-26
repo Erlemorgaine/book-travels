@@ -13,7 +13,7 @@ const ModalWrapper = ({ children, show, closeModal }) => {
     >
       <View style={styles.modalWrapper}>
         <ButtonIcon
-          icon="X"
+          icon="x"
           onPress={closeModal}
           style={styles.modal.modalClose}
         />

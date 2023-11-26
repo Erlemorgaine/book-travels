@@ -2,7 +2,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 import { getBooksForUser } from "../utilities/api";
 
-import { COLORS } from "../utilities/styles/colors";
 import { BottomTabsNavigator } from "../components/BottomTabs.navigator";
 import { Redirect } from "expo-router";
 import { storageUserId } from "../contexts/authentication";
