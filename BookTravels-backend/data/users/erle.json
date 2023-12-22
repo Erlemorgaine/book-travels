@@ -679,7 +679,10 @@
   },
   {
     "name": "Morocco",
-    "code": "MA"
+    "code": "MA",
+    "writer": "Fatima Mernissi",
+    "book": "Beyond the veil",
+    "read": false
   },
   {
     "name": "Mozambique",
@@ -690,7 +693,7 @@
     "code": "MM",
     "writer": "Nu Nu Yi",
     "book": "Smile as they bow",
-    "read": false
+    "read": true
   },
   {
     "name": "Namibia",
