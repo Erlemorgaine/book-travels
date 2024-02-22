@@ -23,7 +23,7 @@
     "code": "AS"
   },
   {
-    "name": "AndorrA",
+    "name": "Andorra",
     "code": "AD"
   },
   {
@@ -125,7 +125,10 @@
   },
   {
     "name": "Botswana",
-    "code": "BW"
+    "code": "BW",
+    "book": "Go tell the sun",
+    "writer": "Wame M. Molefhe",
+    "read": false
   },
   {
     "name": "Bouvet Island",
@@ -155,7 +158,7 @@
     "code": "BF",
     "book": "So distant from my life",
     "writer": "Monique Ilboudo",
-    "read": false
+    "read": true
   },
   {
     "name": "Burundi",
@@ -276,7 +279,7 @@
     "code": "DJ",
     "book": "Why Do You Dance When You Walk?",
     "writer": "Abdourahman A. Waberi",
-    "read": false
+    "read": true
   },
   {
     "name": "Dominica",
@@ -362,7 +365,10 @@
   },
   {
     "name": "Georgia",
-    "code": "GE"
+    "code": "GE",
+    "book": "Hard by a Great Forest",
+    "writer": "Leo Vardiashvili",
+    "read": false
   },
   {
     "name": "Germany",
@@ -508,7 +514,10 @@
   },
   {
     "name": "Jamaica",
-    "code": "JM"
+    "code": "JM",
+    "book": "Broughtupsy",
+    "writer": "Christina Cooke",
+    "read": false
   },
   {
     "name": "Japan",
@@ -534,7 +543,7 @@
     "code": "KE",
     "book": "Things they lost",
     "writer": "Okwiri Oduor",
-    "read": false
+    "read": true
   },
   {
     "name": "Kiribati",
@@ -686,7 +695,10 @@
   },
   {
     "name": "Mozambique",
-    "code": "MZ"
+    "code": "MZ",
+    "book": "The first wife",
+    "writer": "Paulina Chiziane",
+    "read": false
   },
   {
     "name": "Myanmar",
@@ -697,7 +709,10 @@
   },
   {
     "name": "Namibia",
-    "code": "NA"
+    "code": "NA",
+    "book": "The Purple Violet of Oshaantu",
+    "writer": "Neshani Andreas",
+    "read": false
   },
   {
     "name": "Nauru",
@@ -771,7 +786,10 @@
   },
   {
     "name": "Palestinian Territory, Occupied",
-    "code": "PS"
+    "code": "PS",
+    "book": "My First and Only Love",
+    "writer": "Sahar Khalifeh",
+    "read": false
   },
   {
     "name": "Panama",
