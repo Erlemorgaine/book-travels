@@ -17,9 +17,10 @@ export default Home = () => {
     if (data?.length) {
       setCountriesWithBooks(data);
     } else {
-      getBooksForUser(userId).then((books) => {
-        setCountriesWithBooks(books);
-      });
+      setCountriesWithBooks([]);
+      // getBooksForUser(userId).then((books) => {
+      //   setCountriesWithBooks(books);
+      // });
     }
   }, []);
 
@@ -30,11 +31,13 @@ export default Home = () => {
         style={styles.background}
       >
         <View style={styles.container}>
-          <InteractiveMap
-            booksPerCountry={countriesWithBooks}
-            userId={userId}
-            onBookListUpdate={setCountriesWithBooks}
-          />
+          {!!countriesWithBooks?.length && (
+            <InteractiveMap
+              booksPerCountry={countriesWithBooks}
+              userId={userId}
+              onBookListUpdate={setCountriesWithBooks}
+            />
+          )}
           <CountryList
             countryBooks={countriesWithBooks}
             userId={userId}

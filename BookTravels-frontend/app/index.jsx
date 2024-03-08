@@ -5,6 +5,7 @@ import { getBooksForUser } from "../utilities/api";
 import { BottomTabsNavigator } from "../components/BottomTabs.navigator";
 import { Redirect } from "expo-router";
 import { storageUserId } from "../contexts/authentication";
+import { setupDatabase } from "../utilities/db";
 
 export default function App() {
   // TODO: For testing purposes, remove eventually
@@ -14,6 +15,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setupDatabase();
     initializeUser();
   }, []);
 
@@ -34,7 +36,7 @@ export default function App() {
     !loading && (
       <Redirect
         href={
-          userId
+          true
             ? { pathname: "/home", params: { userId } }
             : { pathname: "/userAccess" }
         }
