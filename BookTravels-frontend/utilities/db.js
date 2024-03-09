@@ -38,7 +38,6 @@ const setupDatabase = (callback) => {
       `SELECT * FROM countries LIMIT 1;`,
       [],
       (_, { rows }) => {
-        console.log(rows);
         if (rows.length === 0) {
           // If the table is empty, seed it with initial data
           seedCountries(tx);
@@ -78,7 +77,7 @@ function getCountries(callback) {
 function getBooks(callback) {
   db.transaction((tx) => {
     tx.executeSql(
-      `SELECT c.name, c.code, b.title, b.writer, b.read, b.notes FROM countries c 
+      `SELECT c.name, c.code, b.title, b.writer, b.read, b.notes, b.id FROM countries c 
       LEFT JOIN books b ON c.code = b.country_code;`,
       [],
       (_, { rows: { _array } }) => {
@@ -138,7 +137,7 @@ function uploadBooks(books, callback) {
   });
 }
 
-function addBook(countryCode, book) {
+function addBook(book, callback) {
   db.transaction((tx) => {
     tx.executeSql(
       `INSERT INTO books (title, writer, read, notes, country_code) VALUES (?, ?, ?, ?, ?);`,
@@ -147,15 +146,15 @@ function addBook(countryCode, book) {
         book.writer,
         readToString(book.read),
         book.notes,
-        countryCode,
+        book.countryCode,
       ],
-      (_, result) => callback(result),
+      (_, result) => getBooks(callback),
       (error) => console.error("Error inserting item into database: ", error)
     );
   });
 }
 
-function updateBook(newBook) {
+function updateBook(newBook, callback) {
   db.transaction((tx) => {
     tx.executeSql(
       `UPDATE books SET title = ?, writer = ?, read = ?, notes = ? WHERE id = ?;`,
@@ -166,7 +165,7 @@ function updateBook(newBook) {
         newBook.notes,
         newBook.id,
       ],
-      (_, result) => callback(result),
+      (_, result) => getBooks(callback),
       (error) => console.error("Error inserting item into database: ", error)
     );
   });

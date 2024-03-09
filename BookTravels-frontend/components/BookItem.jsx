@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
       width: 70,
     },
     code: {
-      display: "flex",
       width: 54,
       height: 48,
       paddingTop: 8,

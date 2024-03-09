@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TextInput, StyleSheet, View, Text } from "react-native";
 import { COLORS } from "../utilities/styles/colors";
 
-const InputField = ({
+const SearchField = ({
   value,
   onChange,
   label = "",
@@ -27,7 +27,7 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default SearchField;
 
 const styles = StyleSheet.create({
   container: {
@@ -45,12 +45,9 @@ const styles = StyleSheet.create({
   input: {
     width: "100%",
     padding: 10,
-    borderRadius: 10,
-    backgroundColor: COLORS.white,
-    // margin: 10,
     marginTop: 2,
     marginBottom: 0,
     borderWidth: 2,
-    borderColor: COLORS.cardShadow,
+    borderBottomColor: COLORS.cardShadow,
   },
 });

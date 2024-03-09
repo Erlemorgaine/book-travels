@@ -1,6 +1,7 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 import { COLORS } from "../utilities/styles/colors";
+import { RadioButton } from "react-native-paper";
 
 const RadioGroup = ({ label, options, selectedOption, onOptionSelect }) => {
   return (
@@ -8,15 +9,18 @@ const RadioGroup = ({ label, options, selectedOption, onOptionSelect }) => {
       <Text style={styles.label}>{label}</Text>
       <View style={styles.optionsContainer}>
         {options.map((option) => (
-          <View
-            key={option}
-            style={[
-              styles.option,
-              option === selectedOption && styles.selectedOption,
-            ]}
-            onTouchEnd={() => onOptionSelect(option)}
-          >
-            <Text style={styles.optionText}>{option}</Text>
+          <View key={option} style={styles.option}>
+            <RadioButton
+              label={option}
+              value={option}
+              status={option === selectedOption ? "checked" : "unchecked"}
+              onPress={() => onOptionSelect(option)}
+              color={COLORS.primaryGreenDark}
+            />
+
+            <Pressable onPress={() => onOptionSelect(option)}>
+              <Text>{option}</Text>
+            </Pressable>
           </View>
         ))}
       </View>
@@ -26,22 +30,23 @@ const RadioGroup = ({ label, options, selectedOption, onOptionSelect }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 12,
+    marginBottom: 2,
   },
   label: {
     fontSize: 16,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 2,
   },
   optionsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
   option: {
-    padding: 10,
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: COLORS.primaryGreen,
+    flexDirection: "row",
+    alignItems: "center",
   },
   selectedOption: {
     backgroundColor: COLORS.primaryGreen,

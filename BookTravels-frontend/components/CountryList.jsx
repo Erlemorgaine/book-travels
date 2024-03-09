@@ -197,7 +197,6 @@ const styles = StyleSheet.create({
         width: 70,
       },
       code: {
-        display: "flex",
         width: 48,
         height: 48,
         justifyContent: "center",

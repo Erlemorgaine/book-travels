@@ -27,7 +27,6 @@ const AddBookModal = ({
 
   const addBookInDB = () => {
     addBook(newEntry, (newData) => {
-      console.log(newData);
       onBookListUpdate(newData);
       closeModal();
     });

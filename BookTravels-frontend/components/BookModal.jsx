@@ -16,13 +16,21 @@ export default function BookModal({
   onBookListUpdate,
 }) {
   const [updatedEntry, setUpdatedEntry] = useState(null);
+  const [updated, setUpdated] = useState(false);
 
   useEffect(() => {
     setUpdatedEntry({ ...bookItem });
   }, [bookItem]);
 
   function updateBookInDB() {
-    updateBook(updatedEntry, onBookListUpdate);
+    updateBook(updatedEntry, (data) => {
+      onBookListUpdate(data);
+      setUpdated(true);
+
+      setTimeout(() => {
+        setUpdated(false);
+      }, 3000);
+    });
   }
 
   return (
@@ -67,6 +75,8 @@ export default function BookModal({
               label="Update the book details"
               onPress={updateBookInDB}
             />
+
+            {updated && <Text>Updated!</Text>}
           </View>
         </View>
       )}
