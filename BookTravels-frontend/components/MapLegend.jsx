@@ -11,7 +11,7 @@ const MapLegend = ({ style }) => {
       </View>
       <View style={styles.legend.item}>
         <View style={styles.legend.item.unread} />
-        <Text style={styles.legend.text}>Unread</Text>
+        <Text style={styles.legend.text}>Want to read</Text>
       </View>
     </View>
   );

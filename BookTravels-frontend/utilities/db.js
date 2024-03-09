@@ -28,7 +28,7 @@ const setupDatabase = (callback) => {
       "country_code VARCHAR(2) NOT NULL",
       "title TEXT NOT NULL",
       "writer TEXT NOT NULL",
-      "read BOOLEAN",
+      "read TEXT CHECK (read IN ('true', 'false') OR read IS NULL)",
       "notes TEXT",
       "FOREIGN KEY (country_code) REFERENCES countries(code)",
     ]);
@@ -50,11 +50,13 @@ const setupDatabase = (callback) => {
 };
 
 const seedCountries = (tx) => {
-  countries.forEach((country) => {
+  countries.forEach((country, i) => {
     tx.executeSql(
       `INSERT INTO countries (name, code) VALUES (?, ?);`,
       [country.name, country.code],
-      () => console.log(`Inserted ${country.name} into countries table`),
+      () => {
+        if (i === countries.length - 2) console.log("Inserted all countries");
+      },
       (error) => console.error(`Error inserting ${country.name}: `, error)
     );
   });
@@ -80,8 +82,12 @@ function getBooks(callback) {
       LEFT JOIN books b ON c.code = b.country_code;`,
       [],
       (_, { rows: { _array } }) => {
-        // TODO: This is not correct, use true/false strings to distingiush between read, unread and no read
-        callback(_array.map((book) => ({ ...book, read: !!book.read })));
+        callback(
+          _array.map((book) => ({
+            ...book,
+            read: readToBoolean(book.read),
+          }))
+        );
       },
       (error) => console.error("Error retrieving items from database: ", error)
     );
@@ -119,7 +125,7 @@ function uploadBooks(books, callback) {
         db.transaction((tx) => {
           tx.executeSql(
             `INSERT INTO books (title, writer, read, country_code) VALUES (?, ?, ?, ?);`,
-            [book.title, book.writer, book.read || true, book.code],
+            [book.title, book.writer, readToString(book.read), book.code],
             () => getBooksOnLastBook(isLastBook),
             (error) =>
               console.error("Error inserting item into database: ", error)
@@ -136,7 +142,13 @@ function addBook(countryCode, book) {
   db.transaction((tx) => {
     tx.executeSql(
       `INSERT INTO books (title, writer, read, notes, country_code) VALUES (?, ?, ?, ?, ?);`,
-      [book.title, book.writer, book.read, book.notes, countryCode],
+      [
+        book.title,
+        book.writer,
+        readToString(book.read),
+        book.notes,
+        countryCode,
+      ],
       (_, result) => callback(result),
       (error) => console.error("Error inserting item into database: ", error)
     );
@@ -147,7 +159,13 @@ function updateBook(newBook) {
   db.transaction((tx) => {
     tx.executeSql(
       `UPDATE books SET title = ?, writer = ?, read = ?, notes = ? WHERE id = ?;`,
-      [newBook.title, newBook.writer, newBook.read, newBook.notes, newBook.id],
+      [
+        newBook.title,
+        newBook.writer,
+        readToString(newBook.read),
+        newBook.notes,
+        newBook.id,
+      ],
       (_, result) => callback(result),
       (error) => console.error("Error inserting item into database: ", error)
     );
@@ -164,6 +182,18 @@ async function removeDatabase() {
   } catch (error) {
     console.error("Error removing database:", error);
   }
+}
+
+function readToBoolean(read) {
+  if (read === "true") return true;
+  if (read === "false") return false;
+  return undefined;
+}
+
+function readToString(read) {
+  if (read === true) return "true";
+  if (read === false) return "false";
+  return undefined;
 }
 
 export {

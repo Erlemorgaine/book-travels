@@ -15,7 +15,7 @@ const CountriesReadChart: React.FC<CountriesReadChartProps> = ({
   amountUnread,
   style = {},
 }) => {
-  console.log(amountCountries, amountRead, amountUnread)
+  
 
   const windowWidth = Dimensions.get("window").width;
   const barWidth = windowWidth * 0.4;

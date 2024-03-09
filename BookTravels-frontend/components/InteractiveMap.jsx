@@ -40,7 +40,6 @@ const InteractiveMap = ({
   const mapHeightFactor = 0.85;
 
   useEffect(() => {
-    console.log("Create MAP");
     createMap();
 
     bookObj.current = booksPerCountry.reduce((prev, next) => {
@@ -163,7 +162,7 @@ const InteractiveMap = ({
         amountCountries={booksPerCountry.length}
         amountRead={amountBooksRead}
         amountUnread={
-          booksPerCountry.filter((book) => "read" in book && !book.read).length
+          booksPerCountry.filter((book) => book.read === false).length
         }
         style={{ position: "absolute", right: 10, bottom: 8 }}
       />

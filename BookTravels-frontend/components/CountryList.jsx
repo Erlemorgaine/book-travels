@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FlatList, View, StyleSheet, Dimensions } from "react-native";
 import * as DocumentPicker from "expo-document-picker";
 import * as FileSystem from "expo-file-system";
+import { readString } from "react-native-csv";
 
 import BookModal from "./BookModal";
 import BookItem from "./BookItem";
 import NoBooksView from "./NoBooksView";
 import ButtonPrimary from "./ButtonPrimary";
 import AddBookModal from "./AddBookModal";
+import RadioGroup from "./RadioGroup";
 
 import { COLORS } from "../utilities/styles/colors";
 import { FONTS } from "../utilities/styles/fonts";
@@ -20,12 +22,30 @@ const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
   const [selectedBook, setSelectedBook] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
   const [noViewErrorMessage, setNoViewErrorMessage] = useState("");
+  const [selectedOrderOption, setSelectedOrderOption] = useState("code");
 
-  const allBooks = countryBooks.filter((country) => country.title);
+  const allBooks = useRef([]);
+
+  useEffect(() => {
+    allBooks.current = countryBooks.filter((country) => country.title);
+  }, [countryBooks]);
 
   function handleJsonData(fileContent) {
     const data = JSON.parse(fileContent);
+    uploadInitialData(data);
+  }
 
+  function handleCSVData(fileContent) {
+    const data = readString(fileContent, {
+      encoding: "utf-8",
+      header: true,
+      dynamicTyping: true,
+    }).data;
+
+    uploadInitialData(data);
+  }
+
+  function uploadInitialData(data) {
     if (!Array.isArray(data)) {
       setNoViewErrorMessage(
         "Make sure your JSON file contains an array of objects"
@@ -39,15 +59,12 @@ const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
     }
   }
 
-  function handleCSVData(file) {
-    console.log("CSV file: ", file);
-  }
-
   async function importExternalFile() {
     try {
       const response = await DocumentPicker.getDocumentAsync({
         type: ["application/json", "text/csv"],
       });
+
       if (response.assets?.length) {
         const file = response.assets[0];
         const fileContent = await FileSystem.readAsStringAsync(file.uri);
@@ -63,21 +80,49 @@ const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
     }
   }
 
+  function orderBooks(key) {
+    setSelectedOrderOption(key);
+
+    switch (key) {
+      case "read":
+        allBooks.current.sort((a, b) => {
+          if (a.read && !b.read) return -1;
+          if (!a.read && b.read) return 1;
+          return 0;
+        });
+
+        break;
+      default:
+        allBooks.current.sort((a, b) => {
+          return a[key].localeCompare(b[key]);
+        });
+    }
+  }
+
   return (
     <View style={styles.bookCase}>
       <View style={styles.addBtn}>
-        {!!allBooks.length && (
-          <ButtonPrimary
-            style={{ marginTop: 10 }}
-            label="Add a book"
-            onPress={() => setShowAddModal(true)}
-          />
+        {!!allBooks.current.length && (
+          <View>
+            <ButtonPrimary
+              style={{ marginTop: 10 }}
+              label="Add a book"
+              onPress={() => setShowAddModal(true)}
+            />
+
+            <RadioGroup
+              label="Order by"
+              options={["writer", "title", "code", "read"]}
+              selectedOption={selectedOrderOption}
+              onOptionSelect={orderBooks}
+            />
+          </View>
         )}
       </View>
 
       <FlatList
         style={styles.bookCase.bookList}
-        data={allBooks}
+        data={allBooks.current}
         ListEmptyComponent={
           <NoBooksView
             onAdd={() => setShowAddModal(false)}
