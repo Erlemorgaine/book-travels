@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { FlatList, View, StyleSheet, Dimensions } from "react-native";
+import * as DocumentPicker from "expo-document-picker";
+import * as FileSystem from "expo-file-system";
+
 import BookModal from "./BookModal";
 import BookItem from "./BookItem";
 import NoBooksView from "./NoBooksView";
@@ -8,6 +11,7 @@ import AddBookModal from "./AddBookModal";
 
 import { COLORS } from "../utilities/styles/colors";
 import { FONTS } from "../utilities/styles/fonts";
+import { uploadBooks } from "../utilities/db";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -15,8 +19,49 @@ const windowHeight = Dimensions.get("window").height;
 const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
   const [selectedBook, setSelectedBook] = useState(null);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [noViewErrorMessage, setNoViewErrorMessage] = useState("");
 
-  const allBooks = countryBooks.filter((country) => country.book);
+  const allBooks = countryBooks.filter((country) => country.title);
+
+  function handleJsonData(fileContent) {
+    const data = JSON.parse(fileContent);
+
+    if (!Array.isArray(data)) {
+      setNoViewErrorMessage(
+        "Make sure your JSON file contains an array of objects"
+      );
+    } else if (data.every((d) => d.writer && d.title && d.writer && d.code)) {
+      uploadBooks(data, onBookListUpdate);
+    } else {
+      setNoViewErrorMessage(
+        'Make sure that all objects in your JSON file have the properties "writer" and "title" and "code"'
+      );
+    }
+  }
+
+  function handleCSVData(file) {
+    console.log("CSV file: ", file);
+  }
+
+  async function importExternalFile() {
+    try {
+      const response = await DocumentPicker.getDocumentAsync({
+        type: ["application/json", "text/csv"],
+      });
+      if (response.assets?.length) {
+        const file = response.assets[0];
+        const fileContent = await FileSystem.readAsStringAsync(file.uri);
+
+        if (file.mimeType === "application/json") {
+          handleJsonData(fileContent);
+        } else if (file.mimeType === "text/csv") {
+          handleCSVData(fileContent);
+        }
+      }
+    } catch (error) {
+      console.error("Error opening file dialog: ", error);
+    }
+  }
 
   return (
     <View style={styles.bookCase}>
@@ -34,11 +79,15 @@ const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
         style={styles.bookCase.bookList}
         data={allBooks}
         ListEmptyComponent={
-          <NoBooksView onAdd={() => setShowAddModal(false)} />
+          <NoBooksView
+            onAdd={() => setShowAddModal(false)}
+            onExternalImport={importExternalFile}
+            errorMessage={noViewErrorMessage}
+          />
         }
         renderItem={({ item }) => (
           <BookItem
-            book={item.book}
+            title={item.title}
             countryCode={item.code}
             read={item.read}
             writer={item.writer}

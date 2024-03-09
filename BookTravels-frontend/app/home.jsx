@@ -3,7 +3,7 @@ import { View, StyleSheet, ImageBackground } from "react-native";
 import InteractiveMap from "../components/InteractiveMap";
 import CountryList from "../components/CountryList";
 import { useLocalSearchParams } from "expo-router";
-import { getBooksForUser } from "../utilities/api";
+import { getBooks } from "../utilities/db";
 import { DataContext } from "../contexts/data";
 import { COLORS } from "../utilities/styles/colors";
 
@@ -12,17 +12,20 @@ export default Home = () => {
   const { data } = useContext(DataContext);
 
   const [countriesWithBooks, setCountriesWithBooks] = useState(null);
+  const [amountBooksRead, setAmountBooksRead] = useState(0);
 
   useEffect(() => {
     if (data?.length) {
       setCountriesWithBooks(data);
     } else {
-      setCountriesWithBooks([]);
-      // getBooksForUser(userId).then((books) => {
-      //   setCountriesWithBooks(books);
-      // });
+      getBooks(setBooksOnUpdate);
     }
   }, []);
+
+  function setBooksOnUpdate(data) {
+    setCountriesWithBooks(data);
+    setAmountBooksRead(data.filter((country) => country.read).length);
+  }
 
   return (
     countriesWithBooks && (
@@ -33,15 +36,17 @@ export default Home = () => {
         <View style={styles.container}>
           {!!countriesWithBooks?.length && (
             <InteractiveMap
+              key={"map-" + amountBooksRead}
               booksPerCountry={countriesWithBooks}
               userId={userId}
               onBookListUpdate={setCountriesWithBooks}
+              amountBooksRead={amountBooksRead}
             />
           )}
           <CountryList
             countryBooks={countriesWithBooks}
             userId={userId}
-            onBookListUpdate={setCountriesWithBooks}
+            onBookListUpdate={setBooksOnUpdate}
           />
         </View>
       </ImageBackground>

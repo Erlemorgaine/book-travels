@@ -1,7 +1,9 @@
 import * as SQLite from "expo-sqlite";
+import * as FileSystem from "expo-file-system";
 import { countries } from "./constants/countries";
 
-const db = SQLite.openDatabase("book_travels.db");
+const dbName = "book_travels.db";
+const db = SQLite.openDatabase(dbName);
 
 function createTable(tx, tableName, tableColumns) {
   tx.executeSql(
@@ -12,7 +14,7 @@ function createTable(tx, tableName, tableColumns) {
   );
 }
 
-const setupDatabase = () => {
+const setupDatabase = (callback) => {
   // Create countries table
   db.transaction((tx) => {
     createTable(tx, "countries", [
@@ -23,19 +25,20 @@ const setupDatabase = () => {
     // Create books table
     createTable(tx, "books", [
       "id INTEGER PRIMARY KEY AUTOINCREMENT",
-      "name TEXT NOT NULL",
+      "country_code VARCHAR(2) NOT NULL",
+      "title TEXT NOT NULL",
       "writer TEXT NOT NULL",
       "read BOOLEAN",
-      "notes TEXT NOT NULL",
-      "country_code VARCHAR(2) NOT NULL",
+      "notes TEXT",
       "FOREIGN KEY (country_code) REFERENCES countries(code)",
     ]);
 
-    // Insert initial countries
+    // If no countries exist, insert initial countries
     tx.executeSql(
       `SELECT * FROM countries LIMIT 1;`,
       [],
       (_, { rows }) => {
+        console.log(rows);
         if (rows.length === 0) {
           // If the table is empty, seed it with initial data
           seedCountries(tx);
@@ -57,78 +60,118 @@ const seedCountries = (tx) => {
   });
 };
 
-function getBooks(callback) {
+function getCountries(callback) {
   db.transaction((tx) => {
     tx.executeSql(
-      `SELECT * FROM countries as c LEFT JOIN books as b WHERE c.code = b.;`,
+      `SELECT * FROM countries;`,
       [],
-      (_, { rows: { _array } }) => callback(_array),
+      (_, { rows: { _array } }) => {
+        callback(_array);
+      },
       (error) => console.error("Error retrieving items from database: ", error)
     );
   });
 }
 
-function uploadBooks(books) {
+function getBooks(callback) {
   db.transaction((tx) => {
     tx.executeSql(
-      `INSERT INTO items (name) VALUES (?);`,
-      [name],
-      (_, result) => callback(result.insertId),
+      `SELECT c.name, c.code, b.title, b.writer, b.read, b.notes FROM countries c 
+      LEFT JOIN books b ON c.code = b.country_code;`,
+      [],
+      (_, { rows: { _array } }) => {
+        // TODO: This is not correct, use true/false strings to distingiush between read, unread and no read
+        callback(_array.map((book) => ({ ...book, read: !!book.read })));
+      },
+      (error) => console.error("Error retrieving items from database: ", error)
+    );
+  });
+}
+
+function getBook({ writer, title }, callback) {
+  db.transaction((tx) => {
+    tx.executeSql(
+      `SELECT * from books WHERE writer = ? AND title = ?;`,
+      [writer, title],
+      (_, { rows: { _array } }) => {
+        callback(_array);
+      },
+      (error) => console.error("Error retrieving items from database: ", error)
+    );
+  });
+}
+
+function uploadBooks(books, callback) {
+  console.log("Uploading books...");
+
+  const getBooksOnLastBook = (isLastBook) => {
+    if (isLastBook) {
+      console.log("Books uploaded");
+      getBooks(callback);
+    }
+  };
+
+  books.forEach((book, index) => {
+    const isLastBook = index === books.length - 1;
+
+    getBook(book, (existingBook) => {
+      if (!existingBook?.length) {
+        db.transaction((tx) => {
+          tx.executeSql(
+            `INSERT INTO books (title, writer, read, country_code) VALUES (?, ?, ?, ?);`,
+            [book.title, book.writer, book.read || true, book.code],
+            () => getBooksOnLastBook(isLastBook),
+            (error) =>
+              console.error("Error inserting item into database: ", error)
+          );
+        });
+      } else {
+        getBooksOnLastBook(isLastBook);
+      }
+    });
+  });
+}
+
+function addBook(countryCode, book) {
+  db.transaction((tx) => {
+    tx.executeSql(
+      `INSERT INTO books (title, writer, read, notes, country_code) VALUES (?, ?, ?, ?, ?);`,
+      [book.title, book.writer, book.read, book.notes, countryCode],
+      (_, result) => callback(result),
       (error) => console.error("Error inserting item into database: ", error)
     );
   });
 }
 
-function addBook(userId, book) {
+function updateBook(newBook) {
   db.transaction((tx) => {
     tx.executeSql(
-      `INSERT INTO items (name) VALUES (?);`,
-      [name],
-      (_, result) => callback(result.insertId),
+      `UPDATE books SET title = ?, writer = ?, read = ?, notes = ? WHERE id = ?;`,
+      [newBook.title, newBook.writer, newBook.read, newBook.notes, newBook.id],
+      (_, result) => callback(result),
       (error) => console.error("Error inserting item into database: ", error)
     );
   });
 }
 
-function updateBook(userId, newBook) {
-  db.transaction((tx) => {
-    tx.executeSql(
-      `INSERT INTO items (name) VALUES (?);`,
-      [name],
-      (_, result) => callback(result.insertId),
-      (error) => console.error("Error inserting item into database: ", error)
-    );
-  });
-}
+async function removeDatabase() {
+  const databaseFilePath = FileSystem.documentDirectory + dbName;
 
-function createUser(userId) {
-  db.transaction((tx) => {
-    tx.executeSql(
-      `INSERT INTO items (name) VALUES (?);`,
-      [name],
-      (_, result) => callback(result.insertId),
-      (error) => console.error("Error inserting item into database: ", error)
-    );
-  });
-}
-
-function loginUser(userId) {
-  db.transaction((tx) => {
-    tx.executeSql(
-      `INSERT INTO items (name) VALUES (?);`,
-      [name],
-      (_, result) => callback(result.insertId),
-      (error) => console.error("Error inserting item into database: ", error)
-    );
-  });
+  try {
+    console.log("Removing....");
+    await FileSystem.deleteAsync(databaseFilePath);
+    console.log("Database removed successfully.");
+  } catch (error) {
+    console.error("Error removing database:", error);
+  }
 }
 
 export {
   setupDatabase,
   uploadBooks,
+  getCountries,
   getBooks,
   addBook,
   updateBook,
-  createUser,
-  loginUser,
+  removeDatabase,
 };

@@ -2,7 +2,7 @@
   {
     "name": "Afghanistan",
     "code": "AF",
-    "book": "The kite runner",
+    "title": "The kite runner",
     "writer": "Khaled Hosseini",
     "read": true
   },
@@ -45,7 +45,7 @@
   {
     "name": "Argentina",
     "code": "AR",
-    "book": "Elena knows",
+    "title": "Elena knows",
     "writer": "Claudio Piñeiro",
     "read": false
   },
@@ -60,7 +60,7 @@
   {
     "name": "Australia",
     "code": "AU",
-    "book": "The book thief",
+    "title": "The book thief",
     "writer": "Marcus Zusak",
     "read": true
   },
@@ -95,7 +95,7 @@
   {
     "name": "Belgium",
     "code": "BE",
-    "book": "Kaas",
+    "title": "Kaas",
     "writer": "Willem Elsschot",
     "read": true
   },
@@ -126,7 +126,7 @@
   {
     "name": "Botswana",
     "code": "BW",
-    "book": "Go tell the sun",
+    "title": "Go tell the sun",
     "writer": "Wame M. Molefhe",
     "read": false
   },
@@ -145,7 +145,7 @@
   {
     "name": "Brunei",
     "code": "BN",
-    "book": "Written in black",
+    "title": "Written in black",
     "writer": "K.H. Lim",
     "read": true
   },
@@ -156,7 +156,7 @@
   {
     "name": "Burkina Faso",
     "code": "BF",
-    "book": "So distant from my life",
+    "title": "So distant from my life",
     "writer": "Monique Ilboudo",
     "read": true
   },
@@ -168,20 +168,20 @@
     "name": "Cambodia",
     "code": "KH",
     "writer": "Loung Ung",
-    "book": "First they killed my father",
+    "title": "First they killed my father",
     "read": false
   },
   {
     "name": "Cameroon",
     "code": "CM",
-    "book": "Days come and go",
+    "title": "Days come and go",
     "writer": "Hemley Boum",
     "read": false
   },
   {
     "name": "Canada",
     "code": "CA",
-    "book": "The handmaid's tale",
+    "title": "The handmaid's tale",
     "writer": "Margaret Atwood",
     "read": true
   },
@@ -208,7 +208,7 @@
   {
     "name": "China",
     "code": "CN",
-    "book": "Wild swans",
+    "title": "Wild swans",
     "writer": "Jung Chang",
     "read": false
   },
@@ -263,21 +263,21 @@
   {
     "name": "Czech Republic",
     "code": "CZ",
-    "book": "The unbearable lightness of being",
+    "title": "The unbearable lightness of being",
     "writer": "Milan Kundera",
     "read": true
   },
   {
     "name": "Denmark",
     "code": "DK",
-    "book": "Fairy Tales",
+    "title": "Fairy Tales",
     "writer": "Hans Christian Andersen",
     "read": true
   },
   {
     "name": "Djibouti",
     "code": "DJ",
-    "book": "Why Do You Dance When You Walk?",
+    "title": "Why Do You Dance When You Walk?",
     "writer": "Abdourahman A. Waberi",
     "read": true
   },
@@ -296,7 +296,7 @@
   {
     "name": "Egypt",
     "code": "EG",
-    "book": "Woman at point zero",
+    "title": "Woman at point zero",
     "writer": "Nawal El Saadawi",
     "read": true
   },
@@ -339,7 +339,7 @@
   {
     "name": "France",
     "code": "FR",
-    "book": "Bonjour tristesse",
+    "title": "Bonjour tristesse",
     "writer": "Françoise Sagan",
     "read": true
   },
@@ -366,21 +366,21 @@
   {
     "name": "Georgia",
     "code": "GE",
-    "book": "Hard by a Great Forest",
+    "title": "Hard by a Great Forest",
     "writer": "Leo Vardiashvili",
     "read": false
   },
   {
     "name": "Germany",
     "code": "DE",
-    "book": "Der Leser",
+    "title": "Der Leser",
     "writer": "Bernhard Schlink",
     "read": true
   },
   {
     "name": "Ghana",
     "code": "GH",
-    "book": "Homegoing",
+    "title": "Homegoing",
     "writer": "Yaa Gyasi",
     "read": true
   },
@@ -391,7 +391,7 @@
   {
     "name": "Greece",
     "code": "GR",
-    "book": "Sappho's poems",
+    "title": "Sappho's poems",
     "writer": "Sappho",
     "read": true
   },
@@ -450,7 +450,7 @@
   {
     "name": "Hong Kong",
     "code": "HK",
-    "book": "The impossible city",
+    "title": "The impossible city",
     "writer": "Karen Cheung",
     "read": true
   },
@@ -461,28 +461,28 @@
   {
     "name": "Iceland",
     "code": "IS",
-    "book": "The greenhouse",
+    "title": "The greenhouse",
     "writer": "Auður Ava Ólafsdóttir",
     "read": true
   },
   {
     "name": "India",
     "code": "IN",
-    "book": "The white tiger",
+    "title": "The white tiger",
     "writer": "Aravind Adiga",
     "read": true
   },
   {
     "name": "Indonesia",
     "code": "ID",
-    "book": "Beauty is a wound",
+    "title": "Beauty is a wound",
     "writer": "Eka Kurniawan",
     "read": true
   },
   {
     "name": "Iran, Islamic Republic Of",
     "code": "IR",
-    "book": "Persepolis",
+    "title": "Persepolis",
     "writer": "Marjane Satrapi",
     "read": true
   },
@@ -493,7 +493,7 @@
   {
     "name": "Ireland",
     "code": "IE",
-    "book": "Foster",
+    "title": "Foster",
     "writer": "Claire Keegan",
     "read": true
   },
@@ -508,21 +508,21 @@
   {
     "name": "Italy",
     "code": "IT",
-    "book": "L'amica geniale",
+    "title": "L'amica geniale",
     "writer": "Elena Ferrante",
     "read": true
   },
   {
     "name": "Jamaica",
     "code": "JM",
-    "book": "Broughtupsy",
+    "title": "Broughtupsy",
     "writer": "Christina Cooke",
     "read": false
   },
   {
     "name": "Japan",
     "code": "JP",
-    "book": "Locanda degli amori diversi",
+    "title": "Locanda degli amori diversi",
     "writer": "Ito Ogawa",
     "read": true
   },
@@ -541,7 +541,7 @@
   {
     "name": "Kenya",
     "code": "KE",
-    "book": "Things they lost",
+    "title": "Things they lost",
     "writer": "Okwiri Oduor",
     "read": true
   },
@@ -556,7 +556,7 @@
   {
     "name": "Korea, Republic of",
     "code": "KR",
-    "book": "Born 1982",
+    "title": "Born 1982",
     "writer": "Kim Ji-young",
     "read": true
   },
@@ -623,7 +623,7 @@
   {
     "name": "Malaysia",
     "code": "MY",
-    "book": "Black water sister",
+    "title": "Black water sister",
     "writer": "Zen Cho",
     "read": true
   },
@@ -662,7 +662,7 @@
   {
     "name": "Mexico",
     "code": "MX",
-    "book": "Hurricane season",
+    "title": "Hurricane season",
     "writer": "Fernanda Melchor",
     "read": true
   },
@@ -690,13 +690,13 @@
     "name": "Morocco",
     "code": "MA",
     "writer": "Fatima Mernissi",
-    "book": "Beyond the veil",
+    "title": "Beyond the veil",
     "read": false
   },
   {
     "name": "Mozambique",
     "code": "MZ",
-    "book": "The first wife",
+    "title": "The first wife",
     "writer": "Paulina Chiziane",
     "read": false
   },
@@ -704,13 +704,13 @@
     "name": "Myanmar",
     "code": "MM",
     "writer": "Nu Nu Yi",
-    "book": "Smile as they bow",
+    "title": "Smile as they bow",
     "read": true
   },
   {
     "name": "Namibia",
     "code": "NA",
-    "book": "The Purple Violet of Oshaantu",
+    "title": "The Purple Violet of Oshaantu",
     "writer": "Neshani Andreas",
     "read": false
   },
@@ -725,7 +725,7 @@
   {
     "name": "Netherlands",
     "code": "NL",
-    "book": "Lichter dan ik",
+    "title": "Lichter dan ik",
     "writer": "Dido Michielsen",
     "read": true
   },
@@ -752,7 +752,7 @@
   {
     "name": "Nigeria",
     "code": "NG",
-    "book": "Half a yellow sun",
+    "title": "Half a yellow sun",
     "writer": "Chimamanda Ngozi Adichie",
     "read": true
   },
@@ -787,7 +787,7 @@
   {
     "name": "Palestinian Territory, Occupied",
     "code": "PS",
-    "book": "My First and Only Love",
+    "title": "My First and Only Love",
     "writer": "Sahar Khalifeh",
     "read": false
   },
@@ -811,7 +811,7 @@
     "name": "Philippines",
     "code": "PH",
     "writer": "bebang Siy",
-    "book": "It's a men's world",
+    "title": "It's a men's world",
     "read": false
   },
   {
@@ -845,7 +845,7 @@
   {
     "name": "Russian Federation",
     "code": "RU",
-    "book": "Riot days",
+    "title": "Riot days",
     "writer": "Maria Alyokhina",
     "read": true
   },
@@ -908,7 +908,7 @@
   {
     "name": "Singapore",
     "code": "SG",
-    "book": "Ministry of Moral Panic",
+    "title": "Ministry of Moral Panic",
     "writer": "Amanda Lee Koe",
     "read": true
   },
@@ -931,7 +931,7 @@
   {
     "name": "South Africa",
     "code": "ZA",
-    "book": "Period pain",
+    "title": "Period pain",
     "writer": "Kopano Matlwa",
     "read": true
   },
@@ -942,14 +942,14 @@
   {
     "name": "Spain",
     "code": "ES",
-    "book": "Shadow of the wind",
+    "title": "Shadow of the wind",
     "writer": "Carlos Ruiz Zafón",
     "read": true
   },
   {
     "name": "Sri Lanka",
     "code": "LK",
-    "book": "The Seven Moons of Maali Almeida",
+    "title": "The Seven Moons of Maali Almeida",
     "writer": "Shehan Karunatilaka",
     "read": true
   },
@@ -960,7 +960,7 @@
   {
     "name": "Suriname",
     "code": "SR",
-    "book": "Hoe duur was de suiker",
+    "title": "Hoe duur was de suiker",
     "writer": "Cynthia Mc Leod",
     "read": true
   },
@@ -975,7 +975,7 @@
   {
     "name": "Sweden",
     "code": "SE",
-    "book": "Ronja de roversdochter",
+    "title": "Ronja de roversdochter",
     "writer": "Astrid Lindgren",
     "read": true
   },
@@ -998,14 +998,14 @@
   {
     "name": "Tanzania, United Republic of",
     "code": "TZ",
-    "book": "By the sea",
+    "title": "By the sea",
     "writer": "Abdulrazak Gurnah",
     "read": true
   },
   {
     "name": "Thailand",
     "code": "TH",
-    "book": "Sightseeing",
+    "title": "Sightseeing",
     "writer": "Rattawut Lapcharoensap",
     "read": true
   },
@@ -1036,7 +1036,7 @@
   {
     "name": "Turkey",
     "code": "TR",
-    "book": "Snow",
+    "title": "Snow",
     "writer": "Orhan Pamuk",
     "read": true
   },
@@ -1067,14 +1067,14 @@
   {
     "name": "United Kingdom",
     "code": "GB",
-    "book": "White teeth",
+    "title": "White teeth",
     "writer": "Zadie Smith",
     "read": true
   },
   {
     "name": "United States",
     "code": "US",
-    "book": "To kill a mockingbird",
+    "title": "To kill a mockingbird",
     "writer": "Harper Lee",
     "read": true
   },
@@ -1101,7 +1101,7 @@
   {
     "name": "Viet Nam",
     "code": "VN",
-    "book": "The mountains sing",
+    "title": "The mountains sing",
     "writer": "Nguyễn Phan Quế Mai",
     "read": true
   },
@@ -1132,7 +1132,7 @@
   {
     "name": "Zimbabwe",
     "code": "ZW",
-    "book": "Glory",
+    "title": "Glory",
     "writer": "NoViolet Bulawayo",
     "read": true
   }

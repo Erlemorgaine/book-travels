@@ -111,7 +111,7 @@ function updateBook(req, res) {
 
   if (currentData) {
     currentData.writer = userData.writer;
-    currentData.book = userData.book;
+    currentData.title = userData.title;
     currentData.read = userData.read;
   } else {
     res.status(400).json({ message: "No country with that code exists" });

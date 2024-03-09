@@ -14,7 +14,12 @@ import MapLegend from "./MapLegend";
 import BookModal from "./BookModal";
 import CountriesReadChart from "./CountriesReadChart";
 
-const InteractiveMap = ({ booksPerCountry, userId, onBookListUpdate }) => {
+const InteractiveMap = ({
+  booksPerCountry,
+  userId,
+  amountBooksRead,
+  onBookListUpdate,
+}) => {
   const windowWidth = Dimensions.get("window").width;
 
   const svgRef = useRef(null);
@@ -35,6 +40,7 @@ const InteractiveMap = ({ booksPerCountry, userId, onBookListUpdate }) => {
   const mapHeightFactor = 0.85;
 
   useEffect(() => {
+    console.log("Create MAP");
     createMap();
 
     bookObj.current = booksPerCountry.reduce((prev, next) => {
@@ -60,7 +66,7 @@ const InteractiveMap = ({ booksPerCountry, userId, onBookListUpdate }) => {
     const book = bookObj.current[code];
 
     if (book) {
-      return book.book
+      return book.title
         ? book.read
           ? COLORS.primaryGreen
           : COLORS.primaryRed
@@ -155,7 +161,7 @@ const InteractiveMap = ({ booksPerCountry, userId, onBookListUpdate }) => {
 
       <CountriesReadChart
         amountCountries={booksPerCountry.length}
-        amountRead={booksPerCountry.filter((book) => book.read).length}
+        amountRead={amountBooksRead}
         amountUnread={
           booksPerCountry.filter((book) => "read" in book && !book.read).length
         }

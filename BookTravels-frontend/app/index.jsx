@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
-import { getBooksForUser } from "../utilities/api";
+import { getBooks, removeDatabase } from "../utilities/db";
 
 import { BottomTabsNavigator } from "../components/BottomTabs.navigator";
 import { Redirect } from "expo-router";
@@ -17,16 +17,17 @@ export default function App() {
   useEffect(() => {
     setupDatabase();
     initializeUser();
+
+    // setTimeout(() => {
+    //   removeDatabase();
+    // }, 5000);
   }, []);
 
   async function initializeUser() {
     const storedId = await AsyncStorage.getItem(storageUserId);
     if (storedId) {
       setUserId(storedId);
-
-      // getBooksForUser(storedId).then((books) => {
-      //   setCountryBooks(books);
-      // });
+      getBooks(setCountryBooks);
     }
 
     setLoading(false);
@@ -35,11 +36,7 @@ export default function App() {
   return (
     !loading && (
       <Redirect
-        href={
-          true
-            ? { pathname: "/home", params: { userId } }
-            : { pathname: "/userAccess" }
-        }
+        href={true ? { pathname: "/home" } : { pathname: "/userAccess" }}
       />
     )
   );

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { View, Alert, StyleSheet } from "react-native";
-import { createUser } from "../utilities/api";
 import ButtonPrimary from "../components/ButtonPrimary";
 import InputField from "../components/InputField";
 import ErrorText from "../components/ErrorText";

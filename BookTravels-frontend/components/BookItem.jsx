@@ -9,7 +9,7 @@ import {
 import { COLORS } from "../utilities/styles/colors";
 import { FONTS } from "../utilities/styles/fonts";
 
-const BookItem = ({ book, writer, countryCode, read, onBookSelect }) => (
+const BookItem = ({ title, writer, countryCode, read, onBookSelect }) => (
   <Pressable key={countryCode} style={styles.bookItem} onPress={onBookSelect}>
     {read && (
       <ImageBackground
@@ -30,7 +30,7 @@ const BookItem = ({ book, writer, countryCode, read, onBookSelect }) => (
     )}
 
     <View>
-      <Text style={styles.bookItem.book}>{book}</Text>
+      <Text style={styles.bookItem.book}>{title}</Text>
       {writer && <Text style={styles.bookItem.writer}>{writer}</Text>}
     </View>
   </Pressable>

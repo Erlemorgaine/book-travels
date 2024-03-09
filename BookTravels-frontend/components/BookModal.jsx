@@ -5,7 +5,7 @@ import ModalWrapper from "./ModalWrapper";
 import AppTitle from "./AppTitle";
 import InputField from "./InputField";
 import AppCheckbox from "./AppCheckbox";
-import { updateBookForUser } from "../utilities/api";
+import { updateBook } from "../utilities/db";
 import CountryMap from "./CountryMap";
 import { COLORS } from "../utilities/styles/colors";
 
@@ -21,10 +21,8 @@ export default function BookModal({
     setUpdatedEntry({ ...bookItem });
   }, [bookItem]);
 
-  function updateBook() {
-    updateBookForUser(userId, updatedEntry).then((newData) =>
-      onBookListUpdate(newData)
-    );
+  function updateBookInDB() {
+    updateBook(updatedEntry, onBookListUpdate);
   }
 
   return (
@@ -44,8 +42,8 @@ export default function BookModal({
               label={`You ${
                 updatedEntry.read ? "read" : "are planning to read"
               }`}
-              value={updatedEntry.book}
-              onChange={(book) => setUpdatedEntry({ ...updatedEntry, book })}
+              value={updatedEntry.title}
+              onChange={(title) => setUpdatedEntry({ ...updatedEntry, title })}
               style={{ marginBottom: 10 }}
             />
 
@@ -57,7 +55,6 @@ export default function BookModal({
               }
             />
 
-
             <AppCheckbox
               setEnabled={() =>
                 setUpdatedEntry({ ...updatedEntry, read: !updatedEntry.read })
@@ -68,7 +65,7 @@ export default function BookModal({
 
             <ButtonPrimary
               label="Update the book details"
-              onPress={updateBook}
+              onPress={updateBookInDB}
             />
           </View>
         </View>

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { View, Alert, StyleSheet, Text } from "react-native";
-import { loginUser } from "../utilities/api";
 import ButtonPrimary from "../components/ButtonPrimary";
 import InputField from "../components/InputField";
 import ErrorText from "../components/ErrorText";
@@ -19,25 +18,26 @@ export default Login = () => {
   const handleInputChange = (text) => setUserId(text);
 
   const handleApiPost = () => {
-    loginUser(userId).then((countries) => {
-      if (!countries) {
-        setShowError(true);
-      } else {
-        onLogin(userId, countries);
-      }
-    });
+    // loginUser(userId).then((countries) => {
+    //   if (!countries) {
+    //     setShowError(true);
+    //   } else {
+    // onLogin(userId, countries);
+    onLogin();
+    //   }
+    // });
   };
 
-  async function onLogin(id, countries) {
-    await AsyncStorage.setItem(storageUserId, id);
+  // async function onLogin(id, countries) {
+  async function onLogin() {
+    // await AsyncStorage.setItem(storageUserId, id);
     // setUserId(id);
     // setCountryBooks(countries);
 
-    setData(countries);
+    // setData(countries);
 
     router.push({
       pathname: "home",
-      params: { userId: id },
     });
   }
 

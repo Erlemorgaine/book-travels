@@ -1,0 +1,387 @@
+[
+  {
+    "name": "Afghanistan",
+    "code": "AF",
+    "title": "The kite runner",
+    "writer": "Khaled Hosseini",
+    "read": true
+  },
+  {
+    "name": "Argentina",
+    "code": "AR",
+    "title": "Elena knows",
+    "writer": "Claudio Piñeiro",
+    "read": false
+  },
+  {
+    "name": "Australia",
+    "code": "AU",
+    "title": "The book thief",
+    "writer": "Marcus Zusak",
+    "read": true
+  },
+  {
+    "name": "Belgium",
+    "code": "BE",
+    "title": "Kaas",
+    "writer": "Willem Elsschot",
+    "read": true
+  },
+  {
+    "name": "Botswana",
+    "code": "BW",
+    "title": "Go tell the sun",
+    "writer": "Wame M. Molefhe",
+    "read": false
+  },
+  {
+    "name": "Brunei",
+    "code": "BN",
+    "title": "Written in black",
+    "writer": "K.H. Lim",
+    "read": true
+  },
+  {
+    "name": "Burkina Faso",
+    "code": "BF",
+    "title": "So distant from my life",
+    "writer": "Monique Ilboudo",
+    "read": true
+  },
+  {
+    "name": "Cambodia",
+    "code": "KH",
+    "writer": "Loung Ung",
+    "title": "First they killed my father",
+    "read": false
+  },
+  {
+    "name": "Cameroon",
+    "code": "CM",
+    "title": "Days come and go",
+    "writer": "Hemley Boum",
+    "read": false
+  },
+  {
+    "name": "Canada",
+    "code": "CA",
+    "title": "The handmaid's tale",
+    "writer": "Margaret Atwood",
+    "read": true
+  },
+  {
+    "name": "China",
+    "code": "CN",
+    "title": "Wild swans",
+    "writer": "Jung Chang",
+    "read": false
+  },
+  {
+    "name": "Czech Republic",
+    "code": "CZ",
+    "title": "The unbearable lightness of being",
+    "writer": "Milan Kundera",
+    "read": true
+  },
+  {
+    "name": "Denmark",
+    "code": "DK",
+    "title": "Fairy Tales",
+    "writer": "Hans Christian Andersen",
+    "read": true
+  },
+  {
+    "name": "Djibouti",
+    "code": "DJ",
+    "title": "Why Do You Dance When You Walk?",
+    "writer": "Abdourahman A. Waberi",
+    "read": true
+  },
+  {
+    "name": "Egypt",
+    "code": "EG",
+    "title": "Woman at point zero",
+    "writer": "Nawal El Saadawi",
+    "read": true
+  },
+  {
+    "name": "France",
+    "code": "FR",
+    "title": "Bonjour tristesse",
+    "writer": "Françoise Sagan",
+    "read": true
+  },
+  {
+    "name": "Georgia",
+    "code": "GE",
+    "title": "Hard by a Great Forest",
+    "writer": "Leo Vardiashvili",
+    "read": false
+  },
+  {
+    "name": "Germany",
+    "code": "DE",
+    "title": "Der Leser",
+    "writer": "Bernhard Schlink",
+    "read": true
+  },
+  {
+    "name": "Ghana",
+    "code": "GH",
+    "title": "Homegoing",
+    "writer": "Yaa Gyasi",
+    "read": true
+  },
+  {
+    "name": "Greece",
+    "code": "GR",
+    "title": "Sappho's poems",
+    "writer": "Sappho",
+    "read": true
+  },
+  {
+    "name": "Hong Kong",
+    "code": "HK",
+    "title": "The impossible city",
+    "writer": "Karen Cheung",
+    "read": true
+  },
+  {
+    "name": "Iceland",
+    "code": "IS",
+    "title": "The greenhouse",
+    "writer": "Auður Ava Ólafsdóttir",
+    "read": true
+  },
+  {
+    "name": "India",
+    "code": "IN",
+    "title": "The white tiger",
+    "writer": "Aravind Adiga",
+    "read": true
+  },
+  {
+    "name": "Indonesia",
+    "code": "ID",
+    "title": "Beauty is a wound",
+    "writer": "Eka Kurniawan",
+    "read": true
+  },
+  {
+    "name": "Iran, Islamic Republic Of",
+    "code": "IR",
+    "title": "Persepolis",
+    "writer": "Marjane Satrapi",
+    "read": true
+  },
+  {
+    "name": "Ireland",
+    "code": "IE",
+    "title": "Foster",
+    "writer": "Claire Keegan",
+    "read": true
+  },
+  {
+    "name": "Italy",
+    "code": "IT",
+    "title": "L'amica geniale",
+    "writer": "Elena Ferrante",
+    "read": true
+  },
+  {
+    "name": "Jamaica",
+    "code": "JM",
+    "title": "Broughtupsy",
+    "writer": "Christina Cooke",
+    "read": false
+  },
+  {
+    "name": "Japan",
+    "code": "JP",
+    "title": "Locanda degli amori diversi",
+    "writer": "Ito Ogawa",
+    "read": true
+  },
+  {
+    "name": "Kenya",
+    "code": "KE",
+    "title": "Things they lost",
+    "writer": "Okwiri Oduor",
+    "read": true
+  },
+  {
+    "name": "Korea, Republic of",
+    "code": "KR",
+    "title": "Born 1982",
+    "writer": "Kim Ji-young",
+    "read": true
+  },
+  {
+    "name": "Malaysia",
+    "code": "MY",
+    "title": "Black water sister",
+    "writer": "Zen Cho",
+    "read": true
+  },
+  {
+    "name": "Mexico",
+    "code": "MX",
+    "title": "Hurricane season",
+    "writer": "Fernanda Melchor",
+    "read": true
+  },
+  {
+    "name": "Morocco",
+    "code": "MA",
+    "writer": "Fatima Mernissi",
+    "title": "Beyond the veil",
+    "read": false
+  },
+  {
+    "name": "Mozambique",
+    "code": "MZ",
+    "title": "The first wife",
+    "writer": "Paulina Chiziane",
+    "read": false
+  },
+  {
+    "name": "Myanmar",
+    "code": "MM",
+    "writer": "Nu Nu Yi",
+    "title": "Smile as they bow",
+    "read": true
+  },
+  {
+    "name": "Namibia",
+    "code": "NA",
+    "title": "The Purple Violet of Oshaantu",
+    "writer": "Neshani Andreas",
+    "read": false
+  },
+  {
+    "name": "Netherlands",
+    "code": "NL",
+    "title": "Lichter dan ik",
+    "writer": "Dido Michielsen",
+    "read": true
+  },
+  {
+    "name": "Nigeria",
+    "code": "NG",
+    "title": "Half a yellow sun",
+    "writer": "Chimamanda Ngozi Adichie",
+    "read": true
+  },
+  {
+    "name": "Palestinian Territory, Occupied",
+    "code": "PS",
+    "title": "My First and Only Love",
+    "writer": "Sahar Khalifeh",
+    "read": false
+  },
+  {
+    "name": "Philippines",
+    "code": "PH",
+    "writer": "bebang Siy",
+    "title": "It's a men's world",
+    "read": false
+  },
+  {
+    "name": "Russian Federation",
+    "code": "RU",
+    "title": "Riot days",
+    "writer": "Maria Alyokhina",
+    "read": true
+  },
+  {
+    "name": "Singapore",
+    "code": "SG",
+    "title": "Ministry of Moral Panic",
+    "writer": "Amanda Lee Koe",
+    "read": true
+  },
+  {
+    "name": "South Africa",
+    "code": "ZA",
+    "title": "Period pain",
+    "writer": "Kopano Matlwa",
+    "read": true
+  },
+  {
+    "name": "Spain",
+    "code": "ES",
+    "title": "Shadow of the wind",
+    "writer": "Carlos Ruiz Zafón",
+    "read": true
+  },
+  {
+    "name": "Sri Lanka",
+    "code": "LK",
+    "title": "The Seven Moons of Maali Almeida",
+    "writer": "Shehan Karunatilaka",
+    "read": true
+  },
+  {
+    "name": "Suriname",
+    "code": "SR",
+    "title": "Hoe duur was de suiker",
+    "writer": "Cynthia Mc Leod",
+    "read": true
+  },
+  {
+    "name": "Sweden",
+    "code": "SE",
+    "title": "Ronja de roversdochter",
+    "writer": "Astrid Lindgren",
+    "read": true
+  },
+  {
+    "name": "Tanzania, United Republic of",
+    "code": "TZ",
+    "title": "By the sea",
+    "writer": "Abdulrazak Gurnah",
+    "read": true
+  },
+  {
+    "name": "Thailand",
+    "code": "TH",
+    "title": "Sightseeing",
+    "writer": "Rattawut Lapcharoensap",
+    "read": true
+  },
+  {
+    "name": "Turkey",
+    "code": "TR",
+    "title": "Snow",
+    "writer": "Orhan Pamuk",
+    "read": true
+  },
+  {
+    "name": "United Kingdom",
+    "code": "GB",
+    "title": "White teeth",
+    "writer": "Zadie Smith",
+    "read": true
+  },
+  {
+    "name": "United States",
+    "code": "US",
+    "title": "To kill a mockingbird",
+    "writer": "Harper Lee",
+    "read": true
+  },
+  {
+    "name": "Viet Nam",
+    "code": "VN",
+    "title": "The mountains sing",
+    "writer": "Nguyễn Phan Quế Mai",
+    "read": true
+  },
+  {
+    "name": "Zimbabwe",
+    "code": "ZW",
+    "title": "Glory",
+    "writer": "NoViolet Bulawayo",
+    "read": true
+  }
+]

@@ -51,7 +51,7 @@ const InteractiveMap = ({ booksPerCountry }) => {
     const book = bookObj.current[code];
 
     if (book) {
-      return book.book
+      return book.title
         ? book.read
           ? COLORS.primaryGreen
           : COLORS.primaryRed

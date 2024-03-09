@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
-import { addBookForUser } from "../utilities/api";
+import { addBook } from "../utilities/db";
 import ModalWrapper from "./ModalWrapper";
 import ButtonPrimary from "./ButtonPrimary";
 import InputField from "./InputField";
@@ -17,7 +17,7 @@ const AddBookModal = ({
   onBookListUpdate,
 }) => {
   const [newEntry, setNewEntry] = useState({
-    book: "",
+    title: "",
     writer: "",
     countryCode: "",
     isbn: "",
@@ -25,8 +25,9 @@ const AddBookModal = ({
     read: false,
   });
 
-  const addBook = () => {
-    addBookForUser(userId, newEntry).then((newData) => {
+  const addBookInDB = () => {
+    addBook(newEntry, (newData) => {
+      console.log(newData);
       onBookListUpdate(newData);
       closeModal();
     });
@@ -53,8 +54,8 @@ const AddBookModal = ({
       <InputField
         label="Book title"
         placeholder="Add a book title"
-        value={newEntry.book}
-        onChange={(book) => setNewEntry({ ...newEntry, book })}
+        value={newEntry.title}
+        onChange={(title) => setNewEntry({ ...newEntry, title })}
       />
       <InputField
         label="Writer"
@@ -98,8 +99,8 @@ const AddBookModal = ({
 
       <ButtonPrimary
         label="Start reading"
-        onPress={addBook}
-        disabled={!newEntry.book || !newEntry.writer || !newEntry.countryCode}
+        onPress={addBookInDB}
+        disabled={!newEntry.title || !newEntry.writer || !newEntry.countryCode}
       />
     </ModalWrapper>
   );
