@@ -4,22 +4,16 @@ import InteractiveMap from "../components/InteractiveMap";
 import CountryList from "../components/CountryList";
 import { useLocalSearchParams } from "expo-router";
 import { getBooks } from "../utilities/db";
-import { DataContext } from "../contexts/data";
 import { COLORS } from "../utilities/styles/colors";
 
 export default Home = () => {
   const { userId } = useLocalSearchParams();
-  const { data } = useContext(DataContext);
 
   const [countriesWithBooks, setCountriesWithBooks] = useState(null);
   const [amountBooksRead, setAmountBooksRead] = useState(0);
 
   useEffect(() => {
-    if (data?.length) {
-      setCountriesWithBooks(data);
-    } else {
-      getBooks(setBooksOnUpdate);
-    }
+    getBooks(setBooksOnUpdate);
   }, []);
 
   function setBooksOnUpdate(data) {

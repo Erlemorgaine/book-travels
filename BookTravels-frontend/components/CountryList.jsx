@@ -28,6 +28,7 @@ const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
 
   useEffect(() => {
     allBooks.current = countryBooks.filter((country) => country.title);
+    orderBooks(selectedOrderOption);
   }, [countryBooks]);
 
   function handleJsonData(fileContent) {
