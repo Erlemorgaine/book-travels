@@ -11,23 +11,23 @@ import { FONTS } from "../utilities/styles/fonts";
 
 const BookItem = ({ title, writer, countryCode, read, onBookSelect }) => (
   <Pressable key={countryCode} style={styles.bookItem} onPress={onBookSelect}>
-    {read && (
-      <ImageBackground
-        source={require("../assets/book-read-l.webp")}
-        style={styles.bookItem.bookBg}
+    <ImageBackground
+      source={
+        read
+          ? require("../assets/book-read-l.webp")
+          : require("../assets/book-unread-l.webp")
+      }
+      style={styles.bookItem.bookBg}
+    >
+      <Text
+        style={{
+          ...styles.bookItem.code,
+          ...{ color: read ? COLORS.white : COLORS.black },
+        }}
       >
-        <Text style={styles.bookItem.code}>{countryCode}</Text>
-      </ImageBackground>
-    )}
-
-    {!read && (
-      <ImageBackground
-        source={require("../assets/book-unread-l.webp")}
-        style={styles.bookItem.bookBg}
-      >
-        <Text style={styles.bookItem.code}>{countryCode}</Text>
-      </ImageBackground>
-    )}
+        {countryCode}
+      </Text>
+    </ImageBackground>
 
     <View>
       <Text style={styles.bookItem.book}>{title}</Text>
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
       paddingLeft: 22,
       fontSize: 18,
       borderRadius: 5,
-      color: "#000",
       fontFamily: FONTS.SpecialElite,
     },
 

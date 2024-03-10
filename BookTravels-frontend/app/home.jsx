@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, ImageBackground } from "react-native";
 import InteractiveMap from "../components/InteractiveMap";
 import CountryList from "../components/CountryList";
