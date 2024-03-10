@@ -123,8 +123,14 @@ function uploadBooks(books, callback) {
       if (!existingBook?.length) {
         db.transaction((tx) => {
           tx.executeSql(
-            `INSERT INTO books (title, writer, read, country_code) VALUES (?, ?, ?, ?);`,
-            [book.title, book.writer, readToString(book.read), book.code],
+            `INSERT INTO books (title, writer, read, country_code, notes) VALUES (?, ?, ?, ?, ?);`,
+            [
+              book.title,
+              book.writer,
+              !("read" in book) ? "true" : readToString(book.read),
+              book.code,
+              book.notes,
+            ],
             () => getBooksOnLastBook(isLastBook),
             (error) =>
               console.error("Error inserting item into database: ", error)
