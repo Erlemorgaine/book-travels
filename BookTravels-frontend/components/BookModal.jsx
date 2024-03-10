@@ -71,6 +71,19 @@ export default function BookModal({
               label="I've read this book"
             />
 
+            {(updatedEntry.read || updatedEntry.notes) && (
+              <InputField
+                label="Notes"
+                placeholder="Write all the things down that you would like to remember about this book"
+                value={updatedEntry.notes}
+                onChange={(notes) =>
+                  setUpdatedEntry({ ...updatedEntry, notes })
+                }
+                optional
+                multiline
+              />
+            )}
+
             <ButtonPrimary
               label="Update the book details"
               onPress={updateBookInDB}

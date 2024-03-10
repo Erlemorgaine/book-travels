@@ -72,13 +72,13 @@ const AddBookModal = ({
         }
       />
 
-      <InputField
+      {/* <InputField
         label="ISBN number"
         placeholder="Add the book's ISBN number"
         value={newEntry.isbn}
         onChange={(isbn) => setNewEntry({ ...newEntry, isbn })}
         optional
-      />
+      /> */}
 
       <AppCheckbox
         setEnabled={() => setNewEntry({ ...newEntry, read: !newEntry.read })}
@@ -89,10 +89,11 @@ const AddBookModal = ({
       {newEntry.read && (
         <InputField
           label="Notes"
-          placeholder="Write all the things down that you would like to remember about the book"
+          placeholder="Write all the things down that you would like to remember about this book"
           value={newEntry.notes}
           onChange={(notes) => setNewEntry({ ...newEntry, notes })}
           optional
+          multiline
         />
       )}
 

@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Modal, View, ImageBackground } from "react-native";
 import { COLORS } from "../utilities/styles/colors";
 import ButtonIcon from "./ButtonIcon";
+import { CloseIcon } from "./Icons";
 
 const ModalWrapper = ({ children, show, closeModal }) => {
   return (
@@ -12,12 +13,6 @@ const ModalWrapper = ({ children, show, closeModal }) => {
       onRequestClose={closeModal}
     >
       <View style={styles.modalWrapper}>
-        <ButtonIcon
-          icon="x"
-          onPress={closeModal}
-          style={styles.modal.modalClose}
-        />
-
         <View style={styles.modal}>
           <ImageBackground
             source={require("../assets/paper-texture-4.webp")}
@@ -26,6 +21,12 @@ const ModalWrapper = ({ children, show, closeModal }) => {
             <View style={styles.modal.modalContent}>{children}</View>
           </ImageBackground>
         </View>
+
+        <ButtonIcon
+          Icon={CloseIcon}
+          onPress={closeModal}
+          style={styles.modal.modalClose}
+        />
       </View>
     </Modal>
   );
@@ -50,8 +51,10 @@ const styles = StyleSheet.create({
 
     modalClose: {
       position: "absolute",
-      top: 5,
-      right: 5,
+      bottom: 10,
+      justifyContent: "center",
+      alignSelf: "center",
+      alignItems: "center",
       zIndex: 2,
     },
     modalContent: {

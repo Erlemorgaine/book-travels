@@ -9,6 +9,8 @@ const InputField = ({
   placeholder = "",
   optional = false,
   style = {},
+  multiline = false,
+  numberOfLines = 8,
 }) => {
   return (
     <View style={[styles.container, style]} accessible>
@@ -22,6 +24,8 @@ const InputField = ({
         placeholder={placeholder}
         value={value}
         onChangeText={onChange}
+        multiline={multiline}
+        numberOfLines={multiline ? numberOfLines : 1}
       />
     </View>
   );

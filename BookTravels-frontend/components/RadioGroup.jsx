@@ -11,7 +11,6 @@ const RadioGroup = ({ label, options, selectedOption, onOptionSelect }) => {
         {options.map((option) => (
           <View key={option} style={styles.option}>
             <RadioButton
-              label={option}
               value={option}
               status={option === selectedOption ? "checked" : "unchecked"}
               onPress={() => onOptionSelect(option)}
@@ -19,7 +18,8 @@ const RadioGroup = ({ label, options, selectedOption, onOptionSelect }) => {
             />
 
             <Pressable onPress={() => onOptionSelect(option)}>
-              <Text>{option}</Text>
+              {/* I know this is very ugly and not scalable code, but ok for this app */}
+              <Text>{option === "code" ? "country" : option}</Text>
             </Pressable>
           </View>
         ))}
