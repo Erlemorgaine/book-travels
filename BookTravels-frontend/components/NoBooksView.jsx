@@ -44,7 +44,7 @@ const NoBooksView = ({ onAdd, onExternalImport, errorMessage }) => {
         <Text style={STYLES.Bold}>2-letter ISO country code</Text>.
       </Text>
       <ButtonPrimary
-        label="Import a csv of json file"
+        label="Import a csv or json file"
         onPress={onExternalImport}
       />
 

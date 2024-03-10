@@ -125,7 +125,7 @@ const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
         data={allBooks.current}
         ListEmptyComponent={
           <NoBooksView
-            onAdd={() => setShowAddModal(false)}
+            onAdd={() => setShowAddModal(true)}
             onExternalImport={importExternalFile}
             errorMessage={noViewErrorMessage}
           />
