@@ -10064,7 +10064,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Belize",
-"iso_a2":"BZ",
+            "iso_a2": "BZ",
             "iso_a3": "BLZ"
           }
         },
@@ -10109,7 +10109,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Canada",
-"iso_a2":"CA",
+            "iso_a2": "CA",
             "iso_a3": "CAN"
           }
         },
@@ -10118,7 +10118,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "The Bahamas",
-"iso_a2":"BS",
+            "iso_a2": "BS",
             "iso_a3": "BHS"
           }
         },
@@ -10127,7 +10127,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Costa Rica",
-"iso_a2":"CR",
+            "iso_a2": "CR",
             "iso_a3": "CRI"
           }
         },
@@ -10136,7 +10136,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Cuba",
-"iso_a2":"CU",
+            "iso_a2": "CU",
             "iso_a3": "CUB"
           }
         },
@@ -10145,7 +10145,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Dominican Republic",
-"iso_a2":"DO",
+            "iso_a2": "DO",
             "iso_a3": "DOM"
           }
         },
@@ -10154,7 +10154,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Greenland",
-"iso_a2":"GL",
+            "iso_a2": "GL",
             "iso_a3": "GRL"
           }
         },
@@ -10163,7 +10163,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Honduras",
-"iso_a2":"HN",
+            "iso_a2": "HN",
             "iso_a3": "HND"
           }
         },
@@ -10172,7 +10172,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Haiti",
-"iso_a2":"HT",
+            "iso_a2": "HT",
             "iso_a3": "HTI"
           }
         },
@@ -10181,7 +10181,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Guatemala",
-"iso_a2":"GT",
+            "iso_a2": "GT",
             "iso_a3": "GTM"
           }
         },
@@ -10190,7 +10190,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Jamaica",
-"iso_a2":"JM",
+            "iso_a2": "JM",
             "iso_a3": "JAM"
           }
         },
@@ -10199,7 +10199,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Mexico",
-"iso_a2":"MX",
+            "iso_a2": "MX",
             "iso_a3": "MEX"
           }
         },
@@ -10208,7 +10208,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Nicaragua",
-"iso_a2":"NI",
+            "iso_a2": "NI",
             "iso_a3": "NIC"
           }
         },
@@ -10217,7 +10217,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Puerto Rico",
-"iso_a2":"PR",
+            "iso_a2": "PR",
             "iso_a3": "PRI"
           }
         },
@@ -10226,7 +10226,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Panama",
-"iso_a2":"PA",
+            "iso_a2": "PA",
             "iso_a3": "PAN"
           }
         },
@@ -10235,7 +10235,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "El Salvador",
-"iso_a2":"SV",
+            "iso_a2": "SV",
             "iso_a3": "SLV"
           }
         },
@@ -10244,7 +10244,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Trinidad and Tobago",
-"iso_a2":"TT",
+            "iso_a2": "TT",
             "iso_a3": "TTO"
           }
         },
@@ -10270,7 +10270,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "United States of America",
-"iso_a2":"US",
+            "iso_a2": "US",
             "iso_a3": "USA"
           }
         },
@@ -10279,7 +10279,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Argentina",
-"iso_a2":"AR",
+            "iso_a2": "AR",
             "iso_a3": "ARG"
           }
         },
@@ -10288,7 +10288,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Brazil",
-"iso_a2":"BR",
+            "iso_a2": "BR",
             "iso_a3": "BRA"
           }
         },
@@ -10297,7 +10297,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Chile",
-"iso_a2":"CL",
+            "iso_a2": "CL",
             "iso_a3": "CHL"
           }
         },
@@ -10306,7 +10306,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Colombia",
-"iso_a2":"CO",
+            "iso_a2": "CO",
             "iso_a3": "COL"
           }
         },
@@ -10315,7 +10315,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Falkland Islands",
-"iso_a2":"FK",
+            "iso_a2": "FK",
             "iso_a3": "FLK"
           }
         },
@@ -10324,7 +10324,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Bolivia",
-"iso_a2":"BO",
+            "iso_a2": "BO",
             "iso_a3": "BOL"
           }
         },
@@ -10333,7 +10333,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Guyana",
-"iso_a2":"GY",
+            "iso_a2": "GY",
             "iso_a3": "GUY"
           }
         },
@@ -10342,7 +10342,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Paraguay",
-"iso_a2":"PY",
+            "iso_a2": "PY",
             "iso_a3": "PRY"
           }
         },
@@ -10351,7 +10351,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Peru",
-"iso_a2":"PE",
+            "iso_a2": "PE",
             "iso_a3": "PER"
           }
         },
@@ -10360,7 +10360,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Ecuador",
-"iso_a2":"EC",
+            "iso_a2": "EC",
             "iso_a3": "ECU"
           }
         },
@@ -10369,7 +10369,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Suriname",
-"iso_a2":"SR",
+            "iso_a2": "SR",
             "iso_a3": "SUR"
           }
         },
@@ -10378,7 +10378,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Uruguay",
-"iso_a2":"UY",
+            "iso_a2": "UY",
             "iso_a3": "URY"
           }
         },
@@ -10387,7 +10387,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Venezuela",
-"iso_a2":"VE",
+            "iso_a2": "VE",
             "iso_a3": "VEN"
           }
         },
@@ -10396,7 +10396,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "United Arab Emirates",
-"iso_a2":"AE",
+            "iso_a2": "AE",
             "iso_a3": "ARE"
           }
         },
@@ -10405,7 +10405,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Afghanistan",
-"iso_a2":"AF",
+            "iso_a2": "AF",
             "iso_a3": "AFG"
           }
         },
@@ -10414,7 +10414,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Armenia",
-"iso_a2":"AM",
+            "iso_a2": "AM",
             "iso_a3": "ARM"
           }
         },
@@ -10423,7 +10423,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Azerbaijan",
-"iso_a2":"AZ",
+            "iso_a2": "AZ",
             "iso_a3": "AZE"
           }
         },
@@ -10432,7 +10432,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Brunei",
-"iso_a2":"BN",
+            "iso_a2": "BN",
             "iso_a3": "BRN"
           }
         },
@@ -10441,7 +10441,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Bangladesh",
-"iso_a2":"BD",
+            "iso_a2": "BD",
             "iso_a3": "BGD"
           }
         },
@@ -10450,7 +10450,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Bhutan",
-"iso_a2":"BT",
+            "iso_a2": "BT",
             "iso_a3": "BTN"
           }
         },
@@ -10467,7 +10467,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "China",
-"iso_a2":"CN",
+            "iso_a2": "CN",
             "iso_a3": "CHN"
           }
         },
@@ -10476,7 +10476,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Northern Cyprus",
-"iso_a2":"-99",
+            "iso_a2": "-99",
             "iso_a3": "-99"
           }
         },
@@ -10485,7 +10485,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Cyprus",
-"iso_a2":"CY",
+            "iso_a2": "CY",
             "iso_a3": "CYP"
           }
         },
@@ -10494,7 +10494,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Georgia",
-"iso_a2":"GE",
+            "iso_a2": "GE",
             "iso_a3": "GEO"
           }
         },
@@ -10517,7 +10517,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Indonesia",
-"iso_a2":"ID",
+            "iso_a2": "ID",
             "iso_a3": "IDN"
           }
         },
@@ -10526,7 +10526,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "India",
-"iso_a2":"IN",
+            "iso_a2": "IN",
             "iso_a3": "IND"
           }
         },
@@ -10535,7 +10535,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Iran",
-"iso_a2":"IR",
+            "iso_a2": "IR",
             "iso_a3": "IRN"
           }
         },
@@ -10544,7 +10544,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Israel",
-"iso_a2":"IL",
+            "iso_a2": "IL",
             "iso_a3": "ISR"
           }
         },
@@ -10553,7 +10553,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Iraq",
-"iso_a2":"IQ",
+            "iso_a2": "IQ",
             "iso_a3": "IRQ"
           }
         },
@@ -10562,7 +10562,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Jordan",
-"iso_a2":"JO",
+            "iso_a2": "JO",
             "iso_a3": "JOR"
           }
         },
@@ -10571,7 +10571,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Japan",
-"iso_a2":"JP",
+            "iso_a2": "JP",
             "iso_a3": "JPN"
           }
         },
@@ -10580,7 +10580,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Kazakhstan",
-"iso_a2":"KZ",
+            "iso_a2": "KZ",
             "iso_a3": "KAZ"
           }
         },
@@ -10589,7 +10589,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Kyrgyzstan",
-"iso_a2":"KG",
+            "iso_a2": "KG",
             "iso_a3": "KGZ"
           }
         },
@@ -10598,7 +10598,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "South Korea",
-"iso_a2":"KR",
+            "iso_a2": "KR",
             "iso_a3": "KOR"
           }
         },
@@ -10607,7 +10607,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Cambodia",
-"iso_a2":"KH",
+            "iso_a2": "KH",
             "iso_a3": "KHM"
           }
         },
@@ -10616,7 +10616,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Kuwait",
-"iso_a2":"KW",
+            "iso_a2": "KW",
             "iso_a3": "KWT"
           }
         },
@@ -10625,7 +10625,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Laos",
-"iso_a2":"LA",
+            "iso_a2": "LA",
             "iso_a3": "LAO"
           }
         },
@@ -10634,7 +10634,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Sri Lanka",
-"iso_a2":"LK",
+            "iso_a2": "LK",
             "iso_a3": "LKA"
           }
         },
@@ -10643,7 +10643,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Lebanon",
-"iso_a2":"LB",
+            "iso_a2": "LB",
             "iso_a3": "LBN"
           }
         },
@@ -10652,7 +10652,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Myanmar",
-"iso_a2":"MM",
+            "iso_a2": "MM",
             "iso_a3": "MMR"
           }
         },
@@ -10661,7 +10661,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Mongolia",
-"iso_a2":"MN",
+            "iso_a2": "MN",
             "iso_a3": "MNG"
           }
         },
@@ -10670,7 +10670,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Malaysia",
-"iso_a2":"MY",
+            "iso_a2": "MY",
             "iso_a3": "MYS"
           }
         },
@@ -10679,7 +10679,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Oman",
-"iso_a2":"OM",
+            "iso_a2": "OM",
             "iso_a3": "OMN"
           }
         },
@@ -10688,7 +10688,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Nepal",
-"iso_a2":"NP",
+            "iso_a2": "NP",
             "iso_a3": "NPL"
           }
         },
@@ -10705,7 +10705,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Philippines",
-"iso_a2":"PH",
+            "iso_a2": "PH",
             "iso_a3": "PHL"
           }
         },
@@ -10714,7 +10714,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Pakistan",
-"iso_a2":"PK",
+            "iso_a2": "PK",
             "iso_a3": "PAK"
           }
         },
@@ -10723,7 +10723,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "North Korea",
-"iso_a2":"KP",
+            "iso_a2": "KP",
             "iso_a3": "PRK"
           }
         },
@@ -10732,7 +10732,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Palestine",
-"iso_a2":"PS",
+            "iso_a2": "PS",
             "iso_a3": "PSE"
           }
         },
@@ -10741,7 +10741,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Qatar",
-"iso_a2":"QA",
+            "iso_a2": "QA",
             "iso_a3": "QAT"
           }
         },
@@ -10750,7 +10750,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Saudi Arabia",
-"iso_a2":"SA",
+            "iso_a2": "SA",
             "iso_a3": "SAU"
           }
         },
@@ -10759,7 +10759,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Syria",
-"iso_a2":"SY",
+            "iso_a2": "SY",
             "iso_a3": "SYR"
           }
         },
@@ -10768,7 +10768,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Thailand",
-"iso_a2":"TH",
+            "iso_a2": "TH",
             "iso_a3": "THA"
           }
         },
@@ -10777,7 +10777,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Tajikistan",
-"iso_a2":"TJ",
+            "iso_a2": "TJ",
             "iso_a3": "TJK"
           }
         },
@@ -10786,7 +10786,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Taiwan",
-"iso_a2":"TW",
+            "iso_a2": "TW",
             "iso_a3": "TWN"
           }
         },
@@ -10795,7 +10795,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Turkey",
-"iso_a2":"TR",
+            "iso_a2": "TR",
             "iso_a3": "TUR"
           }
         },
@@ -10804,7 +10804,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "East Timor",
-"iso_a2":"TL",
+            "iso_a2": "TL",
             "iso_a3": "TLS"
           }
         },
@@ -10813,7 +10813,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Turkmenistan",
-"iso_a2":"TM",
+            "iso_a2": "TM",
             "iso_a3": "TKM"
           }
         },
@@ -10822,7 +10822,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Uzbekistan",
-"iso_a2":"UZ",
+            "iso_a2": "UZ",
             "iso_a3": "UZB"
           }
         },
@@ -10831,7 +10831,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Vietnam",
-"iso_a2":"VN",
+            "iso_a2": "VN",
             "iso_a3": "VNM"
           }
         },
@@ -10840,7 +10840,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Yemen",
-"iso_a2":"YE",
+            "iso_a2": "YE",
             "iso_a3": "YEM"
           }
         },
@@ -10849,7 +10849,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Burundi",
-"iso_a2":"BI",
+            "iso_a2": "BI",
             "iso_a3": "BDI"
           }
         },
@@ -10858,7 +10858,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Angola",
-"iso_a2":"AO",
+            "iso_a2": "AO",
             "iso_a3": "AGO"
           }
         },
@@ -10867,7 +10867,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Botswana",
-"iso_a2":"BW",
+            "iso_a2": "BW",
             "iso_a3": "BWA"
           }
         },
@@ -10876,7 +10876,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Burkina Faso",
-"iso_a2":"BF",
+            "iso_a2": "BF",
             "iso_a3": "BFA"
           }
         },
@@ -10885,7 +10885,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Benin",
-"iso_a2":"BJ",
+            "iso_a2": "BJ",
             "iso_a3": "BEN"
           }
         },
@@ -10894,7 +10894,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Central African Republic",
-"iso_a2":"CF",
+            "iso_a2": "CF",
             "iso_a3": "CAF"
           }
         },
@@ -10903,7 +10903,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Ivory Coast",
-"iso_a2":"CI",
+            "iso_a2": "CI",
             "iso_a3": "CIV"
           }
         },
@@ -10912,7 +10912,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Cameroon",
-"iso_a2":"CM",
+            "iso_a2": "CM",
             "iso_a3": "CMR"
           }
         },
@@ -10921,7 +10921,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Republic of Congo",
-"iso_a2":"CG",
+            "iso_a2": "CG",
             "iso_a3": "COG"
           }
         },
@@ -10930,7 +10930,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Democratic Republic of the Congo",
-"iso_a2":"CD",
+            "iso_a2": "CD",
             "iso_a3": "COD"
           }
         },
@@ -10939,7 +10939,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Egypt",
-"iso_a2":"EG",
+            "iso_a2": "EG",
             "iso_a3": "EGY"
           }
         },
@@ -10948,7 +10948,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Djibouti",
-"iso_a2":"DJ",
+            "iso_a2": "DJ",
             "iso_a3": "DJI"
           }
         },
@@ -10962,7 +10962,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Ethiopia",
-"iso_a2":"ET",
+            "iso_a2": "ET",
             "iso_a3": "ETH"
           }
         },
@@ -10971,7 +10971,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Algeria",
-"iso_a2":"DZ",
+            "iso_a2": "DZ",
             "iso_a3": "DZA"
           }
         },
@@ -10980,7 +10980,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Gabon",
-"iso_a2":"GA",
+            "iso_a2": "GA",
             "iso_a3": "GAB"
           }
         },
@@ -10989,7 +10989,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Ghana",
-"iso_a2":"GH",
+            "iso_a2": "GH",
             "iso_a3": "GHA"
           }
         },
@@ -10998,7 +10998,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Guinea Bissau",
-"iso_a2":"GW",
+            "iso_a2": "GW",
             "iso_a3": "GNB"
           }
         },
@@ -11007,7 +11007,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Guinea",
-"iso_a2":"GN",
+            "iso_a2": "GN",
             "iso_a3": "GIN"
           }
         },
@@ -11016,7 +11016,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Eritrea",
-"iso_a2":"ER",
+            "iso_a2": "ER",
             "iso_a3": "ERI"
           }
         },
@@ -11025,7 +11025,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Gambia",
-"iso_a2":"GM",
+            "iso_a2": "GM",
             "iso_a3": "GMB"
           }
         },
@@ -11034,7 +11034,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Equatorial Guinea",
-"iso_a2":"GQ",
+            "iso_a2": "GQ",
             "iso_a3": "GNQ"
           }
         },
@@ -11043,7 +11043,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Libya",
-"iso_a2":"LY",
+            "iso_a2": "LY",
             "iso_a3": "LBY"
           }
         },
@@ -11052,7 +11052,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Morocco",
-"iso_a2":"MA",
+            "iso_a2": "MA",
             "iso_a3": "MAR"
           }
         },
@@ -11061,7 +11061,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Liberia",
-"iso_a2":"LR",
+            "iso_a2": "LR",
             "iso_a3": "LBR"
           }
         },
@@ -11070,7 +11070,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Kenya",
-"iso_a2":"KE",
+            "iso_a2": "KE",
             "iso_a3": "KEN"
           }
         },
@@ -11079,7 +11079,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Lesotho",
-"iso_a2":"LS",
+            "iso_a2": "LS",
             "iso_a3": "LSO"
           }
         },
@@ -11088,7 +11088,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Mali",
-"iso_a2":"ML",
+            "iso_a2": "ML",
             "iso_a3": "MLI"
           }
         },
@@ -11097,7 +11097,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Madagascar",
-"iso_a2":"MG",
+            "iso_a2": "MG",
             "iso_a3": "MDG"
           }
         },
@@ -11106,7 +11106,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Mozambique",
-"iso_a2":"MZ",
+            "iso_a2": "MZ",
             "iso_a3": "MOZ"
           }
         },
@@ -11115,7 +11115,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Namibia",
-"iso_a2":"NA",
+            "iso_a2": "NA",
             "iso_a3": "NAM"
           }
         },
@@ -11124,7 +11124,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Malawi",
-"iso_a2":"MW",
+            "iso_a2": "MW",
             "iso_a3": "MWI"
           }
         },
@@ -11133,7 +11133,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Rwanda",
-"iso_a2":"RW",
+            "iso_a2": "RW",
             "iso_a3": "RWA"
           }
         },
@@ -11142,7 +11142,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Mauritania",
-"iso_a2":"MR",
+            "iso_a2": "MR",
             "iso_a3": "MRT"
           }
         },
@@ -11151,7 +11151,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Senegal",
-"iso_a2":"SN",
+            "iso_a2": "SN",
             "iso_a3": "SEN"
           }
         },
@@ -11160,7 +11160,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Niger",
-"iso_a2":"NE",
+            "iso_a2": "NE",
             "iso_a3": "NER"
           }
         },
@@ -11169,7 +11169,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Western Sahara",
-"iso_a2":"EH",
+            "iso_a2": "EH",
             "iso_a3": "ESH"
           }
         },
@@ -11183,7 +11183,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Sudan",
-"iso_a2":"SD",
+            "iso_a2": "SD",
             "iso_a3": "SDN"
           }
         },
@@ -11192,7 +11192,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Nigeria",
-"iso_a2":"NG",
+            "iso_a2": "NG",
             "iso_a3": "NGA"
           }
         },
@@ -11201,7 +11201,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "South Sudan",
-"iso_a2":"SS",
+            "iso_a2": "SS",
             "iso_a3": "SSD"
           }
         },
@@ -11210,7 +11210,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Somaliland",
-"iso_a2":"-99",
+            "iso_a2": "-99",
             "iso_a3": "-99"
           }
         },
@@ -11219,7 +11219,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Sierra Leone",
-"iso_a2":"SL",
+            "iso_a2": "SL",
             "iso_a3": "SLE"
           }
         },
@@ -11228,7 +11228,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Uganda",
-"iso_a2":"UG",
+            "iso_a2": "UG",
             "iso_a3": "UGA"
           }
         },
@@ -11237,7 +11237,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Tunisia",
-"iso_a2":"TN",
+            "iso_a2": "TN",
             "iso_a3": "TUN"
           }
         },
@@ -11246,7 +11246,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Swaziland",
-"iso_a2":"SZ",
+            "iso_a2": "SZ",
             "iso_a3": "SWZ"
           }
         },
@@ -11255,7 +11255,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "United Republic of Tanzania",
-"iso_a2":"TZ",
+            "iso_a2": "TZ",
             "iso_a3": "TZA"
           }
         },
@@ -11264,7 +11264,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Togo",
-"iso_a2":"TG",
+            "iso_a2": "TG",
             "iso_a3": "TGO"
           }
         },
@@ -11273,7 +11273,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Somalia",
-"iso_a2":"SO",
+            "iso_a2": "SO",
             "iso_a3": "SOM"
           }
         },
@@ -11282,7 +11282,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Chad",
-"iso_a2":"TD",
+            "iso_a2": "TD",
             "iso_a3": "TCD"
           }
         },
@@ -11291,7 +11291,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "South Africa",
-"iso_a2":"ZA",
+            "iso_a2": "ZA",
             "iso_a3": "ZAF"
           }
         },
@@ -11300,7 +11300,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Zambia",
-"iso_a2":"ZM",
+            "iso_a2": "ZM",
             "iso_a3": "ZMB"
           }
         },
@@ -11309,7 +11309,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Zimbabwe",
-"iso_a2":"ZW",
+            "iso_a2": "ZW",
             "iso_a3": "ZWE"
           }
         },
@@ -11318,7 +11318,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Albania",
-"iso_a2":"AL",
+            "iso_a2": "AL",
             "iso_a3": "ALB"
           }
         },
@@ -11327,7 +11327,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Bulgaria",
-"iso_a2":"BG",
+            "iso_a2": "BG",
             "iso_a3": "BGR"
           }
         },
@@ -11336,7 +11336,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Belgium",
-"iso_a2":"BE",
+            "iso_a2": "BE",
             "iso_a3": "BEL"
           }
         },
@@ -11345,7 +11345,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Bosnia and Herzegovina",
-"iso_a2":"BA",
+            "iso_a2": "BA",
             "iso_a3": "BIH"
           }
         },
@@ -11354,7 +11354,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Austria",
-"iso_a2":"AT",
+            "iso_a2": "AT",
             "iso_a3": "AUT"
           }
         },
@@ -11363,7 +11363,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Germany",
-"iso_a2":"DE",
+            "iso_a2": "DE",
             "iso_a3": "DEU"
           }
         },
@@ -11372,7 +11372,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Denmark",
-"iso_a2":"DK",
+            "iso_a2": "DK",
             "iso_a3": "DNK"
           }
         },
@@ -11381,7 +11381,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Czech Republic",
-"iso_a2":"CZ",
+            "iso_a2": "CZ",
             "iso_a3": "CZE"
           }
         },
@@ -11390,7 +11390,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Spain",
-"iso_a2":"ES",
+            "iso_a2": "ES",
             "iso_a3": "ESP"
           }
         },
@@ -11399,7 +11399,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "France",
-"iso_a2":"FR",
+            "iso_a2": "FR",
             "iso_a3": "FRA"
           }
         },
@@ -11408,7 +11408,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Estonia",
-"iso_a2":"EE",
+            "iso_a2": "EE",
             "iso_a3": "EST"
           }
         },
@@ -11417,7 +11417,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Belarus",
-"iso_a2":"BY",
+            "iso_a2": "BY",
             "iso_a3": "BLR"
           }
         },
@@ -11426,7 +11426,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Finland",
-"iso_a2":"FI",
+            "iso_a2": "FI",
             "iso_a3": "FIN"
           }
         },
@@ -11435,7 +11435,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Switzerland",
-"iso_a2":"CH",
+            "iso_a2": "CH",
             "iso_a3": "CHE"
           }
         },
@@ -11444,7 +11444,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "United Kingdom",
-"iso_a2":"GB",
+            "iso_a2": "GB",
             "iso_a3": "GBR"
           }
         },
@@ -11453,7 +11453,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Croatia",
-"iso_a2":"HR",
+            "iso_a2": "HR",
             "iso_a3": "HRV"
           }
         },
@@ -11462,7 +11462,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Greece",
-"iso_a2":"GR",
+            "iso_a2": "GR",
             "iso_a3": "GRC"
           }
         },
@@ -11471,7 +11471,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Hungary",
-"iso_a2":"HU",
+            "iso_a2": "HU",
             "iso_a3": "HUN"
           }
         },
@@ -11480,7 +11480,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Ireland",
-"iso_a2":"IE",
+            "iso_a2": "IE",
             "iso_a3": "IRL"
           }
         },
@@ -11489,7 +11489,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Iceland",
-"iso_a2":"IS",
+            "iso_a2": "IS",
             "iso_a3": "ISL"
           }
         },
@@ -11498,7 +11498,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Italy",
-"iso_a2":"IT",
+            "iso_a2": "IT",
             "iso_a3": "ITA"
           }
         },
@@ -11507,7 +11507,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Kosovo",
-"iso_a2":"-99",
+            "iso_a2": "-99",
             "iso_a3": "-99"
           }
         },
@@ -11516,7 +11516,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Lithuania",
-"iso_a2":"LT",
+            "iso_a2": "LT",
             "iso_a3": "LTU"
           }
         },
@@ -11525,7 +11525,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Latvia",
-"iso_a2":"LV",
+            "iso_a2": "LV",
             "iso_a3": "LVA"
           }
         },
@@ -11534,7 +11534,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Luxembourg",
-"iso_a2":"LU",
+            "iso_a2": "LU",
             "iso_a3": "LUX"
           }
         },
@@ -11543,7 +11543,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Moldova",
-"iso_a2":"MD",
+            "iso_a2": "MD",
             "iso_a3": "MDA"
           }
         },
@@ -11552,7 +11552,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Macedonia",
-"iso_a2":"MK",
+            "iso_a2": "MK",
             "iso_a3": "MKD"
           }
         },
@@ -11561,7 +11561,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Montenegro",
-"iso_a2":"ME",
+            "iso_a2": "ME",
             "iso_a3": "MNE"
           }
         },
@@ -11570,7 +11570,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Norway",
-"iso_a2":"NO",
+            "iso_a2": "NO",
             "iso_a3": "NOR"
           }
         },
@@ -11579,7 +11579,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Poland",
-"iso_a2":"PL",
+            "iso_a2": "PL",
             "iso_a3": "POL"
           }
         },
@@ -11588,7 +11588,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Netherlands",
-"iso_a2":"NL",
+            "iso_a2": "NL",
             "iso_a3": "NLD"
           }
         },
@@ -11597,7 +11597,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Portugal",
-"iso_a2":"PT",
+            "iso_a2": "PT",
             "iso_a3": "PRT"
           }
         },
@@ -11606,7 +11606,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Romania",
-"iso_a2":"RO",
+            "iso_a2": "RO",
             "iso_a3": "ROU"
           }
         },
@@ -11629,7 +11629,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Russia",
-"iso_a2":"RU",
+            "iso_a2": "RU",
             "iso_a3": "RUS"
           }
         },
@@ -11638,7 +11638,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Republic of Serbia",
-"iso_a2":"RS",
+            "iso_a2": "RS",
             "iso_a3": "SRB"
           }
         },
@@ -11647,7 +11647,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Slovakia",
-"iso_a2":"SK",
+            "iso_a2": "SK",
             "iso_a3": "SVK"
           }
         },
@@ -11656,7 +11656,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Slovenia",
-"iso_a2":"SI",
+            "iso_a2": "SI",
             "iso_a3": "SVN"
           }
         },
@@ -11665,7 +11665,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Ukraine",
-"iso_a2":"UA",
+            "iso_a2": "UA",
             "iso_a3": "UKR"
           }
         },
@@ -11674,7 +11674,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "Sweden",
-"iso_a2":"SE",
+            "iso_a2": "SE",
             "iso_a3": "SWE"
           }
         },
@@ -11683,7 +11683,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Australia",
-"iso_a2":"AU",
+            "iso_a2": "AU",
             "iso_a3": "AUS"
           }
         },
@@ -11692,7 +11692,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Fiji",
-"iso_a2":"FJ",
+            "iso_a2": "FJ",
             "iso_a3": "FJI"
           }
         },
@@ -11701,7 +11701,7 @@
           "type": "Polygon",
           "properties": {
             "admin": "New Caledonia",
-"iso_a2":"NC",
+            "iso_a2": "NC",
             "iso_a3": "NCL"
           }
         },
@@ -11710,7 +11710,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "New Zealand",
-"iso_a2":"NZ",
+            "iso_a2": "NZ",
             "iso_a3": "NZL"
           }
         },
@@ -11719,7 +11719,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Solomon Islands",
-"iso_a2":"SB",
+            "iso_a2": "SB",
             "iso_a3": "SLB"
           }
         },
@@ -11728,7 +11728,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Papua New Guinea",
-"iso_a2":"PG",
+            "iso_a2": "PG",
             "iso_a3": "PNG"
           }
         },
@@ -11737,7 +11737,7 @@
           "type": "MultiPolygon",
           "properties": {
             "admin": "Vanuatu",
-"iso_a2":"VU",
+            "iso_a2": "VU",
             "iso_a3": "VUT"
           }
         }
