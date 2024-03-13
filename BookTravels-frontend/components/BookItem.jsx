@@ -14,19 +14,12 @@ const BookItem = ({ title, writer, countryCode, read, onBookSelect }) => (
     <ImageBackground
       source={
         read
-          ? require("../assets/book-read-l.webp")
-          : require("../assets/book-unread-l.webp")
+          ? require("../assets/book-read.webp")
+          : require("../assets/book-unread.webp")
       }
       style={styles.bookItem.bookBg}
     >
-      <Text
-        style={{
-          ...styles.bookItem.code,
-          ...{ color: read ? COLORS.white : COLORS.black },
-        }}
-      >
-        {countryCode}
-      </Text>
+      <Text style={styles.bookItem.code}>{countryCode}</Text>
     </ImageBackground>
 
     <View>
@@ -42,7 +35,7 @@ const styles = StyleSheet.create({
   bookItem: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 4,
+    gap: 2,
     margin: 8,
     flex: 1,
 
@@ -57,6 +50,7 @@ const styles = StyleSheet.create({
       fontSize: 18,
       borderRadius: 5,
       fontFamily: FONTS.SpecialElite,
+      color: COLORS.white,
     },
 
     book: {

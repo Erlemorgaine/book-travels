@@ -3,6 +3,7 @@ import { Image, Text, StyleSheet } from "react-native";
 import ButtonPrimary from "../components/ButtonPrimary";
 import AppTitle from "../components/AppTitle";
 import AccessWrapper from "../components/AccessWrapper";
+import { STYLES } from "../utilities/styles/fonts";
 
 export default Disclaimer = () => {
   return (
@@ -13,7 +14,24 @@ export default Disclaimer = () => {
         alt="A happy bookworm reading a book"
       />
       <AppTitle title="Before we can start ... " />
-      <Text>This is a custom component.</Text>
+      <Text>
+        ... there's a few things you should be aware of in terms of the{" "}
+        <Text style={STYLES.Bold}>data management</Text> of this app. Book
+        Travels stores all data that you enter into the app on your own device.
+        It's not getting sent to an external server (although in the future this
+        might change, depending on new features).
+      </Text>
+      <Text>
+        This means that you can use the app{" "}
+        <Text style={STYLES.Bold}>offline</Text>. It also means that your data
+        can be read by anyone who has <Text style={STYLES.Bold}>access</Text> to
+        your device. Lastly, it means that if you delete this app's cached data,
+        or if for some reason you have to reset your phone, you will{" "}
+        <Text style={STYLES.Bold}>lose your data</Text>! The app offers you a
+        possibility to <Text style={STYLES.Bold}>download</Text> your data in
+        CSV format, so that you can still save your data should one of these
+        situations occur.
+      </Text>
       <ButtonPrimary
         label="Gotcha! Now let me add my books"
         href={{ pathname: "home" }}
@@ -24,7 +42,6 @@ export default Disclaimer = () => {
 
 const styles = StyleSheet.create({
   bookworm: {
-    // width: 188 * 0.8,
     height: 168 * 0.8,
     aspectRatio: 1.1187,
     margin: "auto",
