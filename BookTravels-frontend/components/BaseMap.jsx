@@ -6,7 +6,7 @@
 // import { select } from "d3-selection";
 // import { feature } from "topojson";
 
-// import countriesJson from "../assets/countries.json";
+// import countriesJson from "../assets/maps/countries.json";
 // import { COLORS } from "../utilities/styles/colors";
 
 // const InteractiveMap = ({ booksPerCountry }) => {

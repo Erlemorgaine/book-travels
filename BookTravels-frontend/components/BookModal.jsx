@@ -37,7 +37,7 @@ export default function BookModal({
     <ModalWrapper key={bookItem} show={!!bookItem} closeModal={closeModal}>
       {updatedEntry && (
         <View style={styles.container}>
-          <View>
+          <View style={styles.containerTop}>
             {bookItem && (
               <CountryMap
                 countryCode={bookItem.countryCode}
@@ -45,52 +45,46 @@ export default function BookModal({
               />
             )}
             <AppTitle title={updatedEntry.country} />
-
-            <InputField
-              label={`You ${
-                updatedEntry.read ? "read" : "are planning to read"
-              }`}
-              value={updatedEntry.title}
-              onChange={(title) => setUpdatedEntry({ ...updatedEntry, title })}
-              style={{ marginBottom: 10 }}
-            />
-
-            <InputField
-              label="written by"
-              value={updatedEntry.writer}
-              onChange={(writer) =>
-                setUpdatedEntry({ ...updatedEntry, writer })
-              }
-            />
-
-            <AppCheckbox
-              setEnabled={() =>
-                setUpdatedEntry({ ...updatedEntry, read: !updatedEntry.read })
-              }
-              isEnabled={updatedEntry.read}
-              label="I've read this book"
-            />
-
-            {(updatedEntry.read || updatedEntry.notes) && (
-              <InputField
-                label="Notes"
-                placeholder="Write all the things down that you would like to remember about this book"
-                value={updatedEntry.notes}
-                onChange={(notes) =>
-                  setUpdatedEntry({ ...updatedEntry, notes })
-                }
-                optional
-                multiline
-              />
-            )}
-
-            <ButtonPrimary
-              label="Update the book details"
-              onPress={updateBookInDB}
-            />
-
-            {updated && <Text>Updated!</Text>}
           </View>
+
+          <InputField
+            label={`You ${updatedEntry.read ? "read" : "are planning to read"}`}
+            value={updatedEntry.title}
+            onChange={(title) => setUpdatedEntry({ ...updatedEntry, title })}
+            style={{ marginBottom: 10 }}
+          />
+
+          <InputField
+            label="written by"
+            value={updatedEntry.writer}
+            onChange={(writer) => setUpdatedEntry({ ...updatedEntry, writer })}
+          />
+
+          <AppCheckbox
+            setEnabled={() =>
+              setUpdatedEntry({ ...updatedEntry, read: !updatedEntry.read })
+            }
+            isEnabled={updatedEntry.read}
+            label="I've read this book"
+          />
+
+          {(updatedEntry.read || updatedEntry.notes) && (
+            <InputField
+              label="Notes"
+              placeholder="Write all the things down that you would like to remember about this book"
+              value={updatedEntry.notes}
+              onChange={(notes) => setUpdatedEntry({ ...updatedEntry, notes })}
+              optional
+              multiline
+            />
+          )}
+
+          <ButtonPrimary
+            label="Update the book details"
+            onPress={updateBookInDB}
+          />
+
+          {updated && <Text>Updated!</Text>}
         </View>
       )}
     </ModalWrapper>
@@ -109,5 +103,10 @@ const styles = StyleSheet.create({
       paddingTop: 8,
       paddingBottom: 8,
     },
+  },
+  containerTop: {
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 20,
   },
 });

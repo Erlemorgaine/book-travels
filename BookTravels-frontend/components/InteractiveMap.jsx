@@ -7,7 +7,7 @@ import { zoom } from "d3-zoom";
 import { feature } from "topojson";
 import { COLORS } from "../utilities/styles/colors";
 
-import countriesJson from "../assets/countries.json";
+import countriesJson from "../assets/maps/countries.json";
 // import ButtonRound from "./ButtonRound";
 import AddBookModal from "./AddBookModal";
 import MapLegend from "./MapLegend";
