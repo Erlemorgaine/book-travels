@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, Dimensions } from "react-native";
-import Svg, { Defs, Path, G } from "react-native-svg";
+import {
+  View,
+  Dimensions,
+  Animated,
+  PanResponder,
+  ScrollView,
+} from "react-native";
+import Svg, { Path, G } from "react-native-svg";
 import { geoPath, geoNaturalEarth1 } from "d3-geo";
 import { zoom } from "d3-zoom";
 // import { select } from "d3-selection";
@@ -13,6 +19,10 @@ import AddBookModal from "./AddBookModal";
 import MapLegend from "./MapLegend";
 import BookModal from "./BookModal";
 import CountriesReadChart from "./CountriesReadChart";
+import {
+  PanGestureHandler,
+  PinchGestureHandler,
+} from "react-native-gesture-handler";
 
 const InteractiveMap = ({
   booksPerCountry,
@@ -20,24 +30,72 @@ const InteractiveMap = ({
   amountBooksRead,
   onBookListUpdate,
 }) => {
+  // Define a projection for your map
+  const projection = geoNaturalEarth1().scale(150).translate([0, 0]);
+  const mapHeightFactor = 0.85;
   const windowWidth = Dimensions.get("window").width;
+
+  const [currentTranslation, setCurrentTranslation] = useState(1);
+
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [geojson, setGeojson] = useState(null);
 
   const svgRef = useRef(null);
   const mapGroup = useRef(null);
   const mapCountries = useRef(null);
-  const mapZoom = useRef(null);
   const bookObj = useRef({});
+  const pan = useRef(new Animated.ValueXY()).current;
+  const previousDistance = useRef(null);
+  // const scale = useRef(1);
+  const scale = useRef(new Animated.Value(1.5)).current;
 
-  const [currentZoom, setCurrentZoom] = useState(1);
-  const [currentTranslation, setCurrentTranslation] = useState(1);
+  // const handleZoom = Animated.event([{ nativeEvent: { scale: scale } }], {
+  //   useNativeDriver: false,
+  // });
 
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const [zoomScale, setZoomScale] = useState(0.75);
-  const [geojson, setGeojson] = useState(null);
+  const panResponder = useRef(
+    PanResponder.create({
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderGrant: () => {
+        pan.setOffset({
+          x: pan.x._value,
+          y: pan.y._value,
+        });
+        pan.setValue({ x: 0, y: 0 });
+      },
+      onPanResponderMove: (event, gestureState) => {
+        const touches = event.nativeEvent.touches;
 
-  // Define a projection for your map
-  const projection = geoNaturalEarth1().scale(150).translate([0, 0]);
-  const mapHeightFactor = 0.85;
+        // Perform zoom calculation if there are two touch points
+        const { dx, dy } = gestureState;
+
+        if (touches.length >= 2) {
+          const k = handleZoom(touches);
+          pan.setValue({ x: dx, y: dy });
+          scale.setValue(k);
+        } else {
+          // Perform pan calculation
+
+          pan.setValue({ x: dx, y: dy });
+        }
+      },
+      onPanResponderRelease: (e, gestureState) => {
+        pan.flattenOffset();
+
+        // Check if it's a tap event (no movement)
+        // TODO: This seems to work only sometimes, figure out
+        // if (Math.abs(gestureState.dx) < 2 && Math.abs(gestureState.dy) < 2) {
+        //   const countryCode =
+        //     e.target._internalFiberInstanceHandleDEV.memoizedProps
+        //       .accessibilityLabel;
+
+        //   if (countryCode) {
+        //     handleCountryClick(countryCode);
+        //   }
+        // }
+      },
+    })
+  ).current;
 
   useEffect(() => {
     createMap();
@@ -48,17 +106,11 @@ const InteractiveMap = ({
     }, {});
   }, []);
 
+  useEffect(() => {}, []);
+
   function createMap() {
     const countries = feature(countriesJson, countriesJson.objects.countries);
     setGeojson(countries);
-
-    // mapGroup.current = select("#map-wrapper");
-    // mapCountries.current = select("#map-countries");
-
-    mapZoom.current = zoom().scaleExtent([0.5, 7]).on("zoom", zoomBy); // Improves zoom performance
-    // TODO: Add Panresponder
-    // https://stackoverflow.com/questions/46955024/d3-zoom-behavior-in-react-native
-    // mapGroup.current.call(mapZoom.current).on("dblclick.zoom", null);
   }
 
   function getCountryColor(code) {
@@ -83,72 +135,78 @@ const InteractiveMap = ({
     }
   };
 
-  function resetZoom() {
-    mapGroup.current
-      .transition()
-      .duration(750)
-      .call(
-        mapZoom.current.transform,
-        zoomIdentity,
-        zoomTransform(mapGroup.current.node()).invert([
-          svgDimensions.width / 2,
-          svgDimensions.height / 2,
-        ])
-      );
-  }
+  const handleZoom = (touches) => {
+    let newScale = scale._value || 1.5;
 
-  function zoomMap(value) {
-    if (!value) {
-      resetZoom();
-    } else {
-      mapGroup.current
-        .transition()
-        .duration(750)
-        .call(mapZoom.current.scaleBy, value);
+    const distance = Math.sqrt(
+      Math.pow(touches[0].pageX - touches[1].pageX, 2) +
+        Math.pow(touches[0].pageY - touches[1].pageY, 2)
+    );
+
+    if (previousDistance.current !== null) {
+      const fraction = distance / previousDistance.current;
+
+      // Prevent making big jumps in scale
+      if (Math.abs(fraction - 1) < 0.1) {
+        newScale = scale._value * fraction;
+      }
     }
-  }
-
-  function zoomBy({ transform }) {
-    mapCountries.current.attr("transform", transform);
-
-    setCurrentZoom(transform.k);
-    setCurrentTranslation({ x: transform.y, y: transform.y });
-  }
+    previousDistance.current = distance;
+    return newScale;
+  };
 
   // {...panResponder.panHandlers}
   return (
     <View style={{ flex: 1 }}>
-      <Svg
-        ref={svgRef}
-        width={windowWidth}
-        height={windowWidth * mapHeightFactor}
-        viewBox={`${windowWidth * -0.5} ${
-          windowWidth * -mapHeightFactor * 0.55
-        } ${windowWidth} ${windowWidth * mapHeightFactor}`}
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        pinchGestureEnabled={false}
+        onScrollBeginDrag={() => setPreviousDistance(null)}
       >
-        <G id="map-wrapper" ref={mapGroup}>
-          <G id="map-countries" ref={mapCountries}>
-            {geojson &&
-              geojson.features.map((countryData, i) => (
-                <G key={countryData.properties.iso_a2 + i}>
-                  <Path
-                    d={geoPath().projection(projection)(countryData)}
-                    fill={getCountryColor(countryData.properties.iso_a2)}
-                    stroke="gray"
-                    strokeWidth={0.5}
-                    transform={`scale(${zoomScale})`}
-                    onClick={() =>
-                      handleCountryClick(countryData.properties.iso_a2)
-                    }
-                    onPress={() =>
-                      handleCountryClick(countryData.properties.iso_a2)
-                    }
-                  />
-                </G>
-              ))}
-          </G>
-        </G>
-      </Svg>
+        <Animated.View
+          {...panResponder.panHandlers}
+          style={[
+            {
+              transform: [
+                { translateX: pan.x },
+                { translateY: pan.y },
+                { scale: scale },
+              ],
+            },
+          ]}
+        >
+          <Svg
+            ref={svgRef}
+            width={windowWidth}
+            height={windowWidth * mapHeightFactor}
+            viewBox={`${windowWidth * -1} ${
+              windowWidth * -mapHeightFactor * 0.35
+            } ${windowWidth * 2} ${windowWidth * mapHeightFactor}`}
+            style={{ overflow: "visible" }}
+          >
+            <G id="map-wrapper" ref={mapGroup}>
+              <G id="map-countries" ref={mapCountries}>
+                {geojson &&
+                  geojson.features.map((countryData, i) => (
+                    <G key={countryData.properties.iso_a2 + i}>
+                      <Path
+                        d={geoPath().projection(projection)(countryData)}
+                        fill={getCountryColor(countryData.properties.iso_a2)}
+                        stroke="gray"
+                        strokeWidth={0.5}
+                        accessibilityLabel={countryData.properties.iso_a2}
+                      />
+                    </G>
+                  ))}
+              </G>
+            </G>
+          </Svg>
+        </Animated.View>
+      </ScrollView>
 
       {/* <ButtonRound
         onPress={() => setShowAddModal(true)}
