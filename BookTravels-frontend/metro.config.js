@@ -1,14 +1,10 @@
-// This is necessary since Expo doesn't support linking native modules
-
-const { getDefaultConfig } = require("expo/metro-config");
+const { getDefaultConfig } = require("@expo/metro-config");
 
 module.exports = (async () => {
-  const {
-    resolver: { assetExts },
-  } = await getDefaultConfig(__dirname);
-  return {
-    resolver: {
-      assetExts: [...assetExts, "svg"],
-    },
-  };
+  const defaultConfig = await getDefaultConfig(__dirname);
+
+  // Extending or modifying the default assetExts list from Expo's default config
+  defaultConfig.resolver.assetExts.push("svg"); // Add 'svg' if not already included
+
+  return defaultConfig;
 })();

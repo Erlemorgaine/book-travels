@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FlatList, View, StyleSheet, Dimensions } from "react-native";
 import * as DocumentPicker from "expo-document-picker";
 import * as FileSystem from "expo-file-system";
+import * as Sharing from "expo-sharing";
 import { readString } from "react-native-csv";
 
 import BookModal from "./BookModal";
@@ -14,6 +15,8 @@ import RadioGroup from "./RadioGroup";
 import { COLORS } from "../utilities/styles/colors";
 import { FONTS } from "../utilities/styles/fonts";
 import { uploadBooks } from "../utilities/db";
+import ButtonIcon from "./ButtonIcon";
+import { DownloadIcon } from "./Icons";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -34,6 +37,44 @@ const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
   function handleJsonData(fileContent) {
     const data = JSON.parse(fileContent);
     uploadInitialData(data);
+  }
+
+  /**
+   * Downloads and shares the user's books in a csv file
+   */
+  async function downloadData() {
+    const header = Object.keys(countryBooks[0]).join(",") + "\n";
+
+    const csvString = countryBooks
+      .filter((book) => book.writer && book.title)
+      .reduce((csv, row) => {
+        const values = Object.values(row).map(
+          (field) => `"${(field || "").toString().replace(/"/g, '""')}"`
+        );
+        csv += values.join(",") + "\n";
+        return csv;
+      }, header);
+
+    // Define the file name and URI
+    const fileName = "book-travels.csv";
+    const fileUri = FileSystem.cacheDirectory + fileName;
+
+    // Write the CSV string to a file in the device's file system
+    try {
+      await FileSystem.writeAsStringAsync(fileUri, csvString, {
+        encoding: FileSystem.EncodingType.UTF8,
+      });
+      console.log("CSV file written at:", fileUri);
+
+      // Sharing the file (optional)
+      if (await Sharing.isAvailableAsync()) {
+        await Sharing.shareAsync(fileUri);
+      } else {
+        console.log("Sharing not available, file saved at:", fileUri);
+      }
+    } catch (error) {
+      console.error("Error saving CSV file:", error);
+    }
   }
 
   function handleCSVData(fileContent) {
@@ -105,11 +146,23 @@ const CountryList = ({ countryBooks, userId, onBookListUpdate }) => {
       <View style={styles.addBtn}>
         {!!allBooks.current.length && (
           <View>
-            <ButtonPrimary
-              style={{ marginTop: 10 }}
-              label="Add a book"
-              onPress={() => setShowAddModal(true)}
-            />
+            <View style={styles.topButtons}>
+              <ButtonPrimary
+                style={{ width: "", flexGrow: 1 }}
+                label="Add a book"
+                onPress={() => setShowAddModal(true)}
+              />
+              <ButtonIcon
+                style={{
+                  marginLeft: 10,
+                  marginTop: 15,
+                  backgroundColor: COLORS.primaryGreenDark,
+                  borderRadius: 5,
+                }}
+                Icon={DownloadIcon}
+                onPress={downloadData}
+              />
+            </View>
 
             <RadioGroup
               label="Order by"
@@ -176,6 +229,10 @@ const styles = StyleSheet.create({
   addBtn: {
     paddingHorizontal: 15,
     paddingBottom: 5,
+  },
+  topButtons: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   bookCase: {
     backgroundColor: COLORS.cardColor,
