@@ -8,21 +8,15 @@ import {
 } from "react-native";
 import Svg, { Path, G } from "react-native-svg";
 import { geoPath, geoNaturalEarth1 } from "d3-geo";
-import { zoom } from "d3-zoom";
 // import { select } from "d3-selection";
 import { feature } from "topojson";
 import { COLORS } from "../utilities/styles/colors";
 
 import countriesJson from "../assets/maps/countries.json";
 // import ButtonRound from "./ButtonRound";
-import AddBookModal from "./AddBookModal";
 import MapLegend from "./MapLegend";
 import BookModal from "./BookModal";
 import CountriesReadChart from "./CountriesReadChart";
-import {
-  PanGestureHandler,
-  PinchGestureHandler,
-} from "react-native-gesture-handler";
 
 const InteractiveMap = ({
   booksPerCountry,
