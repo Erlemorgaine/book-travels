@@ -503,7 +503,10 @@
   },
   {
     "name": "Israel",
-    "code": "IL"
+    "code": "IL",
+    "book": "Homo deus",
+    "writer": "Yuval Noah Harari",
+    "read": true
   },
   {
     "name": "Italy",
