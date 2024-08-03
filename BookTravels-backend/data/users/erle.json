@@ -551,7 +551,10 @@
   },
   {
     "name": "Korea, Democratic People\"S Republic of",
-    "code": "KP"
+    "code": "KP",
+    "book": "The girl with seven names",
+    "writer": "Lee Hyeonseo",
+    "read": true
   },
   {
     "name": "Korea, Republic of",
@@ -712,7 +715,7 @@
     "code": "NA",
     "book": "The Purple Violet of Oshaantu",
     "writer": "Neshani Andreas",
-    "read": false
+    "read": true
   },
   {
     "name": "Nauru",
@@ -1015,7 +1018,10 @@
   },
   {
     "name": "Togo",
-    "code": "TG"
+    "code": "TG",
+    "book": "Michel the Giant",
+    "writer": "Tété-Michel Kpomassie",
+    "read": false
   },
   {
     "name": "Tokelau",
